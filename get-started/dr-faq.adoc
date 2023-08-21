@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-faq.html 
+keywords: disaster recovery faq, disaster recovery frequently asked questions 
+summary: Estas preguntas frecuentes pueden ser de ayuda si solo está buscando una respuesta rápida a una pregunta. 
+---
+= Preguntas frecuentes sobre la recuperación ante desastres de BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Estas preguntas frecuentes pueden ser de ayuda si solo está buscando una respuesta rápida a una pregunta.
+
+*¿Cuál es la URL de recuperación de desastres de BlueXP?*
+Para la URL, en un navegador, introduzca: https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/"^] Para acceder a la consola BlueXP.
+
+*¿Necesitas una licencia para usar la recuperación ante desastres de BlueXP?*
+No se requiere un archivo de licencia de NetApp (NLF).
+
+* ¿Cómo accedes a la recuperación ante desastres de BlueXP?*
+La recuperación ante desastres de BlueXP no requiere habilitación. La opción de recuperación ante desastres aparece automáticamente en la navegación izquierda de BlueXP.

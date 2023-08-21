@@ -1,0 +1,108 @@
+---
+sidebar: sidebar 
+permalink: use/manage.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+---
+= Administre la información de sitios, planes, almacenes de datos y máquinas virtuales
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Puede obtener un vistazo rápido de todos sus recursos de recuperación ante desastres o ver cada uno en detalle:
+
+* Consola
+* Sitios
+* Planes de replicación
+* Grupos de recursos
+
+
+
+
+== Consulta la consola de recuperación ante desastres de BlueXP
+
+Usa la consola para obtener una vista rápida de todos los recursos y actividades de recuperación ante desastres de BlueXP. El panel Activity muestra la actividad de operación de trabajo actualizada.
+
+.Pasos
+. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
+. En el menú superior, selecciona *Dashboard*.
+. Explore todos los planes de recuperación ante desastres, cumplimiento de normativas, vCenters, máquinas virtuales y grupos de recursos en el Dashboard.
+. Para ver el recurso, seleccione la flecha a la derecha.
+. Para ver todos los grupos de recursos, seleccione *Ver grupos de recursos*.
+
+
+
+
+== Gestión de sitios de vCenter
+
+Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
+
+.Pasos
+. En el menú superior, selecciona *Sitios*.
+. Seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha del nombre de vCenter y seleccione *Editar*.
+. Edite el nombre y la ubicación del sitio de vCenter.
+
+
+
+
+== Gestionar planes de replicación
+
+Puede desactivar, activar y suprimir planes de replicación.
+
+* Si desea pausar temporalmente un plan de replicación, puede deshabilitarlo y habilitarlo más adelante.
+* Si ya no necesita el plan, puede eliminarlo.
+
+
+.Pasos
+. En el menú superior, selecciona *Planes de replicación*.
+. Para ver los detalles del plan, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y selecciona *Ver detalles del plan*.
+. Realice alguna de las siguientes acciones:
++
+** Para editar los detalles del plan (cambiar la recurrencia), seleccione la pestaña *Detalles del plan* y seleccione el icono *Editar* a la derecha.
+** Para editar las asignaciones de recursos, seleccione la pestaña *Asignación de conmutación por error* y seleccione el icono *Editar*.
+** Para agregar o editar las máquinas virtuales, seleccione la pestaña *Virtual machine* y seleccione el icono *Edit*.
+
+
+. Para realizar acciones con el plan, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  En la parte superior y seleccione cualquiera de las opciones, como *Test failover*, *fail over*, *fail back back*, *Disable*, *Enable*, o *Eliminar*.
+
+
+
+
+== Ver la información de los almacenes de datos
+
+Es posible ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
+
+. En el menú superior, selecciona *Dashboard*.
+. Seleccione la instancia de vCenter en la fila del sitio.
+. Seleccione *datastores*.
+. Consulte la información de los almacenes de datos.
+
+
+
+
+== Ver la información de las máquinas virtuales
+
+Es posible ver información sobre cuántas máquinas virtuales existen en el origen y en el destino, junto con la CPU, la memoria y la capacidad disponible.
+
+. En el menú superior, selecciona *Dashboard*.
+. Seleccione la instancia de vCenter en la fila del sitio.
+. Seleccione *Máquinas virtuales*.
+. Ver la información de las máquinas virtuales.
+
+
+
+
+== Gestione grupos de recursos
+
+Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan.
+
+También puede editar y eliminar grupos de recursos.
+
+.Pasos
+. En el menú superior, selecciona *Grupos de recursos*.
+. Para agregar un grupo de recursos, seleccione *Agregar grupo*.
+. Para realizar acciones con el grupo de recursos, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha y seleccione cualquiera de las opciones, como *Editar grupo de recursos* o *Eliminar grupo de recursos*.
+

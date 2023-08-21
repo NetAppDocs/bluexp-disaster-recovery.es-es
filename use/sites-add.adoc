@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: use/sites-add.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+---
+= Añada sitios de vCenter
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Antes de poder crear un plan de recuperación ante desastres, debe añadir un sitio de vCenter principal y un sitio de recuperación ante desastres de vCenter de destino en BlueXP.
+
+Después de añadirlos, la recuperación de desastres de BlueXP realiza una detección profunda de los entornos de vCenter, incluidos clústeres de vCenter, hosts ESXi, almacenes de datos, huella de almacenamiento, detalles de las máquinas virtuales, réplicas de SnapMirror y redes de máquinas virtuales.
+
+.Pasos
+. Inicia sesión en BlueXP y selecciona *Protección* > *Recuperación ante desastres* desde el navegador izquierdo.
++
+Llegarás a la página del Panel de recuperación de desastres de BlueXP. Cuando comienza por primera vez con el servicio, debe añadir información de vCenter. Más adelante, el panel muestra datos sobre sus sitios y planes de replicación.
+
+. Seleccione *Descubrir servidores de vCenter* para introducir información sobre el sitio de vCenter de origen.
++
+
+TIP: Si algunos sitios de vCenter ya existen y desea agregar más, en el menú superior, seleccione *Sitios* y luego seleccione *Agregar*.
+
++
+image:vcenter-add.png["Añadir captura de pantalla del servidor vCenter "]
+
+. Añada un sitio, seleccione BlueXP Connector y proporcione credenciales de vCenter.
+. Para aceptar certificados autofirmados de la instancia de vCenter de origen, marque la casilla.
++
+
+NOTE: Los certificados autofirmados no son tan seguros como otros certificados. Si el para vCenter está *NO* configurado con certificados de entidad de certificación (CA), debe marcar esta casilla; de lo contrario, la conexión al para vCenter no funcionará.
+
+. Seleccione *Agregar*.
++
+A continuación, añadirá una instancia de vCenter de destino.
+
+. Seleccione el sitio de destino y la ubicación. Si el destino es la nube, selecciona *aws*.
+. Seleccione *Agregar*.
++
+Los vCenter de origen y destino aparecen en la lista de sitios.
+
+. Para ver el progreso de la operación, en el menú superior, seleccione *Monitoreo de trabajos*.
+

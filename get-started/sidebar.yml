@@ -1,0 +1,16 @@
+---
+section: get-started
+title: Manos a la obra
+entries:
+- title: Obtén más información sobre la recuperación ante desastres de BlueXP
+  url: "/get-started/dr-intro.html"
+- title: Requisitos previos
+  url: "/get-started/dr-prerequisites.html"
+- title: Inicio rápido
+  url: "/get-started/dr-quick-start.html"
+- title: Configura la recuperación de desastres de BlueXP
+  url: "/get-started/dr-setup.html"
+- title: Accede a la recuperación ante desastres de BlueXP
+  url: "/get-started/dr-login.html"
+- title: PREGUNTAS FRECUENTES
+  url: "/get-started/dr-faq.html"

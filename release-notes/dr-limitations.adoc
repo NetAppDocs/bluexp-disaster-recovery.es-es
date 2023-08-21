@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: release-notes/dr-limitations.html 
+keywords: disaster recovery, bluexp 
+summary: Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del servicio o cuya interoperabilidad con esta no es óptima. 
+---
+= Limitaciones
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del servicio o cuya interoperabilidad con esta no es óptima.
+
+
+
+== Es posible que BlueXP no descubra Amazon FSx para NetApp ONTAP
+
+A veces, BlueXP no detecta clústeres de Amazon FSx para NetApp ONTAP. Esto podría deberse a que las credenciales de FSx no eran correctas.
+
+*Solución alternativa*: Agrega el clúster de Amazon FSx para NetApp ONTAP en BlueXP y actualiza periódicamente el clúster para mostrar cualquier cambio.
+
+Si tienes que quitar el clúster de ONTAP FSx del servicio de recuperación ante desastres de BlueXP, complete los siguientes pasos:
+
+. En BlueXP Connector, utilice las opciones de conectividad de su proveedor de cloud, conéctese a la máquina virtual Linux en la que se ejecuta Connector y reinicie el servicio «occm» mediante el `docker restart occm` comando.
++
+Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Administrar conectores existentes"^].
+
+. En el lienzo de BlueXP, vuelve a añadir el entorno Amazon FSx para ONTAP y proporciona las credenciales de FSx.
++
+Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Crea un sistema de archivos de Amazon FSx para NetApp ONTAP"^].
+
+. En la recuperación ante desastres de BlueXP, selecciona *Sites*, en la fila de vCenter selecciona la opción *Actions* image:../use/icon-vertical-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"], Y en el menú Acciones, selecciona *Actualizar* para actualizar el descubrimiento FSx en la recuperación ante desastres de BlueXP.
++
+Esta acción vuelve a detectar el almacén de datos, sus máquinas virtuales y su relación de destino.
+
+

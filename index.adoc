@@ -1,0 +1,15 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+permalink: index.html 
+summary: Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp. 
+---
+= Recuperación ante desastres de BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

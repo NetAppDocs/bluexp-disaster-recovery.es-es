@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: use/drplan-create.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Después de añadir sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o replicación. 
+---
+= Cree un plan de replicación
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Después de añadir sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o replicación. Seleccione los vCenter de origen y destino, elija los grupos de recursos y agrupe cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, puede agrupar máquinas virtuales asociadas a una aplicación, o bien agrupar aplicaciones con niveles similares.
+
+Estos planes a veces se llaman _blueprints_.
+
+Un asistente le guiará por los siguientes pasos:
+
+* Seleccione vCenter Servers
+* Seleccione las máquinas virtuales que desea replicar y asignar grupos
+* Asignar el modo en que se asignan los recursos del entorno de origen al destino.
+* Identifique la recurrencia
+* Revise el plan
+
+
+
+
+== Seleccione vCenter Servers
+
+Primero, debe seleccionar la instancia de vCenter de origen y, a continuación, seleccionar la instancia de vCenter de destino.
+
+.Pasos
+. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
+. En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*. O bien, si está empezando a usar el servicio, en el Panel de Control, seleccione *Agregar plan de replicación*.
++
+image:dr-plan-create-name.png["Captura de pantalla que muestra la página Agregar plan de replicación > Agregar plan"]
+
+. Cree un nombre para el plan de replicación.
+. Seleccione la instancia de vCenter de origen y destino en las listas Source y Target vCenter.
+. Seleccione *Siguiente*.
+
+
+
+
+== Seleccione aplicaciones para replicar y asignar grupos de recursos
+
+El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener un orden de inicio que se puede ejecutar tras la recuperación.
+
+
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya aquí.
+
+.Pasos
+. En la parte izquierda de la página Aplicaciones, seleccione las máquinas virtuales que desea replicar y asignar al grupo seleccionado.
++
+La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que agrega una máquina virtual al último grupo, se agrega otro grupo.
+
++
+image:dr-plan-create-apps-vms.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
+
+. Opcionalmente, realice cualquiera de las siguientes acciones:
++
+** Para cambiar de grupo, haga clic en el icono de grupo *Editar*.
+** Para eliminar una máquina virtual de un grupo, seleccione *X*.
+** Para mover una máquina virtual a un grupo diferente, arrástrela y suéltela en el nuevo grupo.
+
+
+. Cuando tenga varios grupos de recursos, asegúrese de que la secuencia de los grupos coincida con la secuencia operativa que debe producirse.
++
+Cada máquina virtual dentro de un grupo se inicia en secuencia según el orden aquí. Dos grupos se inician en paralelo.
+
+. Opcionalmente, cambie el nombre del grupo haciendo clic en el icono *Editar*.
+. Seleccione *Siguiente*.
+
+
+
+
+== Asignar recursos de origen al destino
+
+En el paso Asignación de recursos, especifique cómo se deben asignar los recursos del entorno de origen al destino.
+
+* Seleccione la asignación de red al segmento apropiado.
++
+Los segmentos ya se deben aprovisionar en VMC, por lo que seleccione el segmento adecuado para asignar la máquina virtual.
+
+* Según la selección de máquinas virtuales, se seleccionan automáticamente las asignaciones de almacenes de datos.
++
+
+NOTE: SnapMirror se encuentra en el nivel de volumen. Por lo tanto, todos los equipos virtuales se replican en el destino de replicación. Asegúrese de seleccionar todas las máquinas virtuales que formen parte del almacén de datos. Si no se seleccionan, solo se procesan las máquinas virtuales que forman parte del plan de replicación.
+
+
+
+.Pasos
+. En la página Asignación de recursos, para utilizar las mismas asignaciones tanto para operaciones de failover como de prueba, marque la casilla.
+. En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada uno:
++
+** Recursos de computación
+** Redes virtuales
+** Equipos virtuales
+** Almacenes de datos
+
+
+. En los detalles de las máquinas virtuales, puede cambiar opcionalmente el tamaño de los parámetros de CPU y RAM de la máquina virtual.
++
+image:dr-plan-create-mapping-vms.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
+
++
+Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno. Además, puede modificar el orden de inicio de todas las máquinas virtuales seleccionadas en los grupos de recursos.
+
++
+De forma predeterminada, se utiliza el orden de inicio seleccionado durante la selección del grupo de recursos; sin embargo, puede realizar cambios en esta etapa.
+
+. Para establecer diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Correspondencias de prueba*. Revise cada pestaña como antes, pero esta vez para el entorno de prueba.
++
+
+TIP: Más tarde, puede probar todo el plan. Ahora mismo está configurando las asignaciones para el entorno de prueba.
+
+
+
+
+
+== Identifique la recurrencia
+
+Seleccione si desea migrar datos (un movimiento que se realiza una vez) a otro destino o replicarlos con frecuencia de SnapMirror. Si desea replicarla, identifique la frecuencia con la que se deben duplicar los datos.
+
+
+NOTE: En esta versión beta, configure la frecuencia fuera del servicio de recuperación ante desastres de BlueXP.
+
+.Pasos
+. En la página de repetición, seleccione *Migrate* o *Replicate*.
++
+** *Migrar*: Seleccione para mover la aplicación a la ubicación de destino.
+** *Replicar*: Mantenga la copia de destino actualizada con los cambios de la copia de origen en una replicación recurrente.
+
+
++
+image:dr-plan-create-recurrence.png["Captura de pantalla que muestra la repetición Agregar plan de replicación >"]
+
+. Seleccione *Siguiente*.
+
+
+
+
+== Confirme el plan de replicación
+
+Por último, dedique unos momentos a confirmar el plan de replicación.
+
+
+TIP: Posteriormente, puede desactivar o eliminar el plan de replicación.
+
+.Pasos
+. Revise la información en cada pestaña: Detalles del plan, asignación de conmutación por error, máquinas virtuales.
+. Selecciona *Añadir plan*.
++
+El plan se agrega a la lista de planes.
+
+

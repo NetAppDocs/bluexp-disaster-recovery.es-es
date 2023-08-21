@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-login.html 
+keywords: bluexp login, disaster recovery log in 
+summary: Empieza a usar la recuperación de desastres de BlueXP accediendo al servicio en BlueXP. 
+---
+= Accede a la recuperación ante desastres de BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Utilizarás NetApp BlueXP para iniciar sesión en el servicio de recuperación ante desastres de BlueXP.
+
+Para iniciar sesión en BlueXP, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en cloud de NetApp con su correo electrónico y una contraseña. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^].
+
+.Pasos
+. Abra un explorador web y vaya al https://console.bluexp.netapp.com/["Consola BlueXP"^].
++
+Aparece la página de inicio de sesión de NetApp BlueXP.
+
+. Inicie sesión en BlueXP.
+. En el menú de navegación izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
++
+Si es la primera vez que inicia sesión en este servicio, aparecerá la página de destino.
+
++
+image:draas-landing.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
+
++
+De lo contrario, aparecerá la consola de recuperación de desastres de BlueXP.
+
++
+** Si no tienes un conector BlueXP o no es el adecuado para esta versión beta, es posible que necesites ponerte en contacto con el soporte de NetApp o seguir mensajes para registrarte en esta versión beta.
+** Si eres nuevo en BlueXP y no has utilizado ningún conector, cuando seleccionas «Recuperación de desastres», aparecerá un mensaje sobre la inscripción. Continúe y envíe el formulario. NetApp se pondrá en contacto con usted sobre su solicitud beta.
+** Si eres un usuario de BlueXP con un conector existente, cuando seleccionas «Recuperación de desastres», aparecerá un mensaje sobre la inscripción.
+** Si ya está participando en la beta, al seleccionar “Recuperación ante desastres”, puede continuar con el servicio.
+
+
+

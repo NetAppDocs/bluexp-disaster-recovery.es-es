@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-quick-start.html 
+keywords: how to get started with bluexp disaster recovery, disaster recovery quick start, failover, failback 
+summary: Empieza a usar el servicio de recuperación ante desastres de NetApp BlueXP en unos pocos pasos. 
+---
+= Inicio rápido para la recuperación ante desastres de BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+A continuación encontrarás una descripción general de los pasos necesarios para empezar a utilizar la recuperación de desastres de BlueXP. Los vínculos de cada paso le llevan a una página que proporciona más detalles.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Revise los requisitos previos
+[role="quick-margin-para"]
+link:../get-started/dr-prerequisites.html["Asegúrese de que su entorno cumpla estos requisitos"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Configurar el servicio de recuperación ante desastres
+[role="quick-margin-para"]
+link:../get-started/dr-setup.html["Complete los pasos necesarios para configurar el servicio"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] El futuro
+[role="quick-margin-para"]
+Después de configurar el servicio, esto es lo que puede hacer a continuación.
+
+[role="quick-margin-list"]
+* link:../use/sites-add.html["Añada sitios de vCenter"].
+* link:../use/drplan-create.html["Cree un plan de recuperación ante desastres"].
+* link:../use/replicate.html["Replicar aplicaciones en otro sitio"].
+* link:../use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
+* link:../use/failback.html["Realice una conmutación por error de las aplicaciones en el sitio de origen original"].
+* link:../use/manage.html["Administre la información de sitios, planes, almacenes de datos y máquinas virtuales"].
+* link:../use/monitor-jobs.html["Supervisar las operaciones de recuperación ante desastres"].
+

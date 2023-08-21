@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/failback.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+---
+= Realice una conmutación por error de las aplicaciones en el origen original
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Después de resolver un desastre, conmute al sitio de recuperación de desastres al sitio de origen para volver al funcionamiento normal. Puede seleccionar la snapshot a partir de la que desea recuperar.
+
+En este flujo de trabajo, la recuperación de desastres de BlueXP replica (resincroniza) cualquier cambio de vuelta en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
+
+* En el sitio de destino, las máquinas virtuales se apagan y no se registran y los volúmenes se desmontan.
+* La relación de SnapMirror en el origen original se rompe para que sea de lectura/escritura.
+* La relación SnapMirror se vuelve a sincronizar para revertir la replicación.
+* Las máquinas virtuales de origen están encendidas y registradas, y los volúmenes se montan en el origen.
+
+
+.Pasos
+. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
+. En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
+. Seleccione el plan de recuperación ante desastres.
+. A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  Y seleccione *fail back*.
+. Introduzca el nombre del plan de recuperación de desastres para confirmar e iniciar la conmutación de retorno tras recuperación.
+. Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.
+. Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.
+

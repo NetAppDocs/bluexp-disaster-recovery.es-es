@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/replicate.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+summary: Con la recuperación ante desastres de BlueXP, puedes replicar las aplicaciones de VMware en tu sitio de origen en un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror. 
 ---
 = Replicar aplicaciones en otro sitio
 :hardbreaks:
@@ -12,14 +12,17 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 
 
 [role="lead"]
-Replicar las aplicaciones de VMware que haya en el sitio de origen en un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror.
+Con la recuperación ante desastres de BlueXP, puedes replicar las aplicaciones de VMware en tu sitio de origen en un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror.
 
 
-TIP: Después de crear el plan de recuperación ante desastres, identificar la repetición en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos de recuperación ante desastres de BlueXP verifica que la replicación se produzca realmente según el plan. Puede supervisar la comprobación en la página Job Monitor.
+TIP: Después de crear el plan de recuperación ante desastres, identificar la repetición en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos de recuperación ante desastres de BlueXP verifica que la replicación se produzca realmente según el plan. Puede supervisar el progreso en la página Job Monitor.
+
+.Antes de empezar
+Antes de iniciar la replicación, debe haber creado un plan de replicación y haber seleccionado replicar las aplicaciones. Luego, la opción *Replicar* aparece en el menú Acciones.
 
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior, selecciona *Planes de replicación*.
-. Seleccione el plan de recuperación ante desastres.
+. Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *Replicar*.
 

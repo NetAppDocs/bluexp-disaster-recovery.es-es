@@ -14,19 +14,20 @@ summary: Empieza a usar la recuperación de desastres de BlueXP verificando la c
 [role="lead"]
 Comience verificando la preparación de su entorno operativo, el inicio de sesión, el acceso a la red y el navegador web.
 
-Para utilizar la recuperación de desastres de BlueXP, debes asegurarte de que tu entorno cumpla todos los requisitos.
+Para utilizar la recuperación ante desastres de BlueXP, debes asegurarte de que tu entorno cumpla los siguientes requisitos:
 
 * Entorno de trabajo de VMware en las instalaciones con almacenamiento de NetApp
 * En AWS:
 +
 ** Un sistema de archivos Amazon FSx para NetApp ONTAP. Consulte la documentación de Amazon FSx para ONTAP en https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["cómo comenzar"^].
-** Una cuenta de VMware con un centro de datos definido mediante software (SDDC) en AWS, también conocido como Virtual Machines Cloud (VMS). En VMware Cloud Console, utilice los roles de servicio de Administrator y NSX Cloud Admin, ambos roles en VMware Cloud en AWS. Utilice también el propietario de la organización para el rol de organización. Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Documentación de Virtual Machines Cloud"^].
+** Una cuenta de VMware con un centro de datos definido por software (SDDC) en AWS, también conocido como Virtual Machines Cloud. En VMware Cloud Console, utilice las funciones de servicio de Administrator y NSX Cloud Administrator, ambos roles en VMware Cloud on AWS. Utilice también el propietario de la organización para el rol de organización. Consulte https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Documentación de Virtual Machines Cloud"^].
 ** Enlace el centro de datos de desarrollo de software con Amazon FSx para NetApp ONTAP. Consulte https://vmc.techzone.vmware.com/fsx-guide#overview["Integración de VMware Cloud on AWS con Amazon FSx para NetApp ONTAP"^].
 
 
 * En BlueXP:
 +
-** Es necesario configurar el conector BlueXP en NetApp BlueXP. Usa BlueXP AWS Connector, que tiene acceso tanto a vCenter en las instalaciones como a la nube. BlueXP Connector requiere credenciales tanto para los servidores de vCenter de origen como de destino. Consulte la https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html["Inicio rápido de BlueXP"^] y.. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html["Información de red de BlueXP"^].
+** Es necesario configurar el conector BlueXP en NetApp BlueXP. Usa BlueXP AWS Connector, que tiene acceso tanto al vCenter en las instalaciones como al cloud. BlueXP Connector requiere credenciales tanto para los servidores de vCenter de origen como de destino. Consulte la https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-standard-mode.html["Inicio rápido de BlueXP"^] y.. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-saas-console.html["Información de red de BlueXP"^].
+** Usa el conector on-premises de BlueXP o el conector BlueXP AWS, que tiene acceso al vCenter de origen on-premises y al vCenter on-premises de destino.
 ** Credenciales de Amazon FSx para ONTAP y AWS agregadas al entorno de trabajo de BlueXP
 
 

@@ -12,9 +12,9 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 
 
 [role="lead"]
-En caso de desastre, conmuta al nodo de respaldo de tu sitio principal on-premises a VMware Cloud en un sitio de AWS con FSx para NetApp ONTAP.
+En caso de desastre, conmuta tu sitio principal de VMware local a otro sitio de VMware local o VMware Cloud en AWS.
 
-Durante la conmutación por error, se utiliza la copia Snapshot de SnapMirror más reciente. O bien, se puede seleccionar una copia Snapshot específica de una copia Snapshot de un momento específico (según la política de retención de SnapMirror). La opción de un momento específico puede ser útil si se enfrenta a un evento de corrupción como ransomware, donde las réplicas más recientes ya están comprometidas o cifradas. La recuperación ante desastres de BlueXP muestra todos los puntos disponibles en el tiempo.
+Durante la recuperación tras fallos, se utiliza la copia Snapshot de SnapMirror más reciente. O bien, se puede seleccionar una copia Snapshot específica de una copia Snapshot de un momento específico (según la política de retención de SnapMirror). La opción de un momento específico puede ser útil si se enfrenta a un evento de corrupción como ransomware, donde las réplicas más recientes ya están comprometidas o cifradas. La recuperación ante desastres de BlueXP muestra todos los puntos disponibles en el tiempo.
 
 Este procedimiento interrumpe la relación de replicación, coloca sin conexión las máquinas virtuales de origen de vCenter y habilita la lectura/escritura en el sitio de destino.
 
@@ -28,14 +28,14 @@ Antes de iniciar una conmutación al respaldo real, debe probar el proceso de co
 
 Durante una prueba de conmutación por error, se crean temporalmente las máquinas virtuales. La recuperación ante desastres de BlueXP no asigna el volumen de destino. En su lugar, crea un nuevo volumen FlexClone de la Snapshot seleccionada y se asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
 
-Este proceso no consume capacidad física adicional para Amazon FSx para NetApp ONTAP. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
+Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
 
 Cuando termine la prueba, debe restablecer las máquinas virtuales con la opción *clean up test*. Aunque se recomienda, no es obligatorio.
 
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
-. Seleccione el plan de recuperación ante desastres.
+. Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *Test failover*.
 . En la página Test failover, ingrese “Test failover” y seleccione *Test fail over*.
 . Una vez finalizada la prueba, limpie el entorno de prueba.
@@ -49,7 +49,7 @@ Una vez finalizada la prueba de failover, debe limpiar el entorno de prueba. Est
 
 .Pasos
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
-. Seleccione el plan de recuperación ante desastres.
+. Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  Y seleccione *clean up failover test*.
 . En la página Test failover, ingrese “clean up failover” y seleccione *clean up failover test*.
 
@@ -58,7 +58,7 @@ Una vez finalizada la prueba de failover, debe limpiar el entorno de prueba. Est
 
 == Conmutación por error del sitio de origen a un sitio de recuperación de desastres
 
-En caso de desastre, conmuta al nodo de respaldo tu sitio de origen bajo demanda a VMware Cloud en un sitio AWS con FSx para NetApp ONTAP.
+En caso de desastre, conmuta tu sitio principal de VMware on-premises bajo demanda a otro sitio VMware on-premises o VMware Cloud en AWS con FSx para NetApp ONTAP.
 
 El proceso de recuperación tras fallos implica las siguientes operaciones:
 
@@ -66,20 +66,20 @@ El proceso de recuperación tras fallos implica las siguientes operaciones:
 * Las máquinas virtuales de origen se apagan.
 * La relación de SnapMirror se rompe y el volumen de destino se realiza de lectura/escritura.
 * Según la selección de la instantánea, el sistema de archivos activo se restaura a la instantánea especificada (última o seleccionada).
-* Los almacenes de datos se crean y montan en el clúster o el host de VMC según la información capturada en el plan de recuperación ante desastres.
+* Los almacenes de datos se crean y montan en el clúster o el host de VMware o VMC según la información capturada en el plan de replicación.
 * Las máquinas virtuales de destino se registran y se encienden según el orden capturado en la página Grupos de recursos.
 * La relación de SnapMirror se invierte del equipo virtual de destino al de origen.
 
 
 
-TIP: Después de que se inicia la conmutación al respaldo, los elementos recuperados pueden verse en el VMC vCenter (máquinas virtuales, redes y almacenes de datos). De forma predeterminada, las máquinas virtuales se recuperan en la carpeta Workload.
+TIP: Una vez que se inicia la conmutación al respaldo, es posible ver las máquinas virtuales recuperadas en el para vCenter del sitio de recuperación ante desastres (máquinas virtuales, redes y almacenes de datos). De forma predeterminada, las máquinas virtuales se recuperan en la carpeta Workload.
 
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
-. Seleccione el plan de recuperación ante desastres.
+. Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *fail over*.
-. En la página Test Failover, introduzca el nombre del plan de recuperación ante desastres para confirmar y seleccione *fail over*.
+. En la página Test Failover, introduzca el nombre del plan de replicación para confirmar y seleccione *fail over*.
 . Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.
 . Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.
 

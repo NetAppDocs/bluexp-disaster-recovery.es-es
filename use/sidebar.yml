@@ -4,12 +4,16 @@ title: Utiliza la recuperación ante desastres de BlueXP
 entries:
 - title: Utiliza la información general sobre la recuperación de desastres de BlueXP
   url: "/use/use-overview.html"
+- title: Vea el estado de sus planes de recuperación ante desastres en la Consola
+  url: "/use/dashboard-view.html"
 - title: Añada sitios de vCenter
   url: "/use/sites-add.html"
-- title: Cree un plan de recuperación ante desastres
+- title: Cree un plan de replicación
   url: "/use/drplan-create.html"
 - title: Replicar en otro sitio
   url: "/use/replicate.html"
+- title: Migrar a otro sitio
+  url: "/use/migrate.html"
 - title: Conmutación al nodo de respaldo en un sitio remoto
   url: "/use/failover.html"
 - title: Realice una conmutación por error de las aplicaciones en el sitio de origen

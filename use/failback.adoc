@@ -25,9 +25,9 @@ En este flujo de trabajo, la recuperación de desastres de BlueXP replica (resin
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
-. Seleccione el plan de recuperación ante desastres.
+. Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  Y seleccione *fail back*.
-. Introduzca el nombre del plan de recuperación de desastres para confirmar e iniciar la conmutación de retorno tras recuperación.
+. Introduzca el nombre del plan de replicación para confirmar e iniciar la conmutación de retorno tras recuperación.
 . Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.
 . Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.
 

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: use/migrate.html 
+keywords: disaster recovery, bluexp disaster recovery, migrate, vmware, vcenter 
+summary: Con la recuperación ante desastres de BlueXP, puedes migrar las aplicaciones de VMware desde tu sitio de origen a otro sitio. 
+---
+= Migrar aplicaciones a otro sitio
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Con la recuperación ante desastres de BlueXP, puedes migrar las aplicaciones de VMware desde tu sitio de origen a otro sitio.
+
+
+TIP: Después de crear el plan de replicación, identificar la recurrencia en el asistente e iniciar la migración, cada 30 minutos de recuperación ante desastres de BlueXP verifica que la migración se produzca realmente según el plan. Puede supervisar el progreso en la página Job Monitor.
+
+.Antes de empezar
+Antes de iniciar la migración, debe haber creado un plan de replicación y haber seleccionado migrar las aplicaciones. Luego, la opción *Migrate* aparece en el menú Actions.
+
+.Pasos
+. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione el plan de replicación.
+. A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *Migrate*.
+

@@ -12,24 +12,10 @@ summary: Para utilizar la recuperación ante desastres de BlueXP, realiza unos p
 
 
 [role="lead"]
-Para utilizar la recuperación ante desastres de BlueXP, realiza unos pasos para configurarla.
-
-* Revisar link:../get-started/dr-prerequisites.html["requisitos previos"] garantizar que su entorno está listo.
-* En AWS:
-+
-** Pon en marcha y configura VMware Cloud en AWS.
-** Crea un sistema de archivos de Amazon FSx para ONTAP. Aprovisiona y configura FSx para ONTAP.
-** Utilizar una cuenta de VMware y aprovisionar el centro de datos definido mediante software (SDDC). Asegúrate de que el SDDC tiene conectividad con FSx para ONTAP.
+Para utilizar la recuperación ante desastres de BlueXP, lleva a cabo unos pasos para configurarlo tanto en AWS como en BlueXP.
 
 
-* En BlueXP:
-+
-** Poner en marcha y configurar SnapMirror a FSX para ONTAP
-** Añade el entorno de trabajo del almacenamiento de ONTAP on-premises a BlueXP. Este es el clúster de ONTAP de origen.
-** Añade una cuenta de BlueXP, añade FSxN al entorno de trabajo y añade credenciales de AWS para FSx for ONTAP.
-
-
-
+TIP: Revisar link:../get-started/dr-prerequisites.html["requisitos previos"] garantizar que su entorno está listo.
 
 
 
@@ -37,8 +23,9 @@ Para utilizar la recuperación ante desastres de BlueXP, realiza unos pasos para
 
 En AWS, tendrás que seguir los siguientes pasos:
 
-* Ponga en marcha VMware Cloud
-* Configura Amazon FSx para ONTAP
+* Pon en marcha y configura VMware Cloud en AWS.
+* Crea un sistema de archivos de Amazon FSx para ONTAP. Aprovisiona y configura FSx para ONTAP.
+* Utilizar una cuenta de VMware y aprovisionar el centro de datos definido mediante software (SDDC). Asegúrate de que el SDDC tiene conectividad con FSx para ONTAP.
 
 
 
@@ -61,13 +48,21 @@ Amazon FSX para ONTAP de NetApp es un servicio totalmente gestionado que ofrece 
 
 El siguiente paso es configurar la recuperación de desastres en BlueXP.
 
+* Crear un conector en BlueXP.
+* Pon en marcha y configura SnapMirror para Amazon FSx para NetApp ONTAP.
+* Añade el entorno de trabajo del almacenamiento de ONTAP on-premises a BlueXP. Este es el clúster de ONTAP de origen.
+* Añade una cuenta de BlueXP, añade FSxN al entorno de trabajo y añade credenciales de AWS para FSx for ONTAP.
+
+
 
 
 === Crear un conector en BlueXP
 
-Debes registrarte en la versión beta o ponerte en contacto con tu representante de ventas de NetApp para probar este servicio. A continuación, cuando utilices BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.
+Tienes que registrarte para acceder a la vista previa o ponerte en contacto con tu representante de ventas de NetApp para probar este servicio. A continuación, cuando utilices BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.
 
 Para crear un conector en BlueXP antes de utilizar el servicio, consulte la documentación de BlueXP que se describe https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["cómo crear un conector"^].
+
+Usa el conector on-premises de BlueXP o el conector BlueXP AWS, que tiene acceso al vCenter de origen on-premises y al vCenter on-premises de destino.
 
 
 

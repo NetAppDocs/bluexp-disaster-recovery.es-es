@@ -4,7 +4,7 @@ permalink: get-started/dr-intro.html
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
 summary: La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en nubes públicas como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp. 
 ---
-= Obtén más información sobre la recuperación ante desastres de BlueXP para VMware Beta
+= Descubre la recuperación ante desastres de BlueXP para la vista previa de VMware
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,21 +12,23 @@ summary: La recuperación de desastres en el cloud es una forma resiliente y ren
 
 
 [role="lead"]
-La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware Beta, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp.
+La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para la vista previa de VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.
 
-La versión beta de recuperación ante desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con la versión beta de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS que ejecutan el almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx for NetApp ONTAP.
+La vista previa de la recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con la vista previa de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS que ejecutan el almacenamiento NetApp en las instalaciones en una de las siguientes opciones:
 
-La beta de recuperación ante desastres de BlueXP utiliza la tecnología SnapMirror de ONTAP para el transporte de la replicación al cloud. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
-
-La beta admite la recuperación ante desastres para cargas de trabajo on-premises en la nube.
-
-image:draas-onprem-to-cloud.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]
+* VMware Cloud (VMC) en AWS con Amazon FSx para NetApp ONTAP o.
+* Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP
 
 
+La vista previa de recuperación de desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
 
-== Beneficios de usar la recuperación ante desastres de BlueXP para VMware Beta
+image:draas-onprem-to-cloud-onprem.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]
 
-La beta de recuperación ante desastres de BlueXP ofrece las siguientes ventajas:
+
+
+== Ventajas de usar la recuperación ante desastres de BlueXP para la vista previa de VMware
+
+La vista previa de la recuperación ante desastres de BlueXP ofrece las siguientes ventajas:
 
 * Experiencia de usuario simplificada para la detección y la recuperación de aplicaciones con varias operaciones de recuperación puntual 
 * Reducción del coste total de propiedad con menor coste de operaciones y capacidad de crear y ajustar planes de recuperación ante desastres con el mínimo de recursos
@@ -36,16 +38,15 @@ La beta de recuperación ante desastres de BlueXP ofrece las siguientes ventajas
 
 
 
-== Todo lo que puedes hacer con la recuperación de desastres de BlueXP para VMware Beta
+== Todo lo que puedes hacer con la recuperación ante desastres de BlueXP para la vista previa de VMware
 
-La versión beta de recuperación ante desastres de BlueXP te permite utilizar al máximo varias tecnologías de NetApp para lograr los siguientes objetivos:
+La vista previa de la recuperación ante desastres de BlueXP te permite usar al máximo varias tecnologías de NetApp para lograr los siguientes objetivos:
 
-* Replicar aplicaciones de VMware en su sitio de producción en un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror.
-* En caso de desastre, conmute al nodo de respaldo de su sitio principal bajo demanda a un volumen de cloud de NetApp en VMware Cloud on AWS.
+* Replique aplicaciones de VMware en su sitio de producción local en un sitio remoto de recuperación de desastres en el cloud o en las instalaciones mediante la replicación de SnapMirror.
+* Migre las cargas de trabajo de VMware de su sitio original a otro sitio.
+* En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.
 * Una vez resuelto el desastre, conmutación al respaldo bajo demanda del sitio de recuperación de desastres al sitio principal.
 
-
-Con la tecnología SnapMirror de NetApp, las cargas de trabajo de VMware (para NFS) en las instalaciones se pueden replicar en FSx para NetApp ONTAP ejecutándose en AWS.
 
 
 NOTE: La configuración del servidor vSphere se realiza fuera de la recuperación ante desastres de BlueXP en vSphere Server.
@@ -54,21 +55,25 @@ NOTE: La configuración del servidor vSphere se realiza fuera de la recuperació
 
 == Coste
 
-NetApp no te cobra por usar la versión beta de la recuperación ante desastres de BlueXP.
+NetApp no te cobra por usar la versión preliminar de la recuperación ante desastres de BlueXP.
 
 Se espera que el servicio de recuperación ante desastres de BlueXP, tras su disponibilidad general, ofrezca un precio de pago por uso o un plan anual basado en suscripción.
 
 
 
-== Funcionamiento de la versión beta de recuperación ante desastres de BlueXP
+== Cómo funciona la vista previa de recuperación de desastres de BlueXP
 
-La beta de recuperación ante desastres de BlueXP puede recuperar cargas de trabajo replicadas desde las instalaciones a Amazon FSx para ONTAP. Este servicio automatiza la recuperación desde el nivel de SnapMirror, a través del registro de máquinas virtuales en Virtual Machine Cloud (VMC), y también en asignaciones de red directamente en la plataforma de seguridad y virtualización de red de VMware, NSX-T. Esta función se incluye en todos los entornos de nube de máquinas virtuales.
+La vista previa de recuperación ante desastres de BlueXP puede recuperar cargas de trabajo replicadas desde un sitio on-premises a Amazon FSx para ONTAP o a otro sitio on-premises. Este servicio automatiza la recuperación desde el nivel de SnapMirror, a través del registro de máquinas virtuales en Virtual Machine Cloud (VMC), y también en asignaciones de red directamente en la plataforma de seguridad y virtualización de red de VMware, NSX-T. Esta función se incluye en todos los entornos de nube de máquinas virtuales.
 
-La versión beta de recuperación ante desastres de BlueXP utiliza la tecnología SnapMirror de ONTAP, que proporciona una replicación muy eficiente y conserva las eficiencias de la copia Snapshot incremental de ONTAP para siempre. La replicación de SnapMirror garantiza que las copias Snapshot coherentes con las aplicaciones estén siempre sincronizadas y que los datos se puedan usar inmediatamente después de una conmutación por error.
+La vista previa de la recuperación ante desastres de BlueXP utiliza la tecnología SnapMirror de ONTAP, que proporciona una replicación altamente eficiente y conserva las eficiencias de la copia Snapshot incremental de ONTAP para siempre. La replicación de SnapMirror garantiza que las copias Snapshot coherentes con las aplicaciones estén siempre sincronizadas y que los datos se puedan usar inmediatamente después de una conmutación por error.
 
 image:dr-architecture-diagram-70.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
 
-En caso de desastre, este servicio le ayuda a recuperar máquinas virtuales en el VMC rompiendo las relaciones de SnapMirror y activando el sitio de destino.
+El siguiente diagrama muestra la arquitectura de los planes de recuperación ante desastres locales a los locales.
+
+image:dr-architecture-diagram-onprem-to-onprem.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
+
+Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales en el otro entorno de VMware local o VMC rompiendo las relaciones de SnapMirror y haciendo que el sitio de destino esté activo.
 
 * El servicio también le permite recuperar las máquinas virtuales a la ubicación de origen original.
 * Puede probar el proceso de conmutación al nodo de respaldo de recuperación ante desastres sin interrumpir los equipos virtuales originales. La prueba recupera máquinas virtuales en una red aislada mediante la creación de un FlexClone del volumen.

@@ -17,8 +17,5 @@ Estas preguntas frecuentes pueden ser de ayuda si solo está buscando una respue
 *¿Cuál es la URL de recuperación de desastres de BlueXP?*
 Para la URL, en un navegador, introduzca: https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/"^] Para acceder a la consola BlueXP.
 
-*¿Necesitas una licencia para usar la recuperación ante desastres de BlueXP?*
-No se requiere un archivo de licencia de NetApp (NLF).
-
 * ¿Cómo accedes a la recuperación ante desastres de BlueXP?*
 La recuperación ante desastres de BlueXP no requiere habilitación. La opción de recuperación ante desastres aparece automáticamente en la navegación izquierda de BlueXP.

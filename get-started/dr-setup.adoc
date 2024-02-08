@@ -75,3 +75,9 @@ El siguiente paso es configurar la recuperación de desastres en BlueXP.
 . En BlueXP, pon en marcha SnapMirror en FSx para NetApp ONTAP.
 . En BlueXP, detecta el FSx aprovisionado para NetApp ONTAP en una instancia de AWS y replica los volúmenes de almacén de datos especificados desde un entorno on-premises a FSx para NetApp ONTAP con la frecuencia adecuada y la retención de las copias de Snapshot de NetApp.
 
+
+
+
+=== Configurar la licencia
+
+Con la recuperación ante desastres de BlueXP, puedes registrarte para disfrutar de una prueba gratuita de 90 días.

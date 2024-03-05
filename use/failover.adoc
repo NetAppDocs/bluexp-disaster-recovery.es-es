@@ -18,6 +18,8 @@ Durante la recuperación tras fallos, se utiliza la copia Snapshot de SnapMirror
 
 Este procedimiento interrumpe la relación de replicación, coloca sin conexión las máquinas virtuales de origen de vCenter y habilita la lectura/escritura en el sitio de destino.
 
+Puede incluir scripts personalizados en formato .sh, .bat o .ps1 como procesos posteriores a la conmutación al respaldo. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
+
 Antes de iniciar la conmutación por error, puede probar el proceso, garantizando el éxito cuando lo necesite. La prueba no coloca las máquinas virtuales en estado sin conexión.
 
 
@@ -31,6 +33,8 @@ Durante una prueba de conmutación por error, se crean temporalmente las máquin
 Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
 
 Cuando termine la prueba, debe restablecer las máquinas virtuales con la opción *clean up test*. Aunque se recomienda, no es obligatorio.
+
+Una operación de recuperación tras fallos de prueba afecta _no_ a las cargas de trabajo de producción, a la relación de SnapMirror usada en el sitio de pruebas y a las cargas de trabajo protegidas que deben seguir funcionando normalmente.
 
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.

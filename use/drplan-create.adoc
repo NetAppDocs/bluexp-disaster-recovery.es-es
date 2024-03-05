@@ -16,6 +16,12 @@ Después de añadir sitios de vCenter, estará listo para crear una recuperació
 
 Estos planes a veces se llaman _blueprints_.
 
+Puede crear un plan de replicación y también editar programas para cumplimiento y pruebas.
+
+
+
+== Cree el plan
+
 Un asistente le guiará por los siguientes pasos:
 
 * Seleccione vCenter Servers
@@ -33,9 +39,12 @@ Mientras crea el plan de replicación, puede definir la relación de SnapMirror 
 * Muchos A VARIOS
 
 
+.Antes de empezar
+Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
 
 
-== Seleccione vCenter Servers
+
+=== Seleccione vCenter Servers
 
 Primero, debe seleccionar la instancia de vCenter de origen y, a continuación, seleccionar la instancia de vCenter de destino.
 
@@ -52,7 +61,7 @@ image:dr-plan-create-name.png["Captura de pantalla que muestra la página Agrega
 
 
 
-== Seleccione aplicaciones para replicar y asignar grupos de recursos
+=== Seleccione aplicaciones para replicar y asignar grupos de recursos
 
 El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
 
@@ -84,9 +93,12 @@ Cada máquina virtual dentro de un grupo se inicia en secuencia según el orden 
 
 
 
-== Asignar recursos de origen al destino
+=== Asignar recursos de origen al destino
 
 En el paso Asignación de recursos, especifique cómo se deben asignar los recursos del entorno de origen al destino.
+
+.Antes de empezar
+Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
 
 .Pasos
 . En la página Asignación de recursos, para utilizar las mismas asignaciones tanto para operaciones de failover como de prueba, marque la casilla.
@@ -122,8 +134,12 @@ Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de d
 ** *Replicaciones consistentes con la aplicación*: Indica si se deben crear copias Snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, realizará una snapshot para obtener un estado coherente de la aplicación.
 ** *Almacenes de datos*: En función de la selección de máquinas virtuales, los mapeos de almacenes de datos se seleccionan automáticamente.
 +
-*** *RPO*: Introduzca el objetivo de punto de recuperación (RPO) para indicar la cantidad de datos a recuperar (medido en tiempo). Por ejemplo, si introduce un RPO de 2 horas, la recuperación debe tener datos que no sean superiores a 2 horas en todo momento. Si hay un desastre, está permitiendo la pérdida de hasta 2 horas de datos. Además, introduzca la cantidad de copias de Snapshot que se retendrán para todos los almacenes de datos.
+*** *RPO*: Introduzca el objetivo de punto de recuperación (RPO) para indicar la cantidad de datos a recuperar (medido en tiempo). Por ejemplo, si introduce un objetivo de punto de recuperación de 60 minutos, la recuperación debe tener datos que no tengan una antigüedad superior a 60 minutos en todo momento. Si hay un desastre, está permitiendo la pérdida de hasta 60 minutos de datos. Además, introduzca la cantidad de copias de Snapshot que se retendrán para todos los almacenes de datos.
 *** *Relaciones de SnapMirror*: Si un volumen ya tiene una relación de SnapMirror establecida, se pueden seleccionar los almacenes de datos de origen y de destino correspondientes. Si selecciona un volumen que no tiene una relación de SnapMirror, puede crear uno ahora mediante la selección del entorno de trabajo y su SVM entre iguales.
++
+
+NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
+
 
 
 ** *Grupos de consistencia*: Cuando creas un plan de replicación, puedes incluir VMs que sean de diferentes volúmenes y diferentes SVM. La recuperación ante desastres de BlueXP crea una snapshot de grupo de consistencia.
@@ -146,14 +162,11 @@ TIP: Más tarde, puede probar todo el plan. Ahora mismo está configurando las a
 
 
 
-== Identifique la recurrencia
+=== Identifique la recurrencia
 
 Seleccione si desea migrar datos (un movimiento que se realiza una vez) a otro destino o replicarlos con frecuencia de SnapMirror.
 
 Si desea replicarla, identifique la frecuencia con la que se deben duplicar los datos.
-
-
-NOTE: En esta vista previa, configura la frecuencia fuera del servicio de recuperación ante desastres de BlueXP.
 
 .Pasos
 . En la página de repetición, seleccione *Migrate* o *Replicate*.
@@ -170,7 +183,7 @@ image:dr-plan-create-recurrence.png["Captura de pantalla que muestra la repetici
 
 
 
-== Confirme el plan de replicación
+=== Confirme el plan de replicación
 
 Por último, dedique unos momentos a confirmar el plan de replicación.
 
@@ -183,4 +196,43 @@ TIP: Posteriormente, puede desactivar o eliminar el plan de replicación.
 +
 El plan se agrega a la lista de planes.
 
+
+
+
+
+== Edite los programas para probar el cumplimiento y asegurarse de que las pruebas de conmutación por error funcionan
+
+Es posible que desee configurar programas para probar las pruebas de cumplimiento y de conmutación por error para asegurarse de que funcionarán correctamente en caso de necesitarlas.
+
+* *Impacto en el tiempo de cumplimiento*: Cuando se crea un plan de replicación, el servicio crea un programa de cumplimiento por defecto. El tiempo de cumplimiento predeterminado es de 30 minutos. Para cambiar esta hora, puede editar la programación en el plan de replicación.
+* *Prueba de impacto de failover*: Puede probar un proceso de failover bajo demanda o por un horario. Esto le permite probar la conmutación por error de máquinas virtuales a un destino especificado en un plan de replicación.
++
+Una conmutación al nodo de respaldo de prueba crea un volumen FlexClone, monta el almacén de datos y mueve la carga de trabajo en ese almacén de datos. Una operación de recuperación tras fallos de prueba afecta _no_ a las cargas de trabajo de producción, a la relación de SnapMirror usada en el sitio de pruebas y a las cargas de trabajo protegidas que deben seguir funcionando normalmente.
+
+
+
+Según la programación, la prueba de conmutación por error se ejecuta y garantiza que las cargas de trabajo se muevan al destino especificado por el plan de replicación.
+
+.Pasos
+. En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
++
+image:dr-plan-list.png["Captura de pantalla que muestra la lista de planes de replicación"]
+
+. Selecciona las *Acciones* image:icon-horizontal-dots.png["Puntos horizontales Menú Acciones"] Y seleccione *Editar horarios*.
+. Introduce la frecuencia en cuestión de minutos que quieras que la recuperación ante desastres de BlueXP compruebe el cumplimiento de las pruebas.
+. Para comprobar que sus pruebas de failover están en buen estado, marque *Ejecutar failover en un horario mensual*.
++
+.. Seleccione el día del mes y la hora a la que desea que se ejecuten estas pruebas.
+.. Introduzca la fecha en formato aaaa-mm-dd cuando desee que se inicie la prueba.
++
+image:dr-plan-schedule-edit.png["Captura de pantalla que muestra dónde puede editar horarios"]
+
+
+
+. Para limpiar el entorno de prueba después de que finalice la prueba de conmutación por error, compruebe * Limpiar automáticamente después de la conmutación por error de prueba *.
++
+
+NOTE: Este proceso cancela el registro de las máquinas virtuales temporales de la ubicación de prueba, elimina el volumen FlexClone que se creó y desmonta los almacenes de datos temporales.
+
+. Seleccione *Guardar*.
 

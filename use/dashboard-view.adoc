@@ -17,13 +17,16 @@ Con el panel de recuperación ante desastres de BlueXP, puedes determinar el est
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Dashboard*.
++
+image:dr-dashboard.png["Consola de recuperación de desastres de BlueXP"]
+
 . Revise la siguiente información en el Panel de Control:
 +
 ** *Sitios*: Ver la salud de sus sitios. Un sitio puede tener uno de los siguientes estados:
 +
-*** *Healthy*: El vCenter está conectado y en funcionamiento.
-*** *Desconectado*: El vCenter no es accesible o tiene problemas de conectividad.
-*** *Degradado*: El vCenter no es accesible o tiene problemas de conectividad.
+*** *Running*: El vCenter está conectado, en buen estado y en funcionamiento.
+*** *Down*: El vCenter no es accesible o tiene problemas de conectividad.
+*** *Problema*: El vCenter no es accesible o tiene problemas de conectividad.
 +
 Para ver los detalles del sitio, selecciona *Ver todo* para ver un estado o *Ver sitios* para verlos todos.
 

@@ -43,6 +43,6 @@ Para agregar un conector, consulte https://docs.netapp.com/us-en/bluexp-setup-ad
 
 
 +
-image:dr-dashboard-preview.png["Consola de recuperación de desastres de BlueXP"]
+image:dr-dashboard.png["Consola de recuperación de desastres de BlueXP"]
 
 

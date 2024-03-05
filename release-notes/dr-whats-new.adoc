@@ -12,13 +12,34 @@ summary: La recuperación de desastres de BlueXP es un servicio de recuperación
 
 
 [role="lead"]
-Descubre las novedades de la previsualización de la recuperación de desastres de BlueXP.
+Descubre las novedades de la recuperación ante desastres de BlueXP.
+
+
+
+== 5 de marzo de 2024
+
+Esta es la versión de Disponibilidad general de la recuperación de desastres de BlueXP, que incluye las siguientes actualizaciones.
+
+* *ACTUALIZACIONES DE LICENCIA*: Con la recuperación ante desastres de BlueXP, puedes registrarte para una prueba gratuita de 90 días o BYOL, que es un archivo de licencia de NetApp (NLF) que obtienes de tu representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP. Los cargos de recuperación ante desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos.
++
+Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar la licencia"].
+
++
+Para obtener más información sobre la gestión de licencias para los servicios de *All* BlueXP, consulte https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Gestiona las licencias para todos los servicios de BlueXP"^].
+
+
+
+* *Editar horarios*: Con esta versión, ahora puede configurar horarios para probar pruebas de cumplimiento y failover para asegurarse de que funcionen correctamente en caso de necesitarlos.
++
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree el plan de replicación"].
+
+
 
 
 
 == 1 de febrero de 2024
 
-Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
+Esta versión previa de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
 
 * * Mejora de red*: Con esta versión, ahora puede cambiar el tamaño de los valores de CPU y RAM de VM. Ahora también puede seleccionar una dirección IP estática o DHCP de red para la máquina virtual.
 +
@@ -55,7 +76,7 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-di
 
 == 11 de enero de 2024
 
-Esta versión de recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
+Esta versión preliminar de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
 
 * Con esta versión, puede acceder a la información de otras páginas desde el Dashboard más rápidamente.
 

@@ -10,10 +10,10 @@ indexpage:
   lead: La recuperación de desastres en el cloud es una forma resiliente y rentable
     de proteger cargas de trabajo frente a interrupciones del servicio del sitio y
     eventos de corrupción de datos (por ejemplo, ransomware). Con la recuperación
-    ante desastres de BlueXP para la vista previa de VMware, puedes replicar tus cargas
-    de trabajo de VMware que ejecutan almacenamiento ONTAP en un centro de datos definido
+    ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de
+    VMware on-premises que ejecutan almacenamiento ONTAP en un centro de datos definido
     por software de VMware en un cloud público o en otro sitio on-premises como sitio
-    de recuperación ante desastres.
+    de recuperación de desastres.
   tiles:
   - title: Manos a la obra
     links:

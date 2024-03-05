@@ -4,7 +4,7 @@ permalink: get-started/dr-intro.html
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
 summary: La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en nubes públicas como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp. 
 ---
-= Descubre la recuperación ante desastres de BlueXP para la vista previa de VMware
+= Obtén más información sobre la recuperación ante desastres de BlueXP para VMware
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,15 +12,15 @@ summary: La recuperación de desastres en el cloud es una forma resiliente y ren
 
 
 [role="lead"]
-La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para la vista previa de VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.
+La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.
 
-La vista previa de la recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS en las instalaciones que ejecutan el almacenamiento de NetApp en una de las siguientes opciones:
+La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS en las instalaciones que ejecutan el almacenamiento de NetApp en una de las siguientes opciones:
 
 * VMware Cloud (VMC) en AWS con Amazon FSx para NetApp ONTAP o.
 * Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP
 
 
-La vista previa de recuperación de desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
+La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
 
 image:draas-onprem-to-cloud-onprem.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]
 
@@ -38,9 +38,9 @@ La recuperación ante desastres de BlueXP ofrece las siguientes ventajas:
 
 
 
-== Todo lo que puedes hacer con la recuperación ante desastres de BlueXP para la vista previa de VMware
+== Todo lo que puedes hacer con la recuperación de desastres de BlueXP para VMware
 
-La vista previa de la recuperación ante desastres de BlueXP te permite utilizar completamente varias tecnologías de NetApp para lograr los siguientes objetivos:
+La recuperación ante desastres de BlueXP te permite utilizar al máximo varias tecnologías de NetApp para lograr los siguientes objetivos:
 
 * Replique aplicaciones de VMware en su sitio de producción local en un sitio remoto de recuperación de desastres en el cloud o en las instalaciones mediante la replicación de SnapMirror.
 * Migre las cargas de trabajo de VMware de su sitio original a otro sitio.
@@ -57,11 +57,34 @@ NOTE: La configuración del servidor vSphere se realiza fuera de la recuperació
 
 NetApp no te cobra por usar la versión de prueba de la recuperación ante desastres de BlueXP.
 
+La versión completa del servicio de recuperación ante desastres de BlueXP se puede usar con una licencia de NetApp.
+
+
+
+== Licencia
+
+Puede utilizar los siguientes tipos de licencia:
+
+* Regístrate para una prueba gratuita de 90 días.
+* BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene del representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP.
+
+
+Las licencias para todos los servicios de BlueXP se gestionan a través del servicio de cartera digital de BlueXP. Tras configurar tu BYOL, puedes ver una licencia activa para el servicio en la cartera digital de BlueXP.
+
+
+NOTE: Los cargos de recuperación de desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la cartera digital de BlueXP.
+
+Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar las licencias de recuperación de desastres de BlueXP"].
+
 
 
 == prueba gratuita de 90 días
 
 Puedes probar la recuperación de desastres de BlueXP con una prueba gratuita de 90 días.
+
+Para continuar después de la prueba de 90 días, deberá comprar una licencia BYOL de NetApp.
+
+Puede comprar una licencia en cualquier momento y no se le cobrará hasta que finalice la prueba de 90 días.
 
 
 

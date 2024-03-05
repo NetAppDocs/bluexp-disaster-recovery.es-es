@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-setup.html 
-keywords: bluexp, disaster recovery, 
+keywords: bluexp, disaster recovery, aws, amazon web services 
 summary: Para utilizar la recuperación ante desastres de BlueXP, realiza unos pasos para configurarla. 
 ---
 = Configura la recuperación de desastres de BlueXP
@@ -12,14 +12,14 @@ summary: Para utilizar la recuperación ante desastres de BlueXP, realiza unos p
 
 
 [role="lead"]
-Para utilizar la recuperación ante desastres de BlueXP, lleva a cabo unos pasos para configurarlo tanto en AWS como en BlueXP.
+Para utilizar la recuperación ante desastres de BlueXP, lleve a cabo unos pasos para configurarlo tanto en Amazon Web Services (AWS) como en BlueXP.
 
 
 TIP: Revisar link:../get-started/dr-prerequisites.html["requisitos previos"] garantizar que su entorno está listo.
 
 
 
-== Configure en AWS
+== Configure AWS
 
 En AWS, tendrás que seguir los siguientes pasos:
 
@@ -44,7 +44,7 @@ Amazon FSX para ONTAP de NetApp es un servicio totalmente gestionado que ofrece 
 
 
 
-== Configurar en BlueXP
+== Configura la recuperación de desastres de BlueXP
 
 El siguiente paso es configurar la recuperación de desastres en BlueXP.
 
@@ -58,7 +58,7 @@ El siguiente paso es configurar la recuperación de desastres en BlueXP.
 
 === Crear un conector en BlueXP
 
-Tienes que registrarte para acceder a la vista previa o ponerte en contacto con tu representante de ventas de NetApp para probar este servicio. A continuación, cuando utilices BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.
+Debe ponerse en contacto con su representante de ventas de NetApp para probar este servicio. A continuación, cuando utilices BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.
 
 Para crear un conector en BlueXP antes de utilizar el servicio, consulte la documentación de BlueXP que se describe https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["cómo crear un conector"^].
 
@@ -81,3 +81,7 @@ El siguiente paso es configurar la recuperación de desastres en BlueXP.
 === Configurar la licencia
 
 Con la recuperación ante desastres de BlueXP, puedes registrarte para disfrutar de una prueba gratuita de 90 días.
+
+Puede usar su propia licencia (BYOL), que es un Archivo de licencia de NetApp (NLF).
+
+Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar las licencias de recuperación de desastres de BlueXP"].

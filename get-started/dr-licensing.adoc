@@ -12,25 +12,24 @@ summary: Con la recuperación ante desastres de BlueXP, puedes utilizar diferent
 
 
 [role="lead"]
-Con la recuperación ante desastres de BlueXP, puedes utilizar diferentes planes de licencia, como una prueba gratuita, una suscripción de pago por uso o BYOL.
+Con la recuperación ante desastres de BlueXP, puedes utilizar el servicio en una prueba gratuita o traer tu propia licencia.
 
-Puede utilizar cualquiera de los siguientes tipos de licencia:
+Puede utilizar los siguientes tipos de licencia:
 
 * Regístrate para una prueba gratuita de 90 días.
-* Compre una suscripción de pago por uso (PAYGO) durante 1, 2 o 3 años con Amazon Web Services (AWS) Marketplace.
-* Traer su propia licencia (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene al representante de ventas de NetApp o al sitio de soporte de NetApp (NSS). Puede cargar el NLF directamente en la cartera digital de BlueXP o utilizar el número de serie de la licencia para activar BYOL en la cartera digital de BlueXP.
+* BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene del representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP.
 
 
 
-NOTE: Los cargos de recuperación de desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional, actualice la licencia en la cartera digital de BlueXP o compre una suscripción en AWS. Si elige una suscripción a AWS, cualquier capacidad usada más allá de los límites del contrato se cobrará en función de los planes de AWS Marketplace.
+NOTE: Los cargos de recuperación de desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la cartera digital de BlueXP.
 
-Después de configurar tu BYOL o comprar una suscripción en AWS, puedes ver la licencia en la pestaña *Licencias de servicios de datos* de la cartera digital de BlueXP o en la suscripción activa en la pestaña *Suscripciones* de la cartera digital de BlueXP.
+Después de configurar tu BYOL, puedes ver la licencia en la pestaña *Licencias de servicios de datos* de la cartera digital de BlueXP.
 
-Una vez que finalice la prueba gratuita o que la licencia o la suscripción de AWS caduquen, puede seguir haciendo lo siguiente en el servicio:
+Después de que finalice la prueba gratuita o la licencia caduque, puede seguir haciendo lo siguiente en el servicio:
 
 * Ver cualquier recurso, como una carga de trabajo o un plan de replicación.
 * Elimine cualquier recurso, como una carga de trabajo o un plan de replicación.
-* Ejecute todas las operaciones programadas que se crearon durante el período de prueba, la licencia o la suscripción.
+* Ejecute todas las operaciones programadas que se crearon durante el período de prueba o bajo la licencia.
 
 
 
@@ -42,7 +41,7 @@ Puedes probar la recuperación de desastres de BlueXP utilizando una prueba grat
 
 NOTE: No se aplican límites de capacidad durante la prueba.
 
-Puede obtener una licencia o suscribirse en cualquier momento y no se le cobrará hasta que finalice la prueba de 90 días. Para continuar después de la prueba de 90 días, necesitará comprar una licencia BYOL o una suscripción PAYGO AWS.
+Puede obtener una licencia en cualquier momento y no se le cobrará hasta que finalice la prueba de 90 días. Para continuar después de la prueba de 90 días, deberá comprar una licencia BYOL.
 
 Durante la prueba, tiene plena funcionalidad.
 
@@ -54,63 +53,38 @@ Durante la prueba, tiene plena funcionalidad.
 Si es la primera vez que inicia sesión en este servicio, aparecerá la página de destino.
 
 +
-image:draas-landing.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
+image:draas-landing2.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
 
 . Si aún no ha agregado un conector para otros servicios, agregue uno.
 +
 Para agregar un conector, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^].
 
-. Después de configurar un Connector, en la página de destino de la recuperación de desastres de BlueXP, selecciona *Iniciar prueba gratuita*.
-+
-image:draas-landing-trial.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
-
+. Después de configurar un conector, en la página de destino de la recuperación de desastres de BlueXP, el botón para añadir un conector cambia a un botón para iniciar una prueba gratuita. Seleccione *Iniciar prueba gratuita*.
 . Revise la información de prueba gratuita y seleccione *Vamos*.
-
-
-
-
-=== Cuando finalice la prueba, suscríbase a través de AWS Marketplace
-
-Cuando finalice la prueba gratuita, puedes comprar una licencia de NetApp o suscribirte a través de AWS Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en AWS Marketplace.
-
-.Pasos
-. En la recuperación ante desastres de BlueXP, verás un mensaje que indica que la prueba gratuita ha caducado. En el mensaje, seleccione *Suscribir o comprar una licencia*.
-+
-image:draas-license-subscribe.png["La página de licencia de Suscribirse a la recuperación de desastres de BlueXP o comprar"]
-
-. En la página Suscripción o compra de licencias, seleccione *Suscribirse en AWS Marketplace*.
-. En AWS Marketplace, selecciona *Ver opciones de compra*.
-. Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.
-. Cuando vuelve a la recuperación ante desastres de BlueXP, hay un mensaje que dice que está suscrito. Para ver los detalles de la suscripción en la cartera digital de BlueXP, selecciona *Ver detalles de la suscripción* y mira la suscripción activa en la página *Suscripciones*.
-+
-image:digital-wallet-subscriptions.png["La pestaña Suscripciones de la cartera digital de BlueXP"]
-
 
 
 
 
 === Cuando finalice la prueba, adquiera una licencia BYOL a través de NetApp
 
-Cuando finalice la prueba, puede adquirir una licencia a través de su representante de ventas de NetApp o el soporte técnico.
+Cuando finalice la prueba, puede comprar una licencia a través de su representante de ventas de NetApp
 
 .Pasos
-. Póngase en contacto con su representante de ventas de NetApp o el soporte de NetApp para adquirir una licencia.
-. Después de obtener la licencia, vuelve a la recuperación ante desastres de BlueXP y en el mensaje de que la prueba gratuita ha caducado, selecciona *Suscribir o comprar una licencia*.
+. Póngase en contacto con su representante de ventas de NetApp para adquirir una licencia.
+. Después de obtener la licencia, vuelve a la recuperación de desastres de BlueXP. Seleccione la opción *Ver métodos de pago* en la parte superior derecha. O, en el mensaje de que la prueba gratuita está caducando, seleccione *Suscribirse o comprar una licencia*.
 +
-Aparecerá la página de licencia de suscripción o compra.
-
-+
-image:draas-license-subscribe-NetApp-option.png["La página de licencia de Suscribirse a la recuperación de desastres de BlueXP o comprar"]
+image:draas-license-subscribe-NetApp-option2.png["La página de licencia de Suscribirse a la recuperación de desastres de BlueXP o comprar"]
 
 . Selecciona *Añadir licencia a BlueXP*. Se te dirigirá a la cartera digital de BlueXP.
 +
-image:digital-wallet-data-services-licenses-tab.png["La página de licencia de Suscribirse a la recuperación de desastres de BlueXP o comprar"]
+image:digital-wallet-data-services-licenses-tab2.png["La pestaña Licencias de servicios de datos de la cartera digital de BlueXP"]
 
 . En la cartera digital de BlueXP, en la pestaña *Licencias de servicios de datos*, selecciona *Añadir licencia*.
-. En la página Agregar licencia, introduzca el número de serie o cargue el archivo de licencia de NetApp (NLF).
+. En la página Add License, escriba el número de serie y la información de la cuenta del sitio de soporte de NetApp.
 +
-image:byol-digital-wallet-license-add.png["La página Añadir licencia de BlueXP digital wallet"]
+image:byol-digital-wallet-license-add2.png["La página Añadir licencia de BlueXP digital wallet"]
 
+. Seleccione *Agregar licencia*.
 
 
 
@@ -123,7 +97,7 @@ Puede detener la prueba gratuita en cualquier momento o puede esperar hasta que 
 . En la recuperación ante desastres de BlueXP, en la parte superior derecha, selecciona *Prueba gratuita - Ver detalles*.
 . En los detalles del menú desplegable, seleccione *END FREE TRIAL*.
 +
-image:draas-trial-end.png["Finalice la página de prueba gratuita"]
+image:draas-trial-end3.png["Finalice la página de prueba gratuita"]
 
 . Si desea eliminar todos los datos, marque *Borrar todos los datos cuando termine mi prueba*.
 +
@@ -135,188 +109,6 @@ NOTE: Si finaliza la prueba gratuita y no se le pide que elimine datos y no adqu
 
 . Escriba «End trial» en el cuadro de texto.
 . Seleccione *END*.
-
-
-
-
-== Use una suscripción de pago por uso (PAYGO) de AWS
-
-Si decides usar una suscripción PAYGO de AWS Marketplace, tendrás que configurarla primero en AWS y luego en BlueXP.
-
-Para configurar una suscripción PAYGO en AWS, lleve a cabo los siguientes procedimientos:
-
-* <<Parte 1 Configure su suscripción PAYGO en AWS>>
-* <<Parte 2 Configure su suscripción PAYGO en BlueXP>>
-* <<Part 3a Associate the new SaaS Marketplace subscription with AWS credentials>> o.
-+
-<<Part 3b Associate the new SaaS Marketplace subscription with AWS credentials for annual contracts>>.
-
-
-
-
-
-==== Parte 1 Configure su suscripción PAYGO en AWS
-
-Aquí hay un resumen de alto nivel de los pasos para configurar una suscripción PAYGO en AWS.
-
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Gestiona las credenciales y las suscripciones del mercado de AWS para BlueXP"^].
-
-.Antes de empezar
-Debe haber trabajado ya con el equipo de ventas de NetApp y haber obtenido el enlace de oferta y debe tener permisos para aceptar la oferta como se describe en https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html["Control del acceso a las suscripciones de AWS Marketplace"^].
-
-.Pasos
-. Acepte la oferta privada de AWS Marketplace para NetApp BlueXP en la consola de AWS.
-+
-Consulte la siguiente información:
-
-+
-** https://aws.amazon.com/blogs/awsmarketplace/access-your-private-offers-aws-marketplace-console/["Acceda a sus ofertas privadas a través de la consola de AWS Marketplace"^].
-** https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-offers-page.html#private-offers-page-permissions["Permisos necesarios para ver la página Ofertas privadas"^].
-
-
-. Revise los detalles de la oferta privada y valide que coincidan con su acuerdo.
-+
-
-CAUTION: Debido a que la facturación comienza una vez que haces clic en *Suscribir*, si alguna información es incorrecta, *No* aceptes la Oferta Privada y en su lugar ponte en contacto con tu Representante de Ventas de NetApp.
-
-. Después de confirmar que la información de la oferta es correcta, seleccione *Suscribirse*.
-+
-Si la oferta utiliza una lista de contratos, introduzca también el número de unidades por servicio. A continuación, puede aceptar la oferta privada seleccionando *Crear contrato*.
-
-. En la ventana emergente, selecciona *Configurar tu cuenta*, que te redirige a la consola BlueXP de NetApp para completar la configuración de tu suscripción a BlueXP Marketplace.
-+
-Si la oferta utiliza un listado de contratos, selecciona *Ver opciones de compra* y luego *Configurar tu cuenta*.
-
-
-
-
-
-==== Parte 2 Configure su suscripción PAYGO en BlueXP
-
-Después de aceptar la oferta privada en la consola de AWS, se le dirigirá a la consola de BlueXP.
-
-.Pasos
-. En la consola de BlueXP, realice lo siguiente:
-+
-.. Introduzca un nombre mostrado para la suscripción de SaaS Marketplace.
-.. Selecciona las cuentas de NetApp BlueXP que deberían tener acceso a esta suscripción del Marketplace.
-.. Elige *Reemplazar la suscripción existente* para reemplazar una suscripción existente de SaaS Marketplace en una cuenta de NetApp BlueXP con esta suscripción recién creada. BlueXP reemplazará la suscripción existente de todas las credenciales de la nube de la cuenta con esta nueva suscripción.
-+
-
-NOTE: La opción de reemplazar está limitada a una única cuenta de BlueXP de NetApp. Si tienes varias cuentas de BlueXP que quieras asociar a la misma suscripción de SaaS Marketplace, tendrás que configurarlas por separado.
-
-+
-
-NOTE: Si un conjunto de credenciales en la nube nunca se asoció a una suscripción de SaaS Marketplace, debe configurarlo siguiendo la siguiente parte de este procedimiento.
-
-
-
-. Selecciona *Guardar* y *Listo*.
-. Continúe con la Parte 3 siguiente:
-+
-** <<Parte 3a Asocie la nueva suscripción de Marketplace con credenciales de AWS>>
-** <<Parte 3b Asocie la nueva suscripción al Marketplace con credenciales de AWS para contratos anuales>>.
-
-
-
-
-
-
-==== Parte 3a Asocie la nueva suscripción de Marketplace con credenciales de AWS
-
-Esta parte 3 de la configuración de una licencia en AWS.
-
-
-NOTE: Si tiene un contrato anual, continúe aquí en su lugar:
-<<Part 3b Associate the new SaaS Marketplace subscription with AWS credentials for annual contracts>>.
-
-.Pasos
-. Acceda a https://console.bluexp.netapp.com["Consola de NetApp BlueXP"].
-. Valide los detalles de la suscripción:
-+
-.. En el panel izquierdo, selecciona *Gobernanza* > *Cartera digital*.
-.. Seleccione la pestaña *Suscripciones*.
-+
-image:paygo-digitalwallet-subscriptions.png["Página de suscripciones a la cartera digital de BlueXP"]
-
-.. Busque la suscripción de SaaS Marketplace que agregó durante la Parte 1 y valide que este es el plan correcto que desea usar.
-
-
-. Busca la fila con tu suscripción a AWS, amplía la fila para ver los detalles y confirma que la oferta privada se ha asociado correctamente a tu cuenta de BlueXP.
-+
-Debido a las limitaciones de AWS Marketplace, algunos detalles de la oferta no están disponibles fuera de la consola de AWS. Si uno de los campos muestra “N/A”, significa que la información no se pudo recuperar de la consola de AWS y no es un error. Aún puede comprobar la información en la consola de AWS.
-
-. Selecciona la equipación *Configuración* en la parte superior derecha de la consola BlueXP y selecciona *Credenciales*.
-+
-image:paygo-digitalwallet-settings.png["Menú de ajustes de la cartera digital de BlueXP"]
-
-. Localice el conjunto de credenciales que desea asociar con su nueva suscripción a SaaS Marketplace.
-+
-
-TIP: Puede validar que estos son correctos haciendo clic en *Ver* encima de Entornos de trabajo.
-
-. Seleccione la opción *Acciones ...* y seleccione *Suscripción asociada*.
-. Seleccione su oferta privada en el menú desplegable Suscripción al Mercado y seleccione *Asociar*.
-+
-
-NOTE: Los cargos de Marketplace relacionados con estas credenciales de AWS ahora se facturarán a través de la suscripción de SaaS Marketplace que acabas de asociar. Si utiliza contratos anuales, los costes de infraestructura asociados con estas credenciales de AWS se contabilizarán como uso en relación con su contrato anual.
-
-. Repite estos pasos con todas las demás credenciales de AWS de tu cuenta de BlueXP que desees asociar a esta suscripción de SaaS Marketplace:
-+
-.. Para las credenciales de AWS en otras cuentas de BlueXP, usa la opción *Cuenta* en la parte superior de la consola de BlueXP para cambiar de cuenta y repetir los pasos.
-.. Para las credenciales de AWS relacionadas con otros conectores BlueXP, usa la opción *Connector* en la parte superior de la consola BlueXP para cambiar de conector y repite los pasos.
-
-
-
-
-
-
-==== Parte 3b Asocie la nueva suscripción al Marketplace con credenciales de AWS para contratos anuales
-
-Si usas un contrato anual, la información de la cartera digital de BlueXP aparece de una forma algo diferente.
-
-. Acceda a https://console.bluexp.netapp.com["Consola de NetApp BlueXP"].
-. Valide los detalles de la suscripción:
-+
-.. En el panel izquierdo, selecciona *Gobernanza* > *Cartera digital*.
-.. Seleccione la pestaña *Suscripciones*.
-+
-image:paygo-digitalwallet-subscriptions-annualcontract.png["Página de suscripciones a la cartera digital de BlueXP en la que se muestra un contrato anual"]
-
-.. Busque la suscripción de SaaS Marketplace que agregó durante la Parte 1 y valide que este es el plan correcto que desea usar.
-
-
-. Busca la fila con tu suscripción anual a AWS, amplía la fila para ver los detalles y confirma que tu oferta privada se ha asociado correctamente a tu cuenta de BlueXP.
-+
-image:paygo-digitalwallet-subscriptions-annualcontract-associate.png["Página de suscripciones a la cartera digital de BlueXP para obtener un contrato anual"]
-
-. Seleccione la opción *Acciones ...* en esa fila y seleccione *Suscripción asociada*.
-+
-image:paygo-digitalwallet-subscriptions-annualcontract-associate-dialog.png["Página de suscripciones a la cartera digital de BlueXP para obtener un contrato anual"]
-
-. Selecciona las cuentas que deseas asociar a la suscripción y selecciona *Aplicar*.
-+
-
-NOTE: Los cargos de Marketplace relacionados con estas credenciales de AWS ahora se facturarán a través de la suscripción de SaaS Marketplace que acabas de asociar. Si utiliza contratos anuales, los costes de infraestructura asociados con estas credenciales de AWS se contabilizarán como uso en relación con su contrato anual.
-
-. Repite estos pasos con todas las demás credenciales de AWS de tu cuenta de BlueXP que desees asociar a esta suscripción de SaaS Marketplace:
-+
-.. Para las credenciales de AWS en otras cuentas de BlueXP, usa la opción *Cuenta* en la parte superior de la consola de BlueXP para cambiar de cuenta y repetir los pasos.
-.. Para las credenciales de AWS relacionadas con otros conectores BlueXP, usa la opción *Connector* en la parte superior de la consola BlueXP para cambiar de conector y repite los pasos.
-
-
-
-
-
-
-==== Personaliza lo que ves en la vista Suscripciones a la cartera digital de BlueXP
-
-Puede personalizar las columnas que aparecen en la página Suscripciones. Puede que desee hacerlo para ver la información del término, por ejemplo.
-
-.Pasos
-. En la página Digital Wallet Subscription de BlueXP, seleccione el icono de tabla a la derecha.
-. En la lista de columnas que aparece, compruebe las columnas que desea mostrar en la tabla.
-. Seleccione *aplicar*.
 
 
 
@@ -343,9 +135,7 @@ Si no tienes una licencia de recuperación ante desastres de BlueXP, ponte en co
 
 === Obtén el archivo de licencia de recuperación ante desastres de BlueXP
 
-Después de comprar tu licencia de recuperación ante desastres de BlueXP, activa la licencia introduciendo el número de serie de recuperación ante desastres de BlueXP y la cuenta del sitio de soporte de NetApp (NSS) o cargando el archivo de licencia de NetApp (NLF).
-
-Puede obtener el NLF a través de su representante de ventas de NetApp o en el sitio de soporte de NetApp.
+Después de comprar tu licencia de recuperación ante desastres de BlueXP al representante de ventas de NetApp, activas la licencia introduciendo el número de serie de recuperación de desastres de BlueXP y la información de la cuenta del sitio de soporte de NetApp (NSS).
 
 .Antes de empezar
 Antes de comenzar, necesitará tener la siguiente información:
@@ -360,19 +150,6 @@ Puedes encontrar tu ID de cuenta de BlueXP seleccionando el menú desplegable *C
 
 
 
-.Pasos para obtener un archivo de licencia de NLF del sitio de soporte
-. Inicie sesión en la https://mysupport.netapp.com["Sitio de soporte de NetApp"^]  Y seleccione *Sistemas* > *Licencias de software*.
-+
-image:byol-nss-licenses.png["Página de licencias de software del sitio de soporte de NetApp"]
-
-. Introduce el número de serie de tu licencia de recuperación ante desastres de BlueXP.
-. En la columna Clave de licencia, seleccione *Obtener archivo de licencia de NetApp*.
-+
-image:byol-nss-licenses-get.png["Página de licencias de software del sitio de soporte de NetApp"]
-
-. Introduce tu ID de cuenta de BlueXP (esto se denomina ID de inquilino en el sitio de soporte) y selecciona *Enviar* para descargar el archivo de licencia.
-
-
 
 
 === Añade la licencia de recuperación ante desastres de BlueXP a la cartera digital de BlueXP
@@ -382,11 +159,11 @@ Después de comprar una licencia de recuperación ante desastres de BlueXP para 
 .Pasos
 . En el menú de BlueXP, selecciona *Gobernanza* > *Cartera digital* > *Licencias de servicios de datos*.
 +
-image:byol-digital-wallet-dataserviceslicenses-tab.png["Pestaña Licencias de servicios de datos de la cartera digital de NetApp BlueXP"]
+image:digital-wallet-data-services-licenses-tab2.png["La pestaña Licencias de servicios de datos de la cartera digital de BlueXP"]
 
 . Seleccione *Agregar licencia*.
 +
-image:byol-digital-wallet-license-add.png["Página de NetApp BlueXP digital wallet Añadir licencia"]
+image:byol-digital-wallet-license-add2.png["Página de NetApp BlueXP digital wallet Añadir licencia"]
 
 . En la página Agregar licencia, ingrese la información de la licencia y seleccione *Agregar licencia*:
 +
@@ -421,10 +198,8 @@ Después de pagar la licencia y estar registrado en el sitio de soporte de NetAp
 . Si BlueXP no puede actualizar automáticamente la licencia (por ejemplo, cuando está instalada en un sitio oscuro), deberá cargar manualmente el archivo de licencia.
 +
 .. Puede obtener el archivo de licencia en el sitio de soporte de NetApp.
-.. En la página de la cartera digital de BlueXP, en la pestaña Licencias de servicios de datos, seleccione el icono *Acciones ...* del número de serie del servicio que está actualizando y seleccione *Actualizar licencia*.
-+
-image:digital-wallet-licenses-expired.png["Cartera digital de NetApp BlueXP donde se muestra la licencia caducada"]
-
+.. Accede a la cartera digital de BlueXP.
+.. Seleccione la pestaña *Licencias de servicios de datos*, seleccione el icono *Acciones ...* para el número de serie del servicio que está actualizando y seleccione *Actualizar licencia*.
 
 
 

@@ -29,7 +29,7 @@ Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS
 
 .Pasos
 . En el menú superior, selecciona *Sitios*.
-. Seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha del nombre de vCenter y seleccione *Editar*.
+. Seleccione la opción *Acciones* image:../use/icon-vertical-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha del nombre de vCenter y seleccione *Editar*.
 . Edite el nombre y la ubicación del sitio de vCenter.
 
 
@@ -45,6 +45,9 @@ Puede desactivar, activar y suprimir planes de replicación.
 
 .Pasos
 . En el menú superior, selecciona *Planes de replicación*.
++
+image:../use/dr-plan-list2.png["Lista de planes de replicación"]
+
 . Para ver los detalles del plan, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y selecciona *Ver detalles del plan*.
 . Realice alguna de las siguientes acciones:
 +

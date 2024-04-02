@@ -562,7 +562,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="dcc9d99320099ed731ca2f05b3e501a7" category="list-text">Migre las cargas de trabajo de VMware de su sitio original a otro sitio.</block>
   <block id="2aefc74ac286c583100431f62049590d" category="list-text">En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.</block>
   <block id="a6a42e8e3070730d19bfd86d6a1d66fe" category="paragraph">El siguiente diagrama muestra la arquitectura de los planes de recuperación ante desastres locales a los locales.</block>
-  <block id="11ee533cc4ce7135332d0b64a9e82e51" category="paragraph"><block ref="11ee533cc4ce7135332d0b64a9e82e51" category="inline-image-macro-rx" type="image"></block></block>
   <block id="20099229ad21726312a6ff50740b0b57" category="paragraph">Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales en el otro entorno de VMware local o VMC rompiendo las relaciones de SnapMirror y haciendo que el sitio de destino esté activo.</block>
   <block id="a675a2edc95f7fca650a735944e38f96" category="paragraph">Para utilizar la recuperación ante desastres de BlueXP, debes asegurarte de que tu entorno cumpla los siguientes requisitos:</block>
   <block id="96ed64c294e585324853f8f980f9d78e" category="sidebar">Migrar aplicaciones a otro sitio</block>
@@ -797,4 +796,5 @@ Se requiere una licencia de recuperación ante desastres de BlueXP para acceder 
   <block id="9fc7e8cb24850b1f0912cebc8da32620" category="list-text">Accede a la cartera digital de BlueXP.</block>
   <block id="7b6dca09bf0ef612bac047a313d66cbf" category="list-text">Seleccione la pestaña *Licencias de servicios de datos*, seleccione el icono *Acciones ...* para el número de serie del servicio que está actualizando y seleccione *Actualizar licencia*.</block>
   <block id="be976ba4e18c887ae57e14f6ebfbbab3" category="sidebar">La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo frente a interrupciones del servicio del sitio y eventos de corrupción de datos (por ejemplo, ransomware). Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público o en otro sitio on-premises como sitio de recuperación de desastres.</block>
+  <block id="67d87f62e2f6294a12829113edfa11b8" category="paragraph"><block ref="67d87f62e2f6294a12829113edfa11b8" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

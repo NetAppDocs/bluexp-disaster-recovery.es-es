@@ -98,7 +98,7 @@ image:dr-architecture-diagram-70.png["Diagrama que muestra la arquitectura de la
 
 El siguiente diagrama muestra la arquitectura de los planes de recuperación ante desastres locales a los locales.
 
-image:dr-architecture-diagram-onprem-to-onprem.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
+image:dr-architecture-diagram-onprem-to-onprem2.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
 
 Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales en el otro entorno de VMware local o VMC rompiendo las relaciones de SnapMirror y haciendo que el sitio de destino esté activo.
 

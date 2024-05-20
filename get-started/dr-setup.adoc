@@ -82,6 +82,6 @@ El siguiente paso es configurar la recuperación de desastres en BlueXP.
 
 Con la recuperación ante desastres de BlueXP, puedes registrarte para disfrutar de una prueba gratuita de 90 días.
 
-Puede usar su propia licencia (BYOL), que es un Archivo de licencia de NetApp (NLF).
+Puede comprar una suscripción de pago por uso (PAYGO) con AWS Marketplace o BYOL (BYOL), que es un archivo de licencia de NetApp (NLF).
 
 Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar las licencias de recuperación de desastres de BlueXP"].

@@ -57,3 +57,6 @@ indexpage:
       url: https://bluexp.netapp.com/events
     - title: Blog de recuperación ante desastres de BlueXP
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
+    - title: Introducción a la recuperación ante desastres de BlueXP como laboratorio
+        de servicio bajo demanda
+      url: https://labondemand.netapp.com/lab/draas

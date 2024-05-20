@@ -16,6 +16,21 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 
 
+== 15 de mayo de 2024
+
+Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
+
+* *Replicar las cargas de trabajo de VMware de on-premises a on-premises* ahora se lanza como una característica de disponibilidad general. Anteriormente, era una vista previa de la tecnología con funcionalidad limitada.
+* *Actualizaciones de licencias*: con la recuperación ante desastres de BlueXP, puedes registrarte para disfrutar de una prueba gratuita de 90 días, comprar una suscripción de pago por uso (PAYGO) con Amazon Marketplace o BYOL, que es un archivo de licencia de NetApp (NLF) que obtienes a través de tu representante de ventas de NetApp o en el sitio de soporte de NetApp (NSS).
++
+Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar la licencia"].
+
+
+
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtén más información sobre la recuperación ante desastres de BlueXP"].
+
+
+
 == 5 de marzo de 2024
 
 Esta es la versión de Disponibilidad general de la recuperación de desastres de BlueXP, que incluye las siguientes actualizaciones.

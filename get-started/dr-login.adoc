@@ -24,22 +24,18 @@ Aparece la página de inicio de sesión de NetApp BlueXP.
 . Inicie sesión en BlueXP.
 . En el menú de navegación izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 +
-Si es la primera vez que inicia sesión en este servicio, aparecerá la página de destino.
+Si esta es la primera vez que inicia sesión en este servicio, aparecerá la página de aterrizaje y podrá registrarse para una prueba gratuita.
 
 +
-image:draas-landing2.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
+image:draas-landing3-free-trial.png["Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP"]
 
 +
 De lo contrario, aparecerá la consola de recuperación de desastres de BlueXP.
 
 +
-** Si no tienes un conector BlueXP o no es el único para este servicio, es posible que necesites ponerte en contacto con el soporte de NetApp o seguir mensajes para registrarte en este servicio.
-+
-Para agregar un conector, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^].
-
-** Si eres nuevo en BlueXP y no has utilizado ningún conector, cuando seleccionas «Recuperación de desastres», aparecerá un mensaje sobre la inscripción. Continúe y envíe el formulario. NetApp se pondrá en contacto con usted sobre su solicitud.
+** Si aún no has añadido un conector BlueXP, tendrás que añadir un conector. Para agregar un conector, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^].
 ** Si eres un usuario de BlueXP con un conector existente, al seleccionar «Recuperación ante desastres», aparecerá un mensaje sobre la inscripción.
-** Si ya está utilizando el servicio, al seleccionar «Recuperación ante desastres», puede continuar.
+** Si ya está utilizando el servicio, al seleccionar “Recuperación de desastres”, aparece el panel de control.
 
 
 +

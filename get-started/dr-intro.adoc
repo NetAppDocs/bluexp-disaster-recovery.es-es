@@ -57,7 +57,7 @@ NOTE: La configuración del servidor vSphere se realiza fuera de la recuperació
 
 NetApp no te cobra por usar la versión de prueba de la recuperación ante desastres de BlueXP.
 
-La versión completa del servicio de recuperación ante desastres de BlueXP se puede usar con una licencia de NetApp.
+El servicio de recuperación ante desastres de BlueXP puede usarse con una licencia NetApp o un plan basado en suscripción anual a través de Amazon Web Services Marketplace.
 
 
 
@@ -66,6 +66,7 @@ La versión completa del servicio de recuperación ante desastres de BlueXP se p
 Puede utilizar los siguientes tipos de licencia:
 
 * Regístrate para una prueba gratuita de 90 días.
+* Compre una suscripción de pago por uso (PAYGO) con Amazon Web Services (AWS) Marketplace.
 * BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene del representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP.
 
 
@@ -82,7 +83,7 @@ Para obtener más detalles sobre cómo configurar la licencia para la recuperaci
 
 Puedes probar la recuperación de desastres de BlueXP con una prueba gratuita de 90 días.
 
-Para continuar después de la prueba de 90 días, deberá comprar una licencia BYOL de NetApp.
+Para continuar tras la prueba de 90 días, necesitará obtener una suscripción de pago por uso (PAYGO) de su proveedor de cloud o adquirir una licencia BYOL de NetApp.
 
 Puede comprar una licencia en cualquier momento y no se le cobrará hasta que finalice la prueba de 90 días.
 
@@ -94,11 +95,11 @@ La recuperación ante desastres de BlueXP puede recuperar cargas de trabajo repl
 
 La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP, que proporciona una replicación altamente eficiente y conserva las eficiencias de la Snapshot incremental de ONTAP para siempre. La replicación de SnapMirror garantiza que las copias Snapshot coherentes con las aplicaciones estén siempre sincronizadas y que los datos se puedan usar inmediatamente después de una conmutación por error.
 
-image:dr-architecture-diagram-70.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
+image:dr-architecture-diagram-70-2.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
 
 El siguiente diagrama muestra la arquitectura de los planes de recuperación ante desastres locales a los locales.
 
-image:dr-architecture-diagram-onprem-to-onprem2.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
+image:dr-architecture-diagram-onprem-to-onprem3.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
 
 Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales en el otro entorno de VMware local o VMC rompiendo las relaciones de SnapMirror y haciendo que el sitio de destino esté activo.
 

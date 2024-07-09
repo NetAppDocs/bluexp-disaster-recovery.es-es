@@ -60,3 +60,5 @@ indexpage:
     - title: Introducción a la recuperación ante desastres de BlueXP como laboratorio
         de servicio bajo demanda
       url: https://labondemand.netapp.com/lab/draas
+    - title: Vídeos
+      url: https://www.youtube.com/@netapp/videos

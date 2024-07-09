@@ -83,7 +83,15 @@ TIP: Una vez que se inicia la conmutación al respaldo, es posible ver las máqu
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *fail over*.
-. En la página Test Failover, introduzca el nombre del plan de replicación para confirmar y seleccione *fail over*.
-. Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.
++
+image:dr-plan-failover.png["Página de conmutación por error"]
+
+. En la página Failover, inicie una copia de Snapshot ahora o elija la Snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.
++
+Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
+
+. Opcionalmente, seleccione *Forzar conmutación por error* si desea que se produzca la conmutación por error incluso si se detecta un error que normalmente evitaría que se produzca la conmutación por error.
+. Escriba «failover» en el cuadro.
+. Seleccione *fail over*.
 . Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.
 

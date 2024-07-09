@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/manage.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
+summary: Puedes echar un vistazo rápido a todos tus recursos de recuperación ante desastres de BlueXP y gestionar sitios de vCenter, grupos de recursos y planes de replicación. 
 ---
-= Administre la información de sitios, planes, almacenes de datos y máquinas virtuales
+= Administre la información de sitios, grupos de recursos, planes de replicación, almacenes de datos y máquinas virtuales
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -15,10 +15,10 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 Puede obtener un vistazo rápido de todos sus recursos de recuperación ante desastres o ver cada uno en detalle:
 
 * Sitios
+* Grupos de recursos
 * Planes de replicación
 * Almacenes de datos
 * Equipos virtuales
-* Grupos de recursos
 
 
 
@@ -35,9 +35,23 @@ Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS
 
 
 
+== Gestione grupos de recursos
+
+Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan.
+
+También puede editar y eliminar grupos de recursos.
+
+.Pasos
+. En el menú superior, selecciona *Grupos de recursos*.
+. Para agregar un grupo de recursos, seleccione *Agregar grupo*.
+. Para realizar acciones con el grupo de recursos, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha y seleccione cualquiera de las opciones, como *Editar grupo de recursos* o *Eliminar grupo de recursos*.
+
+
+
+
 == Gestionar planes de replicación
 
-Puede desactivar, activar y suprimir planes de replicación.
+Puede desactivar, activar y suprimir planes de replicación. Puede cambiar los horarios.
 
 * Si desea pausar temporalmente un plan de replicación, puede deshabilitarlo y habilitarlo más adelante.
 * Si ya no necesita el plan, puede eliminarlo.
@@ -53,11 +67,19 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 +
 ** Para editar los detalles del plan (cambiar la recurrencia), seleccione la pestaña *Detalles del plan* y seleccione el icono *Editar* a la derecha.
 ** Para editar las asignaciones de recursos, seleccione la pestaña *Asignación de conmutación por error* y seleccione el icono *Editar*.
-** Para agregar o editar las máquinas virtuales, seleccione la pestaña *Virtual machine* y seleccione el icono *Edit*.
+** Para agregar o editar las máquinas virtuales, seleccione la pestaña * Máquinas virtuales * y seleccione la opción * Agregar máquinas virtuales * o el icono * Editar *.
 
 
 . Para volver a la lista de planes, seleccione «Planes de replicación» en las rutas de navegación de la parte superior izquierda.
 . Para realizar acciones con el plan, en la lista de planes de replicación, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha del plan y seleccione cualquiera de las opciones, como *Editar horarios*, *Prueba de conmutación por error*, *Error de conmutación*, *Error de retorno*, *Deshabilitar*, *Habilitar*, o *Borrar*.
+. Para establecer o cambiar un programa de prueba de conmutación por error o establecer la comprobación de frecuencia de cumplimiento, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] a la derecha del plan y seleccione *Editar horarios*.
++
+.. En la página Edit schedules, introduzca la frecuencia en minutos que desea que se realice la comprobación de cumplimiento de la conmutación por error.
+.. Marque *Ejecutar pruebas de failover en un horario*.
+.. En la opción Repetir, seleccione la programación diaria, semanal o mensual.
+.. Seleccione *Guardar*.
+
+
 
 
 
@@ -82,18 +104,4 @@ Es posible ver información sobre cuántas máquinas virtuales existen en el ori
 . Seleccione la instancia de vCenter en la fila del sitio.
 . Seleccione *Máquinas virtuales*.
 . Ver la información de las máquinas virtuales.
-
-
-
-
-== Gestione grupos de recursos
-
-Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan.
-
-También puede editar y eliminar grupos de recursos.
-
-.Pasos
-. En el menú superior, selecciona *Grupos de recursos*.
-. Para agregar un grupo de recursos, seleccione *Agregar grupo*.
-. Para realizar acciones con el grupo de recursos, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha y seleccione cualquiera de las opciones, como *Editar grupo de recursos* o *Eliminar grupo de recursos*.
 

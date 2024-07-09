@@ -178,7 +178,6 @@
   <block id="405e835e0544bb4cc8bbd26a2c840b54" category="section-title">18 de mayo de 2023</block>
   <block id="acff175f1bababdb2baa1348412d501d" category="paragraph">Esta es el lanzamiento inicial de la recuperación ante desastres de BlueXP.</block>
   <block id="49bd2ef4087967b81353d56e27be132a" category="summary">Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp.</block>
-  <block id="02fce9b41a6b2efe9c45de00491f5b15" category="summary">La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en nubes públicas como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp.</block>
   <block id="a3c972b2a97e85a689b9fc36b1658dcf" category="inline-image-macro">Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware</block>
   <block id="3f3839e5200c4d2924e47db9048f7236" category="list-text">Experiencia de usuario simplificada para la detección y la recuperación de aplicaciones con varias operaciones de recuperación puntual </block>
   <block id="2b62fc3f49aa92691e24ff085ed87ebe" category="list-text">Reducción del coste total de propiedad con menor coste de operaciones y capacidad de crear y ajustar planes de recuperación ante desastres con el mínimo de recursos</block>
@@ -203,30 +202,13 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">requisitos previos</block>
   <block id="12e2dc5fcef627451410583ca25001f8" category="list-text">Revisar <block ref="92ab8b24e9e19913fbd62d38b5e3558b" category="inline-link-macro-rx"></block> garantizar que su entorno está listo.</block>
   <block id="5ca24c4b6c87e148e5e8719ec8dd13ee" category="list-text">Pon en marcha y configura VMware Cloud en AWS.</block>
-  <block id="87eb524d6c04a253599327cc1c7a60ee" category="list-text">Crea un sistema de archivos de Amazon FSx para ONTAP. Aprovisiona y configura FSx para ONTAP.</block>
-  <block id="4c3419728723e5cec0fdd6c5e0a79fbb" category="list-text">Utilizar una cuenta de VMware y aprovisionar el centro de datos definido mediante software (SDDC). Asegúrate de que el SDDC tiene conectividad con FSx para ONTAP.</block>
-  <block id="7fc964519860ed011389afb142e2370e" category="list-text">En BlueXP:</block>
-  <block id="322e46cbec275f2740ec8387b6dd48fd" category="list-text">Añade el entorno de trabajo del almacenamiento de ONTAP on-premises a BlueXP. Este es el clúster de ONTAP de origen.</block>
-  <block id="24b72cf7b78b1dabbeedc0e25ff165f8" category="list-text">Añade una cuenta de BlueXP, añade FSxN al entorno de trabajo y añade credenciales de AWS para FSx for ONTAP.</block>
   <block id="832d5bf67a66aafc3f8182b31c2c8086" category="paragraph">En AWS, tendrás que seguir los siguientes pasos:</block>
   <block id="824ad2eb4e12f7e91aa345fe67fa3e20" category="list-text">Ponga en marcha VMware Cloud</block>
   <block id="4dab2f9796b0af6304d00e21e2b9dfb4" category="inline-link">VMware Cloud en AWS</block>
   <block id="1b38656c5ec12ea70e00624b8b3d9551" category="paragraph"><block ref="aa736dbc3fc450bce1fb1f5726a687eb" category="inline-link-rx"></block> Proporciona una experiencia nativa del cloud para cargas de trabajo basadas en VMware en el ecosistema de AWS. Cada centro de datos definido por software (SDDC) de VMware se ejecuta en un cloud privado virtual (VPC) de Amazon y proporciona una pila completa de VMware (incluida vCenter Server), redes definidas por software NSX-T, almacenamiento definido por software vSAN y uno o varios hosts ESXi que proporcionan recursos de computación y almacenamiento para las cargas de trabajo.</block>
   <block id="2a304a1348456ccd2234cd71a81bd338" category="inline-link">enlace</block>
   <block id="fd14ed73e21c2af5ff119a635c30df95" category="paragraph">Para configurar un entorno VMC en AWS, siga estos pasos<block ref="2482e32457e6109d0aff0016bbcce7d1" category="inline-link-rx"></block>. También se puede usar un clúster piloto para la recuperación ante desastres.</block>
-  <block id="813470cfb6b19cf55033bfb89dad5bc3" category="section-title">Configura Amazon FSx para NetApp ONTAP</block>
-  <block id="eb394b51d4a778c72332db5d64a1960b" category="paragraph">Amazon FSX para ONTAP de NetApp es un servicio totalmente gestionado que ofrece un almacenamiento de archivos altamente fiable, escalable, de alto rendimiento y con numerosas funciones incorporado en el popular sistema de archivos ONTAP de NetApp. Siga estos pasos<block ref="551566e1b64bc66251dbfe6d546a4bef" category="inline-link-rx"></block> Para aprovisionar y configurar FSx para NetApp ONTAP.</block>
-  <block id="496692430255798782df4a20f93d0e46" category="paragraph">El siguiente paso es configurar la recuperación de desastres en BlueXP.</block>
-  <block id="ccaaa0b1fdb9afd84865d38039f74d41" category="section-title">Crear un conector en BlueXP</block>
-  <block id="d29bda09bea50f3d6b0e9d9d61015179" category="inline-link">cómo crear un conector</block>
-  <block id="32ed92d70b140ee92a015de26f8ca076" category="paragraph">Para crear un conector en BlueXP antes de utilizar el servicio, consulte la documentación de BlueXP que se describe<block ref="3be6fdd970ee3d2f07a043a29363ec05" category="inline-link-rx"></block>.</block>
-  <block id="42a965f76897c36cbf37b815d06aff80" category="section-title">Configurar SnapMirror para Amazon FSx para NetApp ONTAP</block>
   <block id="8578ea7cebd82d3ffa5a16500e105552" category="inline-link">Documentación de BlueXP sobre cómo añadir una cuenta</block>
-  <block id="c1396f684f657bba5e27617a98a6991b" category="list-text">En BlueXP, añade una cuenta. Consulte la<block ref="774d23f949c92eac0cff5269d4337483" category="inline-link-rx"></block>.</block>
-  <block id="7d7445247cf277d14bdf223b814aef8a" category="inline-link">Cómo configurar un entorno de trabajo FSx para ONTAP</block>
-  <block id="0a4d5f87126861e7aba9f8041c6ece27" category="list-text">Agregue Amazon FSx para NetApp ONTAP al entorno de trabajo. Comprobar que la relación de SnapMirror con el clúster de ONTAP está instalada y que dispone de un destino de FSx para NetApp ONTAP. Consulte<block ref="196f9f190bce8cf361111930a46ad787" category="inline-link-rx"></block>.</block>
-  <block id="c08a2521245530f9a6691450378e81e8" category="list-text">En BlueXP, pon en marcha SnapMirror en FSx para NetApp ONTAP.</block>
-  <block id="8d6b654ad4c184e8b1a0e93a42951353" category="list-text">En BlueXP, detecta el FSx aprovisionado para NetApp ONTAP en una instancia de AWS y replica los volúmenes de almacén de datos especificados desde un entorno on-premises a FSx para NetApp ONTAP con la frecuencia adecuada y la retención de las copias de Snapshot de NetApp.</block>
   <block id="ee21d19e70e4611d4c782f9439377ba0" category="summary">Empieza a usar el servicio de recuperación ante desastres de NetApp BlueXP en unos pocos pasos.</block>
   <block id="6923c085091f4d4b0d464355d7771240" category="doc">Inicio rápido para la recuperación ante desastres de BlueXP</block>
   <block id="917c67acabedb60df299e96c679e04f8" category="paragraph">A continuación encontrarás una descripción general de los pasos necesarios para empezar a utilizar la recuperación de desastres de BlueXP. Los vínculos de cada paso le llevan a una página que proporciona más detalles.</block>
@@ -235,9 +217,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="d73fd850784e1d8dbda69ab3ca51e7cf" category="inline-link-macro">Asegúrese de que su entorno cumpla estos requisitos</block>
   <block id="5b73a71df82c1c509b1e335875c6c2a0" category="paragraph"><block ref="ef4e7a1c239c49290925a35bbbb1cc25" category="inline-link-macro-rx"></block>.</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">Dos</block>
-  <block id="218c645ebeb94f20d179bea9a6e08957" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Configurar el servicio de recuperación ante desastres</block>
-  <block id="cc6726e02ea7bc25f1ed413652107bdb" category="inline-link-macro">Complete los pasos necesarios para configurar el servicio</block>
-  <block id="d55182b1f34fe59147eb3414ea0b2408" category="paragraph"><block ref="3bb756b4dc36bf4ce11b422d7c4281f9" category="inline-link-macro-rx"></block>.</block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">Tres</block>
   <block id="fb35cdd7029fec15aadbdddd879fa161" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> El futuro</block>
   <block id="0d5e44db30a371573d3409dc5db80551" category="paragraph">Después de configurar el servicio, esto es lo que puede hacer a continuación.</block>
@@ -251,7 +230,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="4f1f3c6d1472c505e740ebe57c2881ce" category="inline-link-macro">Realice una conmutación por error de las aplicaciones en el sitio de origen original</block>
   <block id="5faa19197effc4c0fdc74b32045263ef" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block>.</block>
   <block id="b7cd69eed80f723036ef0a99b8bb375e" category="inline-link-macro">Administre la información de sitios, planes, almacenes de datos y máquinas virtuales</block>
-  <block id="958608aea56e4e43ac86c03981cb1773" category="list-text"><block ref="9b74f5806b489674a9e6e3007bd00474" category="inline-link-macro-rx"></block>.</block>
   <block id="01a7e7f1580e9ccf4f0275e9f79a32dd" category="inline-link-macro">Supervisar las operaciones de recuperación ante desastres</block>
   <block id="899a3601f4e45edcb69bd9d82c68fbef" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block>.</block>
   <block id="976795b09ce57d46e36268967ec95a95" category="summary">Empieza a usar la recuperación de desastres de BlueXP accediendo al servicio en BlueXP.</block>
@@ -267,17 +245,8 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="04f45bf7defd11ead0b4c56cf8c3f371" category="paragraph">Si es la primera vez que inicia sesión en este servicio, aparecerá la página de destino.</block>
   <block id="c6c7eb2270b5edb5f8ecf37392db8b4b" category="inline-image-macro">Captura de pantalla de la página de destino para la recuperación ante desastres de BlueXP</block>
   <block id="674a6bb0fdee8ed1d2d68faddc33d5e6" category="paragraph">De lo contrario, aparecerá la consola de recuperación de desastres de BlueXP.</block>
-  <block id="e1d24b3118270d4224a54337f1f63f2c" category="summary">Empieza a usar la recuperación de desastres de BlueXP verificando la compatibilidad de tu entorno, el acceso a la red, el inicio de sesión y el navegador web.</block>
   <block id="ccf3c2f4a4ab48adb4cc5352e480655c" category="doc">Requisitos previos de recuperación ante desastres de BlueXP</block>
-  <block id="84804abf3404a430e85ae3299587a6b0" category="paragraph">Comience verificando la preparación de su entorno operativo, el inicio de sesión, el acceso a la red y el navegador web.</block>
-  <block id="e3bc55f0abc82785380fd56b902bf803" category="list-text">En AWS:</block>
   <block id="9ff73081ad3af348b09105664054c18f" category="inline-link">cómo comenzar</block>
-  <block id="308d77673e39dd171579985cc8579f92" category="list-text">Un sistema de archivos Amazon FSx para NetApp ONTAP. Consulte la documentación de Amazon FSx para ONTAP en<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block>.</block>
-  <block id="6f80b0ccdeb06755d08fcd10b6efd13c" category="inline-link">Documentación de Virtual Machines Cloud</block>
-  <block id="f2dcae9fff997e552832417884acefaa" category="inline-link">Integración de VMware Cloud on AWS con Amazon FSx para NetApp ONTAP</block>
-  <block id="045482367f3cc5727ae8f097479439ee" category="list-text">Enlace el centro de datos de desarrollo de software con Amazon FSx para NetApp ONTAP. Consulte<block ref="02b70b195fcb534ea97ab3bf74203889" category="inline-link-rx"></block>.</block>
-  <block id="69b085a23d3ed85c84455b9288792bf2" category="inline-link">Inicio rápido de BlueXP</block>
-  <block id="45e7f38a8238b36c23e85bbe6436ba0b" category="inline-link">Información de red de BlueXP</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Avisos legales</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Los avisos legales proporcionan acceso a las declaraciones de copyright, marcas comerciales, patentes y mucho más.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Derechos de autor</block>
@@ -322,7 +291,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="d0d1a7100fd604152ac7b93eb1abc016" category="list-text">A la derecha, selecciona la opción *Acciones* <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block> Y seleccione *fail over*.</block>
   <block id="c8876c4e46fed1dae800753bc202e67d" category="list-text">Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.</block>
   <block id="0362f1f30abcc40f31c3c6618b1a15c3" category="list-text">Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.</block>
-  <block id="5e2bff09ac9b58d2dd6c2458c5ccea11" category="doc">Administre la información de sitios, planes, almacenes de datos y máquinas virtuales</block>
   <block id="ceeed92bd86d67dc2a2a6016ed40a571" category="paragraph">Puede obtener un vistazo rápido de todos sus recursos de recuperación ante desastres o ver cada uno en detalle:</block>
   <block id="3faa64303d5f5bcd043bb88f6768e603" category="list-text">Sitios</block>
   <block id="a8fc43ecd23ee9eb5e9efa5c60cb20b9" category="list-text">Planes de replicación</block>
@@ -333,7 +301,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="c59beae96d46d2c9b38ce64663e3d9d0" category="list-text">En el menú superior, selecciona *Sitios*.</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">Edite el nombre y la ubicación del sitio de vCenter.</block>
   <block id="07851e0287e57a794c18de627c09e0e7" category="section-title">Gestionar planes de replicación</block>
-  <block id="5fc6ce3a162e9142e8d530e890bcf33c" category="paragraph">Puede desactivar, activar y suprimir planes de replicación.</block>
   <block id="3058d1612836b55d5c4e71a540ba0c44" category="list-text">Si desea pausar temporalmente un plan de replicación, puede deshabilitarlo y habilitarlo más adelante.</block>
   <block id="98a6ed9560bddac4a68acf12bb7ce31c" category="list-text">Si ya no necesita el plan, puede eliminarlo.</block>
   <block id="eff6d6d4d66ab65f33be5de8b62e16d3" category="list-text">En el menú superior, selecciona *Planes de replicación*.</block>
@@ -341,7 +308,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="690ae5d914fd57de729046d81d5d2ffa" category="list-text">Realice alguna de las siguientes acciones:</block>
   <block id="5b10db4f07efa25e382abdf259d01eb2" category="list-text">Para editar los detalles del plan (cambiar la recurrencia), seleccione la pestaña *Detalles del plan* y seleccione el icono *Editar* a la derecha.</block>
   <block id="843b9bb43d8bfd905c71d66766381bb3" category="list-text">Para editar las asignaciones de recursos, seleccione la pestaña *Asignación de conmutación por error* y seleccione el icono *Editar*.</block>
-  <block id="8a0bade43f38138c2baa54ba51a11c49" category="list-text">Para agregar o editar las máquinas virtuales, seleccione la pestaña *Virtual machine* y seleccione el icono *Edit*.</block>
   <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">Ver la información de los almacenes de datos</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">Es posible ver información sobre cuántos almacenes de datos existen en el origen y en el destino.</block>
   <block id="5e141a758f792ce4ad7e1b2107b1f7a4" category="list-text">Seleccione la instancia de vCenter en la fila del sitio.</block>
@@ -383,7 +349,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="c34daecc192d502d04e27e0d11bc8acd" category="list-text">En la parte izquierda de la página Aplicaciones, seleccione las máquinas virtuales que desea replicar y asignar al grupo seleccionado.</block>
   <block id="deea58ba2c2a385f7b93c144b2d694e1" category="paragraph">La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que agrega una máquina virtual al último grupo, se agrega otro grupo.</block>
   <block id="4039eb9aa82f9a49f8096e652825e9c9" category="inline-image-macro">Captura de pantalla que muestra la página Agregar plan de replicación &amp;Aplicaciones de gt; para replicar</block>
-  <block id="021b658b4aef5f65124081043c92d29b" category="paragraph"><block ref="9ef4e2dba2a1d5ecef743359d937a39f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f60de6a7e37982bbcf6e675308bbbeb8" category="list-text">Opcionalmente, realice cualquiera de las siguientes acciones:</block>
   <block id="8702576026497ff97614ecf3a246c6e5" category="list-text">Para cambiar de grupo, haga clic en el icono de grupo *Editar*.</block>
   <block id="20b76027356378e48612a50cf35cca8a" category="list-text">Para eliminar una máquina virtual de un grupo, seleccione *X*.</block>
@@ -409,7 +374,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="e0623856c2a2db53c0560ff5b20115df" category="section-title">Confirme el plan de replicación</block>
   <block id="a879d1d71a73bdb6127bcb571303177d" category="paragraph">Por último, dedique unos momentos a confirmar el plan de replicación.</block>
   <block id="26ff2655fb5643a3e76370d9248a31df" category="admonition">Posteriormente, puede desactivar o eliminar el plan de replicación.</block>
-  <block id="3ef49e9516f56dc6f2792feb59c1b116" category="list-text">Revise la información en cada pestaña: Detalles del plan, asignación de conmutación por error, máquinas virtuales.</block>
   <block id="47324a4e5509aeccc192aa7b07cbcac7" category="list-text">Selecciona *Añadir plan*.</block>
   <block id="a9980df200522b9bbaa257521bc396fe" category="paragraph">El plan se agrega a la lista de planes.</block>
   <block id="a9233ff25d3c8ffa3e005e6e453381fc" category="paragraph">Antes de poder crear un plan de recuperación ante desastres, debe añadir un sitio de vCenter principal y un sitio de recuperación ante desastres de vCenter de destino en BlueXP.</block>
@@ -506,7 +470,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="798f01bc27c71f62fd4a64e0bb155f2f" category="paragraph">Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.</block>
   <block id="fc3e06260a2d82cbcdc61d0edfe814f2" category="paragraph">En caso de desastre, conmuta tu sitio principal de VMware on-premises bajo demanda a otro sitio VMware on-premises o VMware Cloud en AWS con FSx para NetApp ONTAP.</block>
   <block id="0e4406e2f319d2b24ab99a69613fbf47" category="list-text">Los almacenes de datos se crean y montan en el clúster o el host de VMware o VMC según la información capturada en el plan de replicación.</block>
-  <block id="f806e093eb7de418336ba62747d0d9ab" category="list-text">En la página Test Failover, introduzca el nombre del plan de replicación para confirmar y seleccione *fail over*.</block>
   <block id="48b7a229446624a8bba6bae8e801d0ab" category="list-text">Para volver a la lista de planes, seleccione «Planes de replicación» en las rutas de navegación de la parte superior izquierda.</block>
   <block id="2ebea8fe68e78bc0ff591a0dfab2033d" category="list-text">Para realizar acciones con el plan, en la lista de planes de replicación, seleccione la opción *Acciones* <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block>  A la derecha del plan y seleccione cualquiera de las opciones, como *Editar horarios*, *Prueba de conmutación por error*, *Error de conmutación*, *Error de retorno*, *Deshabilitar*, *Habilitar*, o *Borrar*.</block>
   <block id="8fcc9f88ea38569445e7602709323556" category="summary">La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.</block>
@@ -551,9 +514,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="bc7f3cb185f48d451eb5ef976e8ad82d" category="list-text">*Objetivo*:</block>
   <block id="d23a9d83c87c6eacef309f00a2beb5d3" category="inline-image-macro">Captura de pantalla de la página Sitios</block>
   <block id="28f8c0c78028f2e899f7af50ce138e1b" category="paragraph"><block ref="28f8c0c78028f2e899f7af50ce138e1b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1835d0517fe4ffa8b6a639fa95e369ad" category="list-text">Crear un conector en BlueXP.</block>
-  <block id="25cb0baf366c7202daaabd5e60c16293" category="list-text">Pon en marcha y configura SnapMirror para Amazon FSx para NetApp ONTAP.</block>
-  <block id="2a1f2380d9e50746902517055340629f" category="paragraph">Usa el conector on-premises de BlueXP o el conector BlueXP AWS, que tiene acceso al vCenter de origen on-premises y al vCenter on-premises de destino.</block>
   <block id="6f5e3fdfa73285ac2283ba492cf2d47b" category="list-text">VMware Cloud (VMC) en AWS con Amazon FSx para NetApp ONTAP o.</block>
   <block id="b374472b15e644f23d1e6b059b5216b9" category="list-text">Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP</block>
   <block id="53c1c0c22e2a647591a0b52427852850" category="paragraph"><block ref="53c1c0c22e2a647591a0b52427852850" category="inline-image-macro-rx" type="image"></block></block>
@@ -562,7 +522,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="2aefc74ac286c583100431f62049590d" category="list-text">En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.</block>
   <block id="a6a42e8e3070730d19bfd86d6a1d66fe" category="paragraph">El siguiente diagrama muestra la arquitectura de los planes de recuperación ante desastres locales a los locales.</block>
   <block id="20099229ad21726312a6ff50740b0b57" category="paragraph">Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales en el otro entorno de VMware local o VMC rompiendo las relaciones de SnapMirror y haciendo que el sitio de destino esté activo.</block>
-  <block id="a675a2edc95f7fca650a735944e38f96" category="paragraph">Para utilizar la recuperación ante desastres de BlueXP, debes asegurarte de que tu entorno cumpla los siguientes requisitos:</block>
   <block id="96ed64c294e585324853f8f980f9d78e" category="sidebar">Migrar aplicaciones a otro sitio</block>
   <block id="36a7330c410600f4393af365b3d66e29" category="sidebar">Blog de recuperación ante desastres de BlueXP</block>
   <block id="ad80d6168dc288f4361413eeca80dc5f" category="sidebar">Migrar a otro sitio</block>
@@ -664,21 +623,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="c68217420a685b93e20f298ae3ea72c8" category="paragraph">Puede incluir scripts personalizados en formato .sh, .bat o .ps1 como procesos posteriores a la conmutación al respaldo. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.</block>
   <block id="8b4399d7029673ba83df4f916514230b" category="paragraph">Una operación de recuperación tras fallos de prueba afecta _no_ a las cargas de trabajo de producción, a la relación de SnapMirror usada en el sitio de pruebas y a las cargas de trabajo protegidas que deben seguir funcionando normalmente.</block>
   <block id="22d1d4bc51673707e71b38cb5d9f8053" category="admonition">Una vez que se inicia la conmutación al respaldo, es posible ver las máquinas virtuales recuperadas en el para vCenter del sitio de recuperación ante desastres (máquinas virtuales, redes y almacenes de datos). De forma predeterminada, las máquinas virtuales se recuperan en la carpeta Workload.</block>
-  <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Cancelar un trabajo</block>
-  <block id="0f6fb16278c8db9e7104435d2ca9b98f" category="paragraph">Si hay un trabajo en curso y no desea que continúe, puede cancelarlo. Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola. Es posible que desee cancelar un trabajo antes de agotar el tiempo de espera.</block>
-  <block id="22b7400444d76583bfa01ad371bebbc5" category="paragraph">Para cancelar un trabajo, se utiliza Swagger.</block>
-  <block id="90fcc3b3a806bdba15ead6130adbd9a9" category="paragraph">Para cancelar un trabajo, debe tener el ID de cuenta.</block>
-  <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">En la página Monitor de trabajos, anote el ID del trabajo que desea cancelar.</block>
-  <block id="336ff1e9aa6177ea7a71984fa8c241b9" category="inline-link">Swagger</block>
-  <block id="5273316399077a35494eb5acbbcf7801" category="list-text">Acceda a la URL de Swagger de recuperación ante desastres de BlueXP:<block ref="9e4854fddaa37e1b0c806d7c99538b64" category="inline-link-rx"></block>.</block>
-  <block id="cfe384e99d913d27036c11c367a847da" category="paragraph"><block ref="cfe384e99d913d27036c11c367a847da" category="inline-link-rx"></block></block>
-  <block id="7a01c0f2bb049f0040198121da3c115e" category="inline-image-macro">Página Swagger que muestra cómo cancelar un trabajo</block>
-  <block id="3c54383fbe7b935cfc38e6a4118698cb" category="paragraph"><block ref="3c54383fbe7b935cfc38e6a4118698cb" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5f8add33c48ab0f59f2908faa8d36196" category="inline-link">Documentos de Swagger</block>
-  <block id="e124a230be11158b2df2a4490b5bc010" category="paragraph">Para obtener más información sobre Swagger, consulte<block ref="851cca880157b178ca93e5f9f752f929" category="inline-link-rx"></block>.</block>
-  <block id="ae46b3f9f499c97dfc5b7c1e327aeea1" category="list-text">Desde Swagger, obtenga el token de seguridad, también llamado _bearer token_, de la opción Autorizar.</block>
-  <block id="d46acb5ac038cd8e0a5d3f7165605907" category="list-text">Introduzca el ID de cuenta y el ID de trabajo.</block>
-  <block id="b1f85b610b71ac9db3be3c5efe00f9a4" category="list-text">Seleccione *probar*.</block>
   <block id="7133b9cf238828da0a287b89ce855ec3" category="paragraph"><block ref="7133b9cf238828da0a287b89ce855ec3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0e17ce70dd39a8a056cb5ca0081d4526" category="list-text">*Running*: El vCenter está conectado, en buen estado y en funcionamiento.</block>
   <block id="ed4bdaafb191f860f256d0b1e88eb50e" category="list-text">*Down*: El vCenter no es accesible o tiene problemas de conectividad.</block>
@@ -706,8 +650,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="0a003809d85acf4d6a198955e5780ac3" category="list-text">Para limpiar el entorno de prueba después de que finalice la prueba de conmutación por error, compruebe * Limpiar automáticamente después de la conmutación por error de prueba *.</block>
   <block id="20ace5d6661ce95df08950b97c500ddc" category="admonition">Este proceso cancela el registro de las máquinas virtuales temporales de la ubicación de prueba, elimina el volumen FlexClone que se creó y desmonta los almacenes de datos temporales.</block>
   <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">Seleccione *Guardar*.</block>
-  <block id="8f6793a82f1110a347dbefe3c3758178" category="section-title">La conmutación tras recuperación utiliza la última copia Snapshot</block>
-  <block id="9ee4d1cdb3c09e86e561a895a7ab9345" category="paragraph">En la versión actual, el proceso de conmutación por recuperación siempre utiliza la copia Snapshot más reciente. Esto ocurre incluso si eligió una copia Snapshot específica para utilizar.</block>
   <block id="4d519f9cb24d082270f8f88ccccd42e3" category="paragraph">Descubre las novedades de la recuperación ante desastres de BlueXP.</block>
   <block id="592997dde366d5775e7e052816854f74" category="section-title">5 de marzo de 2024</block>
   <block id="23f1adcf87ca650c2ac077f4be520c97" category="paragraph">Esta es la versión de Disponibilidad general de la recuperación de desastres de BlueXP, que incluye las siguientes actualizaciones.</block>
@@ -719,18 +661,13 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="4b2bfa262e877a668b7102f58d207f63" category="inline-link">Cree el plan de replicación</block>
   <block id="976dcedce9d4c9dc14db60abc49c5867" category="paragraph">Para obtener más información, consulte<block ref="8026234d3eaba16fdffb266108c2804b" category="inline-link-rx"></block>.</block>
   <block id="0468e5ced7eddf7112cb542d124a006f" category="paragraph">Esta versión previa de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:</block>
-  <block id="c35429358a46b999fafa3eb39893122c" category="inline-link-macro">Complete los pasos para configurar la licencia</block>
-  <block id="c46b74d8fea462e40a3a35bd54771989" category="paragraph"><block ref="3d00f62ff93b742ed767a11952d4b89c" category="inline-link-macro-rx"></block>.</block>
   <block id="5f6035a41d2be8c5780281ca63dc230a" category="paragraph">*¿Necesitas una licencia para usar la recuperación ante desastres de BlueXP?*
 Se requiere una licencia de recuperación ante desastres de BlueXP para acceder completamente. Sin embargo, puedes probarlo con la prueba gratuita.</block>
   <block id="65b8710d9a2596e72f3f9c24620b97a3" category="inline-link-macro">Configurar las licencias de recuperación de desastres de BlueXP</block>
   <block id="a4812a60b42128cc371c18f06197d9ab" category="paragraph">Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte <block ref="0ba47d7cccc1dc28f47670d48274167c" category="inline-link-macro-rx"></block>.</block>
   <block id="78a065b9fb649a31c2037ac8b6adf208" category="paragraph">Para utilizar la recuperación ante desastres de BlueXP, lleve a cabo unos pasos para configurarlo tanto en Amazon Web Services (AWS) como en BlueXP.</block>
-  <block id="456948be6cc17bd9f797492f175ff847" category="section-title">Configure AWS</block>
-  <block id="724c7536b89d0d851109ea9f7868da08" category="paragraph">Debe ponerse en contacto con su representante de ventas de NetApp para probar este servicio. A continuación, cuando utilices BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.</block>
   <block id="878214f294066da0bab8a3693a1f802a" category="doc">Obtén más información sobre la recuperación ante desastres de BlueXP para VMware</block>
   <block id="e04cb1e00b4f2d764efe09d0b22a6b43" category="paragraph">La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.</block>
-  <block id="81cd6d5889a00f3187d6e30af0f9838e" category="paragraph">La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS en las instalaciones que ejecutan el almacenamiento de NetApp en una de las siguientes opciones:</block>
   <block id="fbec25bffbcdefa11c9ca28adb0b824c" category="paragraph">La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.</block>
   <block id="3c524eb32d863a57c821ef5ffecb96ee" category="section-title">Todo lo que puedes hacer con la recuperación de desastres de BlueXP para VMware</block>
   <block id="0ad83d5f52e2b8f6dfc6ec26ef91aa38" category="paragraph">La recuperación ante desastres de BlueXP te permite utilizar al máximo varias tecnologías de NetApp para lograr los siguientes objetivos:</block>
@@ -740,14 +677,7 @@ Se requiere una licencia de recuperación ante desastres de BlueXP para acceder 
   <block id="c809a23426c6fb72cef75816c461ade9" category="paragraph">Las licencias para todos los servicios de BlueXP se gestionan a través del servicio de cartera digital de BlueXP. Tras configurar tu BYOL, puedes ver una licencia activa para el servicio en la cartera digital de BlueXP.</block>
   <block id="8eb586b1b79ddd3ae7c3123b39d4420e" category="admonition">Los cargos de recuperación de desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la cartera digital de BlueXP.</block>
   <block id="27be91c80d5e97799bb6e73e37370e5d" category="paragraph">Puede comprar una licencia en cualquier momento y no se le cobrará hasta que finalice la prueba de 90 días.</block>
-  <block id="da329ee75f8833283c259789372600f6" category="list-text">Entorno de trabajo de VMware on-premises con almacenamiento de NetApp</block>
-  <block id="0f5757c2302ddb1a6b48cf01d0fe295d" category="list-text">Una cuenta de VMware con un centro de datos definido por software (SDDC) en AWS, también conocido como Virtual Machines Cloud. En VMware Cloud Console, utilice las funciones de servicio de Administrator y NSX Cloud Administrator. Utilice también el propietario de la organización para el rol de organización. Consulte<block ref="e0529c1c92608a25886bf41835abea27" category="inline-link-rx"></block>.</block>
-  <block id="10158aa869cd2a07a9e35313b86f48f8" category="list-text">Credenciales de Amazon FSx para ONTAP y AWS agregadas al entorno de trabajo de BlueXP.</block>
-  <block id="fce90829059c8b31e3882fa3db9f644c" category="list-text">Es necesario configurar el conector BlueXP en BlueXP. El conector local y en la nube deben tener conectividad tanto con el vCenter local como con VMware Cloud (VMC) con ESXis. Esto permite que las funciones de backup, conmutación al nodo de respaldo, conmutación por error y migración funcionen correctamente con las funciones de script y redes necesarias.</block>
-  <block id="54acd3bad890d9cacb0dd0970cbf3cd4" category="paragraph">BlueXP Connector requiere credenciales tanto para los servidores de vCenter de origen como de destino. Consulte la<block ref="4b1866f17dc6bd66f88d9d6839084df6" category="inline-link-rx"></block> y..<block ref="8b2e3c99c244ff11d22f3c561bd167b2" category="inline-link-rx"></block>.</block>
-  <block id="4b23440b522693ef465ede54b1e9df88" category="list-text">Para garantizar que los procesos de coherencia de la aplicación se realizan correctamente, asegúrese de cumplir los siguientes requisitos previos:</block>
   <block id="7033a5d3e074f0c7401499ee4e48f38a" category="list-text">Asegúrese de que las herramientas de VMware (o Open VM Tools) se están ejecutando en las VM que estarán protegidas.</block>
-  <block id="7c480d19e9a60d89cc5b027f95938aa8" category="list-text">Para equipos virtuales Windows que ejecuten SQL, Oracle o ambos, las bases de datos deben tener activados sus instancias de VSS Writers y las bases de datos deben estar en estado estable.</block>
   <block id="af77ac64a97a80925dee7dc916344004" category="list-text">Las bases de datos Oracle que se ejecutan en un sistema operativo Linux deben tener activada la autenticación de usuario del sistema operativo para el rol SYSDBA de la base de datos Oracle.</block>
   <block id="e23539b066371b4dcfdd50b7d80417d8" category="paragraph">Después de que finalice la prueba gratuita o la licencia caduque, puede seguir haciendo lo siguiente en el servicio:</block>
   <block id="1594f78ebbb281f7b5359eb6d2b89912" category="list-text">Ejecute todas las operaciones programadas que se crearon durante el período de prueba o bajo la licencia.</block>
@@ -777,11 +707,7 @@ Se requiere una licencia de recuperación ante desastres de BlueXP para acceder 
   <block id="ad7911fdd21ff5752d10300d0446de95" category="section-title">Cuando finalice la prueba, suscríbase a través de AWS Marketplace</block>
   <block id="e1186eb5e41d3a9e96827c9ab4aef684" category="paragraph">Cuando finalice la prueba gratuita, puedes comprar una licencia de NetApp o suscribirte a través de AWS Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en AWS Marketplace.</block>
   <block id="acce4a6c25bc51b4930085d68e3cb0cd" category="list-text">En la recuperación ante desastres de BlueXP, verás un mensaje que indica que la prueba gratuita ha caducado. En el mensaje, seleccione *Suscribir o comprar una licencia*.</block>
-  <block id="89642db6eeb3c89414135d980b0f379c" category="inline-image-macro">La página de métodos de pago de recuperación de desastres de BlueXP</block>
-  <block id="cd54cee81e627d252868fbc3cfc5731c" category="paragraph"><block ref="cd54cee81e627d252868fbc3cfc5731c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="584a50ae29d097d233ebd86ad952d305" category="list-text">Seleccione *Suscribirse en AWS Marketplace*.</block>
-  <block id="a06442e94af0d31f4eee679c83de7779" category="list-text">En AWS Marketplace, selecciona *Ver opciones de compra*.</block>
-  <block id="266c58f74740e96b35f10409d3036f8f" category="list-text">Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.</block>
   <block id="717132172ed170ccb94cc8674c35dfbd" category="list-text">Cuando vuelve a la recuperación ante desastres de BlueXP, hay un mensaje que dice que está suscrito.</block>
   <block id="6678054c83157276d9287735dd3e1d92" category="paragraph">Para ver los detalles de la suscripción en la cartera digital de BlueXP, selecciona *Ver detalles de la suscripción* y mira la suscripción activa en la página *Suscripciones*.</block>
   <block id="0a504e78221db1ccaf51b7ad21bc16ce" category="inline-image-macro">La pestaña Suscripciones de la cartera digital de BlueXP</block>
@@ -796,10 +722,186 @@ Después de comprar una licencia de recuperación ante desastres de BlueXP para 
   <block id="595da0c0edf936a84fa3d6a69bbbb4e5" category="paragraph"><block ref="595da0c0edf936a84fa3d6a69bbbb4e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5d50de45dd75ac0ea74e9c427687d113" category="list-text">En la cartera digital de BlueXP, en la pestaña *Licencias de servicios de datos*, selecciona *Añadir licencia*.</block>
   <block id="7744384d0e7b78819bc53ca36ef36369" category="list-text">Seleccione la pestaña *Licencias de cancelación de datos*, seleccione el icono *Acciones ...* para el número de serie del servicio que está actualizando y seleccione *Actualizar licencia*.</block>
-  <block id="fe16d01759ec350f7a6eaad418e37316" category="paragraph">El servicio de recuperación ante desastres de BlueXP puede usarse con una licencia NetApp o un plan basado en suscripción anual a través de Amazon Web Services Marketplace.</block>
   <block id="577219605d1e6146de9dc5b1e218ce65" category="paragraph">Para continuar tras la prueba de 90 días, necesitará obtener una suscripción de pago por uso (PAYGO) de su proveedor de cloud o adquirir una licencia BYOL de NetApp.</block>
   <block id="d66d706cd022ab39ed6479a713135515" category="paragraph"><block ref="d66d706cd022ab39ed6479a713135515" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991e816286764c3a5ea9b023c35e1d77" category="paragraph"><block ref="991e816286764c3a5ea9b023c35e1d77" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f356176c4e01ac702abad1ad2e11449a" category="paragraph">Puede comprar una suscripción de pago por uso (PAYGO) con AWS Marketplace o BYOL (BYOL), que es un archivo de licencia de NetApp (NLF).</block>
   <block id="b45dfe874eaba6a97e58e0436eba2402" category="sidebar">Introducción a la recuperación ante desastres de BlueXP como laboratorio de servicio bajo demanda</block>
+  <block id="439704735653d5132727cb9c21bc97c8" category="paragraph">La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puede proteger las cargas de trabajo basadas en NFS en las instalaciones y en una vista previa tecnológica, los almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere que ejecutan almacenamiento NetApp en una de las siguientes opciones:</block>
+  <block id="d5368fed025a9875e8a424b419508bef" category="admonition">Con esta versión, la recuperación ante desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones a entornos VMware en las instalaciones con almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere. NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.</block>
+  <block id="0dc4a26bb39078be4974284a72d54f64" category="paragraph">El servicio de recuperación ante desastres de BlueXP puede usarse con una licencia NetApp o un plan basado en suscripción anual a través de Amazon Web Services.</block>
+  <block id="66a7384fcc7d6c71e8da6dc152b82593" category="admonition">Algunos lanzamientos incluyen una vista previa de la tecnología. NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa. Consulte <block ref="431ce6b88c6d5399033553c1891688aa" category="inline-link-macro-rx"></block> para obtener información sobre las últimas vistas previas de la tecnología.</block>
+  <block id="cb29907626b2fabe5961e9265140cc76" category="list-text">En AWS Marketplace, selecciona *Ver opciones de compra*. Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.</block>
+  <block id="82dea2c8434a1770d46c03eb8b4c2389" category="summary">Antes de usar la recuperación ante desastres de BlueXP, debes asegurarte de que tu entorno cumpla los requisitos de almacenamiento de ONTAP, clúster de VMware vCenter y BlueXP.</block>
+  <block id="d28c14a0fc5b1bfa37eb72dd0ac54a13" category="section-title">Requisitos previos de almacenamiento ONTAP</block>
+  <block id="911d68300fa1a1a181b338683eb2e1b9" category="paragraph">Estos requisitos previos se aplican a instancias de ONTAP o Amazon FSx para NetApp ONTAP.</block>
+  <block id="07a02bd33ebc759fa2827fd098fe4d5b" category="list-text">Los clústeres de origen y destino deben tener una relación entre iguales.</block>
+  <block id="4a240de94d3b8b2cf85c70ef705ec1ad" category="list-text">La SVM que alojará los volúmenes de recuperación ante desastres debe existir en el clúster de destino.</block>
+  <block id="49a62cf19d5f5549f15f53e7cc0931a4" category="list-text">La SVM de origen y la SVM de destino deben tener una relación entre iguales.</block>
+  <block id="03d4e4f8142b74599e73a9baef34f455" category="admonition">No se deben crear volúmenes de recuperación ante desastres en la SVM o las SVM de destino. La recuperación ante desastres de BlueXP creará los volúmenes de destino según sea necesario para el plan de replicación.</block>
+  <block id="3c6fc169e2cb30ab2f19198ee948214f" category="list-text">Si se realiza la puesta en marcha con Amazon FSx para NetApp ONTAP, se aplican los siguientes requisitos previos:</block>
+  <block id="416e7e2f04e50d9ce77de6997e876b89" category="list-text">Debe haber una instancia de Amazon FSx para NetApp ONTAP para alojar almacenes de datos de recuperación de desastres de VMware en el VPC. Consulte la documentación de Amazon FSx para ONTAP en<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block>.</block>
+  <block id="78ac16e6d697b73a4da8c7145ce2ebf3" category="section-title">Requisitos previos de los clústeres de VMware vCenter</block>
+  <block id="e43184d3dcdfbef8d9c719533929f538" category="paragraph">Estos requisitos previos se aplican tanto a clústeres de vCenter en las instalaciones como al centro de datos definido por software (SDDC) de VMware Cloud para AWS.</block>
+  <block id="f5091f12fda6dcb8b160780e3352bbd5" category="list-text">Todos los clústeres de VMware que quieras que gestione la recuperación ante desastres de BlueXP se deben alojar en ONTAP Volumes.</block>
+  <block id="a103c229873d833279c49def9ebe9fc3" category="list-text">Todos los almacenes de datos de VMware que se gestionen mediante la recuperación ante desastres de BlueXP deben usar uno de los siguientes protocolos:</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS</block>
+  <block id="47e0fa80d3fa1add35dfaada74c496e9" category="list-text">VMFS que utiliza el protocolo iSCSI (actualmente se encuentra en una vista previa tecnológica)</block>
+  <block id="b48bd09b37dbbe2233bba9ccc258e634" category="list-text">Si utiliza VMware Cloud SDDC, se aplican estos requisitos previos.</block>
+  <block id="7fc6ed2196514db323edb5f8ee464448" category="inline-link">Usar VMware Cloud Foundations con documentación de AWS FSx para NetApp ONTAP</block>
+  <block id="f2fc5fa158eeee58eae505a362a866b3" category="list-text">En VMware Cloud Console, utilice las funciones de servicio de Administrator y NSX Cloud Administrator. Utilice también el propietario de la organización para el rol de organización. Consulte<block ref="87df9e87408172a2291d5738f3ae5f4f" category="inline-link-rx"></block>.</block>
+  <block id="4e1ddb83fcf4e704fe454a7d694377b4" category="inline-link">Integración de VMware Cloud on AWS con la información sobre la puesta en marcha de Amazon FSx para NetApp ONTAP</block>
+  <block id="7122f5fb62a64795817462bf41ff7862" category="list-text">Vincula el centro de datos definido por software de VMware Cloud con Amazon FSx para la instancia de NetApp ONTAP. Consulte<block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>.</block>
+  <block id="96888c442fac1de0bbc3ba9d00f296a4" category="section-title">Requisitos previos de BlueXP</block>
+  <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">Recopile las credenciales para ONTAP y VMware</block>
+  <block id="40d6832bb97021f07389b0bb1371ebc8" category="list-text">Las credenciales de Amazon FSx para ONTAP y AWS deben añadirse al entorno de trabajo dentro del espacio de trabajo de BlueXP que se utilizarán para gestionar la recuperación ante desastres de BlueXP.</block>
+  <block id="a3322827dcb371ce03fcea3e6f6dac4b" category="list-text">La recuperación ante desastres de BlueXP requiere credenciales de vCenter. Introduce las credenciales de vCenter cuando añade un sitio en la recuperación ante desastres de BlueXP.</block>
+  <block id="af48f45a45fa68c1e7482428d13d3ae2" category="inline-link-macro">Se necesitan privilegios de vCenter para la recuperación ante desastres de BlueXP</block>
+  <block id="663ac415354a0662169e04ba51a80ee1" category="inline-link-macro">Agregar un sitio</block>
+  <block id="04d842fd50a052e8aa0d29fecc18a42b" category="paragraph">Para ver una lista de los privilegios de vCenter necesarios, consulte <block ref="2c677a2a2de566e8f203663d6f65fae2" category="inline-link-macro-rx"></block>. Para obtener instrucciones sobre cómo agregar un sitio, consulte <block ref="4e15c40290645aa1bfcc516405624ad3" category="inline-link-macro-rx"></block>.</block>
+  <block id="d5e44723931260e9fb1d91641ec67565" category="section-title">Añade una cuenta de BlueXP</block>
+  <block id="55d6d6a5af12f879c7cc9cc76ddabdec" category="paragraph">En BlueXP, si todavía no tienes una cuenta, tendrás que añadir una cuenta. Consulte la<block ref="774d23f949c92eac0cff5269d4337483" category="inline-link-rx"></block>.</block>
+  <block id="a5085066220b6bc77291e8a3ba481c5a" category="section-title">Crea un conector BlueXP</block>
+  <block id="6bdd2270b2444eb60c9eb649a9ca2c48" category="paragraph">Debe configurarse un conector BlueXP en BlueXP. Cuando uses BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.</block>
+  <block id="d45c08fd27c89f889429a0d0279aa820" category="inline-link">Introducción a BlueXP en modo estándar</block>
+  <block id="9617f94c4d0db3b59bc87478ad69a2e3" category="list-text">La recuperación ante desastres de BlueXP solo funciona con la puesta en marcha de Connector en modo estándar. Consulte<block ref="8d7d3151883721ed32dc6ccb054ca1c1" category="inline-link-rx"></block>.</block>
+  <block id="7355396a11c2997a2e012d54ec400c23" category="list-text">Tipo de conector BlueXP necesario:</block>
+  <block id="1fb392a56edc456b1bc3eddb57b0906b" category="inline-link">Instalar y configurar un conector en las instalaciones</block>
+  <block id="4606ca846bc1047c423bf2f388cae62e" category="list-text">*Recuperación ante desastres local a local*: Instale el conector local de BlueXP en el sitio de recuperación ante desastres. Consulte<block ref="1757fdffe316429694b3d2e3fbccb91f" category="inline-link-rx"></block>.</block>
+  <block id="eca3237a9ea860ef946ba4cdd489bc59" category="inline-link">Opciones de instalación de conectores en AWS</block>
+  <block id="5429b4727bb6860d719abc5d18c2c7ee" category="list-text">*En las instalaciones a AWS*: Instala el conector BlueXP para AWS en tu VPC de AWS. Consulte<block ref="5b7871abcfa07c659c7f1c6cfa3aafba" category="inline-link-rx"></block>.</block>
+  <block id="12162c662baf903fc463cab971a2c144" category="admonition">Para entornos locales a locales, utiliza el conector on-premises de BlueXP. Para las instalaciones a AWS, utiliza BlueXP AWS Connector, que tiene acceso al vCenter de origen en las instalaciones y al vCenter en las instalaciones de destino.</block>
+  <block id="b44186c8f26107b5ae7810b1a74e8093" category="list-text">El conector BlueXP instalado debe poder acceder a cualquier clúster de VMware que gestione la recuperación ante desastres de BlueXP.</block>
+  <block id="a342d0b5394cc9bc5595d491d2a70101" category="list-text">Todas las cabinas de ONTAP que se van a gestionar mediante la recuperación ante desastres de BlueXP deben añadirse a cualquier entorno de trabajo dentro del espacio de trabajo de BlueXP que se utilizará para gestionar la recuperación ante desastres de BlueXP.</block>
+  <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">Detectar clústeres de ONTAP en las instalaciones</block>
+  <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">Consulte<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block>.</block>
+  <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">Requisitos previos de carga de trabajo</block>
+  <block id="6a84d76f499de61c5fe29550fe09a932" category="paragraph">Para garantizar que los procesos de coherencia de la aplicación se realicen correctamente, aplique estos requisitos previos:</block>
+  <block id="53967495fd407c118c305a84866ca152" category="list-text">Para equipos virtuales Windows que ejecuten Microsoft SQL Server, Oracle Database o ambos, las bases de datos deben tener activados sus Escritores de VSS.</block>
+  <block id="a906261e8914cac100bb85be774d5451" category="list-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Configura el servicio de recuperación ante desastres de BlueXP</block>
+  <block id="bba2d28657478d7f1f8cfa1202334b6c" category="inline-link-macro">Configurar la infraestructura para el servicio</block>
+  <block id="922a3f684ad3f3d8beda0f750bdbb18f" category="list-text"><block ref="d5f560af5db6cf4511b8e34e3209d0d9" category="inline-link-macro-rx"></block>.</block>
+  <block id="143a2ad68b93a4241fb25dee71d34878" category="list-text"><block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block>.</block>
+  <block id="0b513f7730ddab41ea5b37d6963c756d" category="inline-link-macro">Añade tus sitios de vCenter a la recuperación ante desastres de BlueXP</block>
+  <block id="1e92a19963b0c5825cc688d14c3c7952" category="list-text"><block ref="2502be63ed2d6f89316c7fbe34a648d3" category="inline-link-macro-rx"></block>.</block>
+  <block id="b65e0d1bdfae52b7003edeca0851a1cd" category="inline-link-macro">Cree su primer grupo de recursos</block>
+  <block id="2694ce9387b386ed8def037e0ef2a01c" category="list-text"><block ref="92830d5aa0eb820db09685f71801553b" category="inline-link-macro-rx"></block>.</block>
+  <block id="81b20ae68e2b688ed9a18df38cce62c6" category="inline-link-macro">Cree su primer plan de replicación</block>
+  <block id="1bef08da93920d58af9116d6cc82018e" category="list-text"><block ref="3447feddfbfb06a3f88061bcb344494c" category="inline-link-macro-rx"></block>.</block>
+  <block id="e111b7436e71ef6b7b99d4ab60693716" category="inline-link-macro">Gestione sitios, grupos de recursos y planes de replicación</block>
+  <block id="9c0c127bbcf25422e200cf3bf5c94728" category="list-text"><block ref="b808936e11943a7ce505d2bf605d808d" category="inline-link-macro-rx"></block>.</block>
+  <block id="7297a33a5c9a50db535ceb180e4e6c29" category="doc">Configura tu infraestructura para la recuperación ante desastres de BlueXP</block>
+  <block id="fc75fa7bbac9e87518d6f17a91cfce8b" category="section-title">Prepárate para la recuperación ante desastres de BlueXP</block>
+  <block id="1c1d912a4b5c8c14cabacde67a6ba702" category="list-text">Verifique su entorno de producción.</block>
+  <block id="23c17aafeb6f23d40515eff8b860e5f4" category="list-text">Asegúrese de que las máquinas virtuales que desee proteger están alojadas en almacenes de datos NFS (con volúmenes de NFS de ONTAP) o en almacenes de datos VMFS (con LUN iSCSI de NetApp).</block>
+  <block id="179525e812f4f22c9d701388e129164d" category="list-text">Asegúrese de tener credenciales y claves de acceso para sus cabinas ONTAP, vCenters e instancias de cloud VMware alojadas en AWS.</block>
+  <block id="013c9bec06c7786c33c0cfb5f4a32bcf" category="list-text">Cree o verifique su sitio de recuperación ante desastres.</block>
+  <block id="6d269e8a65127766658cd3b13af2c081" category="list-text">Cree o verifique que su sistema de archivos de Amazon FSx está listo.</block>
+  <block id="d7398479ae0f9ae38ae2ed32d89ad5a7" category="list-text">Asegúrate de que las máquinas virtuales de origen y destino tienen una relación entre iguales.</block>
+  <block id="c279ea5c4d51358b229e0e39c4308144" category="section-title">Configure VMware Cloud para AWS SDDC</block>
+  <block id="fd087c8a3a1df61c75b0ddc129a87874" category="paragraph">Configurar el centro de datos definido por software (SDDC) de VMware Cloud para AWS</block>
+  <block id="b667fcb6ff2b158ecaa3e62d1e56452e" category="list-text">Crea un sistema de archivos de Amazon FSx para ONTAP. Aprovisiona y configura FSx para ONTAP. Amazon FSX para ONTAP de NetApp es un servicio totalmente gestionado que ofrece un almacenamiento de archivos altamente fiable, escalable, de alto rendimiento y con numerosas funciones incorporado en el popular sistema de archivos ONTAP de NetApp.</block>
+  <block id="c2ca61cdaafcad548af5836df039fcb3" category="inline-link">Inicio rápido de Amazon FSX para ONTAP de NetApp</block>
+  <block id="ef30511465fed8e5a5b5c3a9aae4795a" category="list-text">Sigue los pasos que puedes seguir<block ref="551566e1b64bc66251dbfe6d546a4bef" category="inline-link-rx"></block><block ref="594efabf60d7236eeecf072ead1cf02b" category="inline-link-rx"></block> para aprovisionar y configurar FSx para NetApp ONTAP.</block>
+  <block id="e65c19fddc907d69ae5172a0084b710b" category="list-text">Añade Amazon FSx para NetApp ONTAP al entorno de trabajo y añade las credenciales de AWS para FSx para ONTAP.</block>
+  <block id="95e1164f78d2b6799a19e13081137cbd" category="list-text">Utilice una cuenta de VMware y aprovisione el SDDC. Asegúrate de que el SDDC tiene conectividad con FSx para ONTAP.</block>
+  <block id="23b186d0b29dfdb5e0e175ad6de4147e" category="paragraph">Puede adquirir uno de los siguientes:</block>
+  <block id="e5cadf619f38981c2b6059a9e6577ec3" category="list-text">Una suscripción de pago por uso (PAYGO) con AWS Marketplace</block>
+  <block id="90d5e71753c6b7ee358df340daa5fe4c" category="list-text">BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF).</block>
+  <block id="8e794011cc1f1c5c04b70473672767c4" category="paragraph">Consulte <block ref="0ba47d7cccc1dc28f47670d48274167c" category="inline-link-macro-rx"></block>.</block>
+  <block id="b63b041aeb212763ffab8f16313f009d" category="inline-link-macro">Aviso para la recuperación ante desastres de BlueXP</block>
+  <block id="54ad6e999d021c5f10d0b688267e8d17" category="paragraph"><block ref="54ad6e999d021c5f10d0b688267e8d17" category="inline-link-macro-rx"></block></block>
+  <block id="30bc3f8ec3b5e171c9e8c063eec0ebce" category="summary">La cuenta de vCenter debe tener un conjunto mínimo de privilegios de vCenter para permitir que la recuperación ante desastres de BlueXP lleve a cabo sus servicios, como el registro y desregistro de almacenes de datos, iniciar y detener máquinas virtuales, y reconfigurar máquinas virtuales (VM). En la siguiente tabla se enumeran todos los privilegios necesarios para la recuperación ante desastres de BlueXP para interactuar con un clúster de vCenter.</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Tipo</block>
+  <block id="f31fadcb7ced5ed0e7fbc3d65d0ab660" category="cell">Nombre del privilegio</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descripción</block>
+  <block id="2051881d2c94079273dde07614b52317" category="cell">*Datastore*</block>
+  <block id="39e17557e52f8908bd58f0aa8f90e589" category="paragraph">Almacén de datos. Configurar el almacén de datos</block>
+  <block id="b0156af1fabe28340f5f515de85b8ba2" category="paragraph">Utilice para configurar un almacén de datos.</block>
+  <block id="16ca70be6373a69d7a7a4054b8740d5f" category="paragraph">Almacén de datos. Quite el almacén de datos</block>
+  <block id="5d7a7f943775e5b9f23c14409254d31f" category="paragraph">Utilice para quitar un almacén de datos.</block>
+  <block id="0d710447bc4b3d240dbec4ffdff78d7f" category="cell">* Máquina virtual*</block>
+  <block id="0d027ba13a066afab0e72091146c32c3" category="paragraph">Máquina virtual.Configuración.Cambiar configuración</block>
+  <block id="ac5fed24b3778885bc91821ce7badce7" category="paragraph">Utilice para cambiar la configuración general de la máquina virtual.</block>
+  <block id="877b1c9b324b92cc7eb4c734fa176de9" category="paragraph">Máquina virtual.Configuración.Modificar la configuración del dispositivo</block>
+  <block id="a470a1e5aa63361f7bba6f9b3753f58d" category="paragraph">Se utiliza para cambiar las propiedades de un dispositivo existente.</block>
+  <block id="1c48d7d8b2a2dfea7d4778be6f8adce8" category="paragraph">Máquina virtual.Configuración.Volver a cargar desde la ruta de acceso</block>
+  <block id="a21bfc06d31dc57593c8038b2c5c0e18" category="paragraph">Se utiliza para cambiar un parche de configuración de VM mientras se conserva la identidad de la VM. Soluciones como VMware vCenter Site Recovery Manager utilizan esta operación para mantener la identificación de máquinas virtuales durante la conmutación por error y la conmutación tras recuperación.</block>
+  <block id="936b25ae8b1305df4de41cc7edd3fb3c" category="paragraph">Virtual machine.Configuration.Renombrar</block>
+  <block id="eb6647b772f29fe6d76a2ff596d8da2e" category="paragraph">Utilice para cambiar el nombre de una máquina virtual o modificar los nodos asociados de una máquina virtual.</block>
+  <block id="4553fbef402a1d8731c1816f91ce505e" category="paragraph">Máquina virtual.Configuración.Restablecer información de invitado</block>
+  <block id="c0acbac48fd78801142c21bfcc2d7f80" category="paragraph">Se utiliza para editar la información del sistema operativo invitado para una máquina virtual.</block>
+  <block id="b7f2f93f9ded16ef0cf42386d0a084de" category="paragraph">Máquina virtual.Configuración.Cambiar memoria</block>
+  <block id="7e417510f4c5b448e5e913a6e30e26c2" category="paragraph">Utilice esta opción para cambiar la cantidad de memoria asignada a la máquina virtual.</block>
+  <block id="0a90330abb3eb200a7ba0bf8a956104c" category="paragraph">Máquina virtual.Configuración.Cambiar el recuento de CPU</block>
+  <block id="7099548d8fb2bdd522f5dd68ea188fa2" category="paragraph">Se utiliza para cambiar el número de CPU virtuales.</block>
+  <block id="9dea3c37393731c874e9363f748cf20b" category="cell">*Virtual Machine Guest*</block>
+  <block id="5254bee77444f0715c2e30f4220be885" category="paragraph">Máquina virtual. Operaciones de invitado. Modificaciones de la operación de invitado</block>
+  <block id="864141f9bd9cc6a2551f6a1a984099e3" category="paragraph">Permite operaciones invitadas de máquinas virtuales que involucran cambios en un sistema operativo invitado en una máquina virtual, como la transferencia de un archivo a la máquina virtual.</block>
+  <block id="21cb03054cbe3a67055ca3df7a2ab77b" category="cell">* Interacción de la máquina virtual*</block>
+  <block id="075d18862c516c291ccc18b4ef715fe5" category="paragraph">Máquina virtual.Interacción.Apagado</block>
+  <block id="198a48c49bf020db667c8efb024e757e" category="paragraph">Utilice para apagar una máquina virtual encendida. Esta operación apaga el sistema operativo invitado.</block>
+  <block id="10bd34b60a2bda547e4bc8e9973f3e31" category="paragraph">Máquina virtual.Interacción.Encendido</block>
+  <block id="3fc8744b9995cd14b4bb7379533c3ba6" category="paragraph">Utilice el para encender una máquina virtual apagada y reanudar una máquina virtual suspendida.</block>
+  <block id="5192d6f694edc454343369b22dbfc5c6" category="paragraph">Instalación de Virtual Machine.Interaction.VMware Tools</block>
+  <block id="30519066cd3534ef7d314b2c9aacd55d" category="paragraph">Utilice para montar y desmontar el instalador del CD de VMware Tools como CD-ROM para el sistema operativo invitado.</block>
+  <block id="66fdc82624c87dcd5ceb484e44a95fdd" category="cell">* Inventario de máquinas virtuales*</block>
+  <block id="bb9a532fb645f8d94cb7c827a61302ea" category="paragraph">Máquina virtual.Inventory.Crear nuevo</block>
+  <block id="00b57b9dfd38ba20e57b6ef930030e86" category="paragraph">Se utiliza para crear una máquina virtual y asignar recursos para su ejecución.</block>
+  <block id="c28cfecb65a13c8091d476d8c65457e1" category="paragraph">Máquina virtual.Inventory.Register</block>
+  <block id="8e8abc11ed45aba5690c57962484db6d" category="paragraph">Utilice para añadir una máquina virtual existente a un inventario de host o una instancia de vCenter Server.</block>
+  <block id="db6d9006d2f72f5cf22c40fa1220b43a" category="paragraph">Máquina virtual.Inventory.Anular registro</block>
+  <block id="fa8ff1e1f1b39d6eb3b65050b2b1d275" category="paragraph">Utilice para cancelar el registro de una máquina virtual de un inventario de host o vCenter Server.</block>
+  <block id="3d021ff57844dddc6d9f4674f6934243" category="cell">*Estado de la máquina virtual*</block>
+  <block id="a9b3b608e7046721eb5ab1e0dbaf0c7d" category="paragraph">Máquina virtual. Gestión de Snapshot.</block>
+  <block id="0386636d5860b389e6185a8e3d1fc157" category="paragraph">Se utiliza para crear una instantánea a partir del estado actual de la máquina virtual.</block>
+  <block id="18f05db9c4723f1a48e0cddc8e00ec23" category="paragraph">Máquina virtual. Gestión de Snapshot. Eliminar instantánea</block>
+  <block id="653c42e482faf281af92e05d3ba79031" category="paragraph">Se utiliza para eliminar una instantánea del historial de instantáneas.</block>
+  <block id="d3aa03526082ef556ffca1a6a35a1775" category="paragraph">Máquina virtual. Gestión de Snapshot. Revertir a snapshot</block>
+  <block id="3817fbf7d76df44f4565ed3cde76a690" category="paragraph">Se utiliza para establecer el estado en el que estaba la máquina virtual en una snapshot determinada.</block>
+  <block id="d8e45589bc9d86b39aed3bcde52935ac" category="section-title">5 de julio de 2024</block>
+  <block id="7ee40b46e664d0d7baaad4da422c7457" category="list-text">*Soporte para la serie A de AFF*: Esta versión es compatible con las plataformas de hardware de la serie A de NetApp AFF.</block>
+  <block id="a1961f9eb07acee12f93a3f0b929745e" category="list-text">*Soporte para almacenes de datos VMware VMFS en las instalaciones a los locales*: Esta versión incluye una _technology preview_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere protegidos en el almacenamiento local. Con este lanzamiento, la recuperación de desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones al entorno VMware en las instalaciones con almacenes de datos VMFS.</block>
+  <block id="710abd7c1d5a2a3be1aa4c7dbff890cf" category="admonition">NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.</block>
+  <block id="282dc334473cc4944da587c83b4a1761" category="list-text">*Actualizaciones del plan de replicación*: Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de asignación de recursos.</block>
+  <block id="a1975f713c38b2cbf1c095ed7dbadabe" category="list-text">*Editar planes de replicación*: Con esta versión, la página de asignaciones de failover se ha mejorado para una mayor claridad.</block>
+  <block id="e9558a079e21d43034f54a99b19f2ad7" category="inline-link">Gestionar planes</block>
+  <block id="583edef1d12ac8fcf925b864da2d76c6" category="paragraph">Consulte<block ref="a8a4a23c947d3e2e3dc169027b7cac12" category="inline-link-rx"></block>.</block>
+  <block id="2343906acc207119786e118da0bbadf7" category="list-text">*Editar VMs*: Con esta versión, el proceso de edición de VMs en el plan incluyó algunas mejoras menores de UI.</block>
+  <block id="5f1df9fa6d6ce95c36680ae870250af7" category="inline-link">Gestionar máquinas virtuales</block>
+  <block id="f7e4cafc0e54e03cc0ff738b39e333cb" category="paragraph">Consulte<block ref="1d44a072309f2a4f38fd6e17ed7eb631" category="inline-link-rx"></block>.</block>
+  <block id="51c73608632a284eecfb3fce29106b26" category="list-text">* Fallo de actualizaciones*: Antes de iniciar una conmutación por error, ahora puede determinar el estado de las VM y si están encendidas o apagadas. Ahora el proceso de conmutación por error le permite tomar una copia Snapshot ahora o elegir las instantáneas.</block>
+  <block id="ab132121a366abdd7667443cc98f3a69" category="paragraph">Consulte<block ref="1cbf59ee3e77dd0082612a21b0900f81" category="inline-link-rx"></block>.</block>
+  <block id="66dacd6d538323484187ed3f8c9ef650" category="list-text">* Programas de prueba de conmutación por error*: Ahora puede editar las pruebas de conmutación por error y establecer horarios diarios, semanales y mensuales para la prueba de conmutación por error.</block>
+  <block id="42b40c3ce2e25adae8327795c655116d" category="list-text">*Actualizaciones de la información de requisitos previos*: Se ha actualizado la información de requisitos previos de recuperación de desastres de BlueXP.</block>
+  <block id="8a62eb7f743049ce2523fe7eb67fb48f" category="paragraph">Consulte<block ref="dfd63f4ad4adb15a66b44e212e2488b7" category="inline-link-rx"></block>.</block>
+  <block id="2e57ab34890abd985ae5cff7c16db6f6" category="list-text">En el lado izquierdo de la página Applications, puede buscar almacenes de datos.</block>
+  <block id="9d84acdf93849adb3b0acbaaf1af7071" category="paragraph"><block ref="0a9d2462a8c27f9a697547bddae93987" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8020af4fa709c3156161baa6bf00e88a" category="inline-image-macro">Plan de replicación, pestaña Asignación de recursos</block>
+  <block id="0d5dff4bbd2c70484d25c822afa80986" category="paragraph"><block ref="0d5dff4bbd2c70484d25c822afa80986" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="da06c5c1d28e308403236438dda209dc" category="list-text">*Datacenters de origen y destino*</block>
+  <block id="bf0db130eb2746cb5707eb7ebd4e997b" category="list-text">*Host objetivo* (opcional)</block>
+  <block id="228db5aff5c10fb4007bcfc106b96eac" category="list-text">*Target cluster* (opcional)</block>
+  <block id="396f79fd09d35663fad706f8d93d48ba" category="list-text">*Carpeta de VM de destino* (opcional): Utilice esto para crear una nueva carpeta raíz para almacenar las VM seleccionadas.</block>
+  <block id="210dfd955522333f74e13d0843ab02ff" category="paragraph">Esta sección puede estar activada o desactivada en función de su selección.</block>
+  <block id="30cb4638cdd1e514eba27473e745afb4" category="paragraph">En la pestaña Test maps, las asignaciones de máquinas virtuales y almacenes de datos están deshabilitadas.</block>
+  <block id="ebcc6bc6ad0c177b30c661fc23c0f951" category="list-text">Revise la información en cada pestaña: Detalles del plan, asignación de conmutación por error, máquinas virtuales.</block>
+  <block id="711c35de4b0430b043159f5d91f6752f" category="inline-image-macro">Página de conmutación por error</block>
+  <block id="c29c6e0ccfc363d2f29bc8ad4397f5bb" category="paragraph"><block ref="c29c6e0ccfc363d2f29bc8ad4397f5bb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="418818fc05931805b481fbdf48b3a075" category="list-text">En la página Failover, inicie una copia de Snapshot ahora o elija la Snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.</block>
+  <block id="51d5fa513676d68f3e574487650b021d" category="paragraph">Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.</block>
+  <block id="7d0da89e5c4df500c537ba4145ed8fae" category="list-text">Opcionalmente, seleccione *Forzar conmutación por error* si desea que se produzca la conmutación por error incluso si se detecta un error que normalmente evitaría que se produzca la conmutación por error.</block>
+  <block id="544bb990c26b075198ab3593eb235cab" category="list-text">Escriba «failover» en el cuadro.</block>
+  <block id="d3c41fabd7d85897eb0f306101f87e33" category="list-text">Seleccione *fail over*.</block>
+  <block id="9aaabae265e2785e58b6618d73b8e267" category="summary">Puedes echar un vistazo rápido a todos tus recursos de recuperación ante desastres de BlueXP y gestionar sitios de vCenter, grupos de recursos y planes de replicación.</block>
+  <block id="592189bb19e09b41686c42842ae7f60a" category="doc">Administre la información de sitios, grupos de recursos, planes de replicación, almacenes de datos y máquinas virtuales</block>
+  <block id="88947748ef8b3b00cf2cf0c3999a702e" category="paragraph">Puede desactivar, activar y suprimir planes de replicación. Puede cambiar los horarios.</block>
+  <block id="fa62d17ad222d305b611f8c161aab288" category="list-text">Para agregar o editar las máquinas virtuales, seleccione la pestaña * Máquinas virtuales * y seleccione la opción * Agregar máquinas virtuales * o el icono * Editar *.</block>
+  <block id="714c8620cd504e0c90291fad7b5c119f" category="list-text">Para establecer o cambiar un programa de prueba de conmutación por error o establecer la comprobación de frecuencia de cumplimiento, seleccione la opción *Acciones* <block ref="2fddd650b01c7f9674be856867aae05d" category="inline-image-macro-rx" type="image"></block> a la derecha del plan y seleccione *Editar horarios*.</block>
+  <block id="6774836d1489d59b22c26b6c62f0749c" category="list-text">En la página Edit schedules, introduzca la frecuencia en minutos que desea que se realice la comprobación de cumplimiento de la conmutación por error.</block>
+  <block id="919f04c7393ca337da4d5ecf62b924fc" category="list-text">Marque *Ejecutar pruebas de failover en un horario*.</block>
+  <block id="87446024d70eefcd64c28443544975b4" category="list-text">En la opción Repetir, seleccione la programación diaria, semanal o mensual.</block>
+  <block id="a1d594c41e91785ad3637cf3bff4ade5" category="summary">La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Puede supervisar todos los trabajos de recuperación ante desastres y determinar su progreso.</block>
+  <block id="554cfab3938e21d9270bd6b75931f96f" category="sidebar">Vídeos</block>
+  <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Referencia</block>
+  <block id="b80f9ccd1ed052ae2d1a95c50bd37d8b" category="sidebar">Privilegios de vCenter necesarios para la recuperación ante desastres de BlueXP</block>
 </blocks>

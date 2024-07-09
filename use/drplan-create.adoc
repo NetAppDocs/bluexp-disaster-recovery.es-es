@@ -69,12 +69,13 @@ El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de rec
 TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya aquí.
 
 .Pasos
+. En el lado izquierdo de la página Applications, puede buscar almacenes de datos.
 . En la parte izquierda de la página Aplicaciones, seleccione las máquinas virtuales que desea replicar y asignar al grupo seleccionado.
 +
 La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que agrega una máquina virtual al último grupo, se agrega otro grupo.
 
 +
-image:dr-plan-create-apps-vms.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
+image:dr-plan-create-apps-vms3.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
 
 . Opcionalmente, realice cualquiera de las siguientes acciones:
 +
@@ -102,15 +103,28 @@ Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus
 
 .Pasos
 . En la página Asignación de recursos, para utilizar las mismas asignaciones tanto para operaciones de failover como de prueba, marque la casilla.
++
+image:dr-plan-resource-mapping.png["Plan de replicación, pestaña Asignación de recursos"]
+
 . En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada uno:
 +
 ** *Recursos de computación*
++
+*** *Datacenters de origen y destino*
+*** *Host objetivo* (opcional)
+*** *Target cluster* (opcional)
+*** *Carpeta de VM de destino* (opcional): Utilice esto para crear una nueva carpeta raíz para almacenar las VM seleccionadas.
+
+
 ** *Redes virtuales*
 
 
 . En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso:
 +
 ** *Máquinas virtuales*: Seleccione el mapeo de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento apropiado para asignar la máquina virtual.
++
+Esta sección puede estar activada o desactivada en función de su selección.
+
 +
 SnapMirror se encuentra en el nivel de volumen. Por lo tanto, todos los equipos virtuales se replican en el destino de replicación. Asegúrese de seleccionar todas las máquinas virtuales que formen parte del almacén de datos. Si no se seleccionan, solo se procesan las máquinas virtuales que forman parte del plan de replicación.
 
@@ -134,6 +148,9 @@ Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de d
 ** *Replicaciones consistentes con la aplicación*: Indica si se deben crear copias Snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, realizará una snapshot para obtener un estado coherente de la aplicación.
 ** *Almacenes de datos*: En función de la selección de máquinas virtuales, los mapeos de almacenes de datos se seleccionan automáticamente.
 +
+Esta sección puede estar activada o desactivada en función de su selección.
+
++
 *** *RPO*: Introduzca el objetivo de punto de recuperación (RPO) para indicar la cantidad de datos a recuperar (medido en tiempo). Por ejemplo, si introduce un objetivo de punto de recuperación de 60 minutos, la recuperación debe tener datos que no tengan una antigüedad superior a 60 minutos en todo momento. Si hay un desastre, está permitiendo la pérdida de hasta 60 minutos de datos. Además, introduzca la cantidad de copias de Snapshot que se retendrán para todos los almacenes de datos.
 *** *Relaciones de SnapMirror*: Si un volumen ya tiene una relación de SnapMirror establecida, se pueden seleccionar los almacenes de datos de origen y de destino correspondientes. Si selecciona un volumen que no tiene una relación de SnapMirror, puede crear uno ahora mediante la selección del entorno de trabajo y su SVM entre iguales.
 +
@@ -154,6 +171,9 @@ NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster
 
 
 . Para establecer diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Correspondencias de prueba*. Revise cada pestaña como antes, pero esta vez para el entorno de prueba.
++
+En la pestaña Test maps, las asignaciones de máquinas virtuales y almacenes de datos están deshabilitadas.
+
 +
 
 TIP: Más tarde, puede probar todo el plan. Ahora mismo está configurando las asignaciones para el entorno de prueba.

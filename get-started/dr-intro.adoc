@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
 keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back 
-summary: La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en nubes públicas como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp. 
+summary: La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres. 
 ---
 = Obtén más información sobre la recuperación ante desastres de BlueXP para VMware
 :hardbreaks:
@@ -14,11 +14,14 @@ summary: La recuperación de desastres en el cloud es una forma resiliente y ren
 [role="lead"]
 La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.
 
-La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS en las instalaciones que ejecutan el almacenamiento de NetApp en una de las siguientes opciones:
+La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con el servicio de recuperación ante desastres de BlueXP, puede proteger las cargas de trabajo basadas en NFS en las instalaciones y en una vista previa tecnológica, los almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere que ejecutan almacenamiento NetApp en una de las siguientes opciones:
 
 * VMware Cloud (VMC) en AWS con Amazon FSx para NetApp ONTAP o.
 * Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP
 
+
+
+IMPORTANT: Con esta versión, la recuperación ante desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones a entornos VMware en las instalaciones con almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere. NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
 
 La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
 
@@ -57,7 +60,10 @@ NOTE: La configuración del servidor vSphere se realiza fuera de la recuperació
 
 NetApp no te cobra por usar la versión de prueba de la recuperación ante desastres de BlueXP.
 
-El servicio de recuperación ante desastres de BlueXP puede usarse con una licencia NetApp o un plan basado en suscripción anual a través de Amazon Web Services Marketplace.
+El servicio de recuperación ante desastres de BlueXP puede usarse con una licencia NetApp o un plan basado en suscripción anual a través de Amazon Web Services.
+
+
+IMPORTANT: Algunos lanzamientos incluyen una vista previa de la tecnología. NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa. Consulte link:../release-notes/dr-whats-new.html["Novedades en la recuperación ante desastres de BlueXP"] para obtener información sobre las últimas vistas previas de la tecnología.
 
 
 

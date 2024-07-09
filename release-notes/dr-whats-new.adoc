@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
-keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter 
+keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas 
 summary: La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en nubes públicas como sitio de recuperación ante desastres mediante el almacenamiento en la nube de NetApp. 
 ---
 = Lo nuevo
@@ -13,6 +13,46 @@ summary: La recuperación de desastres de BlueXP es un servicio de recuperación
 
 [role="lead"]
 Descubre las novedades de la recuperación ante desastres de BlueXP.
+
+
+
+== 5 de julio de 2024
+
+Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
+
+* *Soporte para la serie A de AFF*: Esta versión es compatible con las plataformas de hardware de la serie A de NetApp AFF.
+
+
+* *Soporte para almacenes de datos VMware VMFS en las instalaciones a los locales*: Esta versión incluye una _technology preview_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere protegidos en el almacenamiento local. Con este lanzamiento, la recuperación de desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones al entorno VMware en las instalaciones con almacenes de datos VMFS.
++
+
+NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
+
+* *Actualizaciones del plan de replicación*: Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de asignación de recursos.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+* *Editar planes de replicación*: Con esta versión, la página de asignaciones de failover se ha mejorado para una mayor claridad.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes"].
+
+* *Editar VMs*: Con esta versión, el proceso de edición de VMs en el plan incluyó algunas mejoras menores de UI.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar máquinas virtuales"].
+
+* * Fallo de actualizaciones*: Antes de iniciar una conmutación por error, ahora puede determinar el estado de las VM y si están encendidas o apagadas. Ahora el proceso de conmutación por error le permite tomar una copia Snapshot ahora o elegir las instantáneas.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
+
+* * Programas de prueba de conmutación por error*: Ahora puede editar las pruebas de conmutación por error y establecer horarios diarios, semanales y mensuales para la prueba de conmutación por error.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes"].
+
+* *Actualizaciones de la información de requisitos previos*: Se ha actualizado la información de requisitos previos de recuperación de desastres de BlueXP.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["Requisitos previos de recuperación ante desastres de BlueXP"].
+
+
 
 
 

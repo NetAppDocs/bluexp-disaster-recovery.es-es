@@ -75,12 +75,8 @@ Cuando finalice la prueba gratuita, puedes comprar una licencia de NetApp o susc
 
 .Pasos
 . En la recuperación ante desastres de BlueXP, verás un mensaje que indica que la prueba gratuita ha caducado. En el mensaje, seleccione *Suscribir o comprar una licencia*.
-+
-image:draas-license-subscribe2.png["La página de métodos de pago de recuperación de desastres de BlueXP"]
-
 . Seleccione *Suscribirse en AWS Marketplace*.
-. En AWS Marketplace, selecciona *Ver opciones de compra*.
-. Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.
+. En AWS Marketplace, selecciona *Ver opciones de compra*. Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.
 . Cuando vuelve a la recuperación ante desastres de BlueXP, hay un mensaje que dice que está suscrito.
 +
 Para ver los detalles de la suscripción en la cartera digital de BlueXP, selecciona *Ver detalles de la suscripción* y mira la suscripción activa en la página *Suscripciones*.

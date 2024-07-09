@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/monitor-jobs.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Puede supervisar todos los trabajos de recuperación ante desastres y determinar su progreso. 
 ---
 = Supervisar los trabajos de recuperación ante desastres
 :hardbreaks:
@@ -20,34 +20,4 @@ Puede supervisar todos los trabajos de recuperación ante desastres y determinar
 . Explore todos los trabajos relacionados con las operaciones y revise sus marcas de tiempo y estado.
 . Para ver los detalles de un trabajo concreto, seleccione esa fila.
 . Para actualizar la información, selecciona *Actualizar*.
-
-
-
-
-== Cancelar un trabajo
-
-Si hay un trabajo en curso y no desea que continúe, puede cancelarlo. Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola. Es posible que desee cancelar un trabajo antes de agotar el tiempo de espera.
-
-Para cancelar un trabajo, se utiliza Swagger.
-
-.Antes de empezar
-Para cancelar un trabajo, debe tener el ID de cuenta.
-
-.Pasos
-. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
-. En el menú superior, selecciona *Monitoreo de trabajos*.
-. En la página Monitor de trabajos, anote el ID del trabajo que desea cancelar.
-. Acceda a la URL de Swagger de recuperación ante desastres de BlueXP: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_["Swagger"^].
-+
-"https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Jobs/put_jobmanager_v2_jobs__jobId_"[]
-
-+
-image:dr-swagger-job-cancel.png["Página Swagger que muestra cómo cancelar un trabajo"]
-
-+
-Para obtener más información sobre Swagger, consulte https://swagger.io/docs/["Documentos de Swagger"^].
-
-. Desde Swagger, obtenga el token de seguridad, también llamado _bearer token_, de la opción Autorizar.
-. Introduzca el ID de cuenta y el ID de trabajo.
-. Seleccione *probar*.
 

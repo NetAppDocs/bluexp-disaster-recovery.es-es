@@ -18,23 +18,23 @@ A continuación encontrarás una descripción general de los pasos necesarios pa
 [role="quick-margin-para"]
 link:../get-started/dr-prerequisites.html["Asegúrese de que su entorno cumpla estos requisitos"].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Configurar el servicio de recuperación ante desastres
-[role="quick-margin-para"]
-link:../get-started/dr-setup.html["Complete los pasos necesarios para configurar el servicio"].
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Configura el servicio de recuperación ante desastres de BlueXP
+[role="quick-margin-list"]
+* link:../get-started/dr-setup.html["Configurar la infraestructura para el servicio"].
+* link:../get-started/dr-licensing.html["Configurar la licencia"].
 
-[role="quick-margin-para"]
-link:../get-started/dr-licensing.html["Complete los pasos para configurar la licencia"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] El futuro
 [role="quick-margin-para"]
 Después de configurar el servicio, esto es lo que puede hacer a continuación.
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["Añada sitios de vCenter"].
-* link:../use/drplan-create.html["Cree un plan de recuperación ante desastres"].
+* link:../use/sites-add.html["Añade tus sitios de vCenter a la recuperación ante desastres de BlueXP"].
+* link:../use/manage.html#manage-resource-groups["Cree su primer grupo de recursos"].
+* link:../use/drplan-create.html["Cree su primer plan de replicación"].
 * link:../use/replicate.html["Replicar aplicaciones en otro sitio"].
 * link:../use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
 * link:../use/failback.html["Realice una conmutación por error de las aplicaciones en el sitio de origen original"].
-* link:../use/manage.html["Administre la información de sitios, planes, almacenes de datos y máquinas virtuales"].
+* link:../use/manage.html["Gestione sitios, grupos de recursos y planes de replicación"].
 * link:../use/monitor-jobs.html["Supervisar las operaciones de recuperación ante desastres"].
 

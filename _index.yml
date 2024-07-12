@@ -44,11 +44,6 @@ indexpage:
     - title: Realice una conmutación por error de las aplicaciones en el sitio de
         origen original
       url: "/use/failback.html"
-    - title: Administre la información de sitios, planes, almacenes de datos y máquinas
-        virtuales
-      url: "/use/manage.html"
-    - title: Supervisar los trabajos de recuperación ante desastres
-      url: "/use/monitor-jobs.html"
   - title: Blogs y comunidad
     links:
     - title: Comunidad de NetApp

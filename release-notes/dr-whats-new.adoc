@@ -16,6 +16,43 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 
 
+== 17 de julio de 2024
+
+Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
+
+* * Programas de prueba de conmutación por error*: Esta versión incluye actualizaciones de la estructura del programa de prueba de conmutación por error, que era necesaria para soportar los horarios diarios y semanales. Esta actualización requiere que desactive y vuelva a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
++
+Le contamos cómo:
+
++
+.. En el menú superior, selecciona *Planes de replicación*.
+.. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
+.. Seleccione *Desactivar*.
+.. Después de unos minutos, selecciona *Habilitar*.
+
+
+* *Actualizaciones del plan de replicación*: Esta versión incluye actualizaciones de los datos del plan de replicación, que resuelve un problema de “instantánea no encontrada”. Esto requiere cambiar el recuento de retención en todos los planes de replicación a 1 e iniciar una instantánea bajo demanda. Este proceso crea una nueva copia de seguridad y elimina todas las copias de seguridad más antiguas.
++
+Le contamos cómo:
+
++
+.. En el menú superior, selecciona *Planes de replicación*.
+.. Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el icono del lápiz *Editar*.
+.. Haga clic en la flecha *datastores* para expandirla.
++
+image:use/dr-plan-failover-edit.png["Editar la página de asignaciones de failover"]
+
+.. Observe el valor del recuento de retención en el plan de replicación. Tendrá que restablecer este valor original cuando haya terminado con estos pasos.
+.. Reduzca el conteo a 1.
+.. Inicie una snapshot bajo demanda. Para hacerlo, en la página del plan de replicación, seleccione el plan, haga clic en el icono Acciones y seleccione *Tomar instantánea ahora*.
+.. Una vez que el trabajo de instantánea se haya completado correctamente, aumente el recuento del plan de replicación hasta el valor original que anotó en el primer paso.
+.. Repita estos pasos para todos los planes de replicación existentes.
+
+
+
+
+
+
 == 5 de julio de 2024
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:

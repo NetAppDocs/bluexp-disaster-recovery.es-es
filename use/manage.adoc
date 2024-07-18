@@ -84,6 +84,21 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 
 
 
+=== Cambiar el recuento de retención para programas de conmutación por error
+
+Es posible cambiar cuántos almacenes de datos se retienen.
+
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el icono del lápiz *Editar*.
+. Haga clic en la flecha *datastores* para expandirla.
++
+image:../use/dr-plan-failover-edit.png["Editar la página de asignaciones de failover"]
+
+. Cambie el valor del recuento de retención en el plan de replicación.
+
+
+
+
 == Ver la información de los almacenes de datos
 
 Es posible ver información sobre cuántos almacenes de datos existen en el origen y en el destino.

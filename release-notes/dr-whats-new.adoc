@@ -16,6 +16,23 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 
 
+== 2 de agosto de 2024
+
+Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
+
+* *Compatibilidad con almacenes de datos VMware VMFS en las instalaciones para FC*: Esta versión incluye una _vista previa de tecnología_ de soporte para VM montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para FC protegido en almacenamiento local. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para ISCI. Con este lanzamiento, la recuperación de desastres de BlueXP admite una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones y un entorno VMware en las instalaciones con almacenes de datos VMFS para FC.
++
+
+NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
+
+* *Cancelación de trabajo*: Con esta versión, ahora puede cancelar un trabajo en la interfaz de usuario de Job Monitor.
++
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Supervisar trabajos"].
+
+
+
+
+
 == 17 de julio de 2024
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
@@ -65,10 +82,7 @@ Esta versión de recuperación de desastres de BlueXP incluye las siguientes act
 
 NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
 
-* *Actualizaciones del plan de replicación*: Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de asignación de recursos.
-+
-Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
-
+* *Actualizaciones del plan de replicación*: Puede agregar un plan de replicación más fácilmente filtrando las VM por almacén de datos en la página Aplicaciones y mediante selecti//consulte link:../use/drplan-create.html["Cree un plan de replicación"]. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"]. Ng Más detalles de destino en la página de asignación de recursos.
 * *Editar planes de replicación*: Con esta versión, la página de asignaciones de failover se ha mejorado para una mayor claridad.
 +
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes"].

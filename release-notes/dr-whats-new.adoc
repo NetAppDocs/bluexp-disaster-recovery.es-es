@@ -20,7 +20,7 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Compatibilidad con almacenes de datos VMware VMFS en las instalaciones para FC*: Esta versión incluye una _vista previa de tecnología_ de soporte para VM montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para FC protegido en almacenamiento local. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para ISCI. Con este lanzamiento, la recuperación de desastres de BlueXP admite una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones y un entorno VMware en las instalaciones con almacenes de datos VMFS para FC.
+* *Compatibilidad con almacenes de datos VMware VMFS en las instalaciones para FC*: Esta versión incluye una _vista previa de tecnología_ de soporte para VM montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para FC protegido en almacenamiento local. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para iSCSI.
 +
 
 NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.

@@ -35,5 +35,5 @@ Si un trabajo está en curso o en estado en cola y no desea que continúe, puede
 +
 El trabajo debe estar en el estado En curso o En cola.
 
-. En la columna Acciones, seleccione *Cancelar*.
+. En la columna Acciones, seleccione *Cancelar trabajo*.
 

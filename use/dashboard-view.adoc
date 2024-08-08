@@ -42,13 +42,10 @@ Para revisar los detalles del plan de replicación, seleccione *Ver todo* para u
 
 
 ** *Grupos de recursos*: Ver la salud de sus grupos de recursos. Un grupo de recursos puede tener uno de los siguientes estados:
+** *VMs protegidas*: Las VMs forman parte de un grupo de recursos.
+** *VMs sin protección*: Las VMs no forman parte de un grupo de recursos.
 +
-*** *VMs protegidas*: Las VMs forman parte de un grupo de recursos.
-*** *VMs sin protección*: Las VMs no forman parte de un grupo de recursos.
-+
-Para revisar los detalles del grupo de recursos, selecciona *Ver todo* para un estado o *Ver grupos de recursos* para verlos todos.
-
-
+Para revisar los detalles, seleccione el enlace *Ver* debajo de cada uno.
 
 ** La cantidad de conmutaciones al respaldo, pruebas de recuperación tras fallos y migraciones. Por ejemplo, si creó dos planes y migró a los destinos, el recuento de migraciones aparece como «2».
 

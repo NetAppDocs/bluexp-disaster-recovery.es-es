@@ -84,7 +84,7 @@ TIP: Una vez que se inicia la conmutación al respaldo, es posible ver las máqu
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *fail over*.
 +
-image:dr-plan-failover.png["Página de conmutación por error"]
+image:dr-plan-failover2.png["Página de conmutación por error"]
 
 . En la página Failover, inicie una copia de Snapshot ahora o elija la Snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.
 +

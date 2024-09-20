@@ -16,6 +16,24 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 
 
+== 20 de septiembre de 2024
+
+Esta versión de recuperación ante desastres de BlueXP  incluye la siguiente actualización.
+
+* *Compatibilidad con almacenes de datos VMware VMFS locales a locales*: Esta versión incluye soporte para VM montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) VMware vSphere para iSCSI y FC protegidos para almacenamiento local. Anteriormente, el servicio ofrecía una _technology preview_ que admitía los almacenes de datos VMFS para iSCSI y FC.
++
+A continuación se muestran algunas consideraciones adicionales relativas a los protocolos iSCSI y FC:
+
++
+** La compatibilidad con FC es para los protocolos de interfaz de cliente, no para la replicación.
+** La recuperación ante desastres de BlueXP  solo admite una única LUN por volumen ONTAP. El volumen no debe tener varios LUN.
+** Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas. Por ejemplo, si el origen utiliza un protocolo FC, el destino debe utilizar también FC.
+
+
+
+
+
+
 == 2 de agosto de 2024
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:

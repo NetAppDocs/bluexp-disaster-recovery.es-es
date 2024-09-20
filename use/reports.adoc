@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: use/reports.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Puede supervisar todos los trabajos de recuperación ante desastres y determinar su progreso. 
+---
+= Crear informes de recuperación tras siniestros
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+La revisión de los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos y las recuperaciones tras fallos, detalles de replicación en todos los sitios y detalles de tareas del año pasado. También puede crear informes personalizados.
+
+Es posible descargar los informes en formato PDF.
+
+.Pasos
+. En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
+. En el menú superior, selecciona *Informes*.
++
+image:dr-reports.png["Informes"]
+
+. Antes de crear o descargar un informe, actualice los datos haciendo clic en la opción *Actualizar*.
+. Seleccione un informe de la pestaña *Listo* o cree su propio informe en la pestaña *Personalizado*.
+. Descargue un informe haciendo clic en *Descargar*.
+
+
+
+
+== Cree su propio informe de recuperación ante desastres
+
+Puede crear un informe personalizado donde puede especificar las ubicaciones, los planes de replicación y los datos. Puede especificar si desea incluir resúmenes de conmutación por error y conmutación por recuperación del año anterior, detalles de VM para cada plan de replicación y detalles de trabajo para cada plan de replicación del año anterior.
+
+. En el menú superior, selecciona *Informes*.
+. Antes de crear un informe, actualice los datos haciendo clic en la opción *Actualizar*.
+. Seleccione la pestaña *Custom*.
+. Selecciona *Añadir* para añadir un nuevo informe.
++
+image:dr-reports-add.png["Cuadro de diálogo Agregar informe personalizado"]
+
+. Seleccione las opciones para personalizar el informe:
++
+** Sitios
+** Planes de replicación
+** SQL Server
++
+*** Resumen de los fallos y las recuperaciones tras fallos del año pasado
+*** Detalles de VM para cada plan de replicación
+*** Detalles del trabajo para cada plan de replicación del año pasado
+
+
+
+
+. Selecciona *Añadir* para añadir un nuevo informe.
++
+El informe personalizado aparece en la lista de informes personalizados.
+
++
+
+TIP: Para ver todos los sitios o planes incluidos en el informe, haga clic en el número a la derecha del nombre del informe o los nombres de planes.
+
+. Descargue su informe personalizado haciendo clic en *Descargar*.
+

@@ -16,6 +16,12 @@ Las limitaciones conocidas identifican plataformas, dispositivos o funciones que
 
 
 
+== Espere hasta que se complete la conmutación por recuperación antes de ejecutar la detección
+
+Después de finalizar la conmutación al nodo de respaldo, no inicie la detección manualmente en la instancia de vCenter de origen. Espere hasta que termine la conmutación de retorno tras recuperación e inicie la detección en la instancia de vCenter de origen.
+
+
+
 == Es posible que BlueXP no descubra Amazon FSx para NetApp ONTAP
 
 A veces, BlueXP no detecta clústeres de Amazon FSx para NetApp ONTAP. Esto podría deberse a que las credenciales de FSx no eran correctas.

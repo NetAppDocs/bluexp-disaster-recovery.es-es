@@ -336,9 +336,6 @@ La recuperación ante desastres de BlueXP no requiere habilitación. La opción 
   <block id="b2f702d4d241c0d53726eedc499ac784" category="paragraph">Estos planes a veces se llaman _blueprints_.</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">Un asistente le guiará por los siguientes pasos:</block>
   <block id="8705d6076cb452e919a6e22862427440" category="list-text">Seleccione vCenter Servers</block>
-  <block id="8b89ed4b8e4a4b16d551a86114a0c361" category="list-text">Seleccione las máquinas virtuales que desea replicar y asignar grupos</block>
-  <block id="0ee5515fd7a8d972a5df4c4eb08b18f2" category="list-text">Identifique la recurrencia</block>
-  <block id="febc3cdab40dc222679ce1e42cce7011" category="list-text">Revise el plan</block>
   <block id="d72f4a94d857178ae5cb1420995137e4" category="inline-image-macro">Captura de pantalla que muestra la página Agregar plan de replicación &amp;gt; Agregar plan</block>
   <block id="6961a5b80d0429840ea8a9232c79ec6f" category="paragraph"><block ref="b3b324f474892662518dcbec32158ea5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="466ea193e548e9ef8d853f2da4829a3e" category="list-text">Cree un nombre para el plan de replicación.</block>
@@ -920,8 +917,6 @@ Después de comprar una licencia de recuperación ante desastres de BlueXP para 
   <block id="7906e2e007c3bad108fcd7ed7311a131" category="paragraph"><block ref="7906e2e007c3bad108fcd7ed7311a131" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6dbc81f47f4a822cd11ce7c8403756ed" category="list-text">En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada uno.</block>
   <block id="022ab008c31f5588f9d15da4dc3439fb" category="list-text">*Recursos de cómputo*: Selecciona la flecha hacia abajo junto a *Recursos de cómputo*.</block>
-  <block id="023cde6974e67dee3aff7c64e3290e80" category="list-text">Clúster de origen</block>
-  <block id="221533a77747ed01c409141d8985b5fe" category="list-text">Clúster de destino (opcional)</block>
   <block id="5bfe17be68350c18dc777bcfabdd7a8f" category="list-text">*Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Introduzca o seleccione la LAN virtual de origen y el segmento de destino.</block>
   <block id="a358a5c755a9f869690207e2a0726737" category="list-text">*Máquinas virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Máquinas virtuales*.</block>
   <block id="909f84e264f0200a692127b28fbdbaaf" category="paragraph">Seleccione la asignación de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento apropiado para asignar la máquina virtual.</block>
@@ -934,4 +929,47 @@ Después de comprar una licencia de recuperación ante desastres de BlueXP para 
   <block id="10936c8535aaede0ed75f5d8d4fa6aaf" category="list-text">*Conteo de retención*: Introduzca el número de instantáneas que desea conservar.</block>
   <block id="b23c862689b973964a4b79af3d87b2de" category="list-text">*Almacenes de datos de origen y destino*: Si un volumen tiene una relación SnapMirror ya establecida, puede seleccionar los almacenes de datos de origen y destino correspondientes. Si selecciona un volumen que no tiene una relación de SnapMirror, puede crear uno ahora mediante la selección del entorno de trabajo y su SVM entre iguales.</block>
   <block id="8772d236d3c62b688c3b57224d982ee1" category="paragraph"><block ref="8772d236d3c62b688c3b57224d982ee1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1267d6fc2aff2a3372b02b4d25a9f397" category="list-text">Realice una prueba de recuperación tras fallos; las máquinas virtuales se crean temporalmente. La recuperación ante desastres de BlueXP  crea un nuevo volumen FlexClone de la Snapshot seleccionada, y se asigna un almacén de datos temporal que respalda el volumen de FlexClone a los hosts ESXi. Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.</block>
+  <block id="76e4d72594030fca0b96279d0f8392dc" category="section-title">Términos que pueden ayudarle con la recuperación ante desastres de BlueXP </block>
+  <block id="b7b26d16c3d1d84d3872afa1f04c92d6" category="paragraph">Puede que se le beneficie si entiende alguna terminología relacionada con la recuperación ante desastres.</block>
+  <block id="7f800e59a5bd3f98ce900fa6e543f67d" category="list-text">*Sitio*: Un contenedor lógico asociado típicamente a un centro de datos físico o proveedor de la nube.</block>
+  <block id="1060a69dfe06a51ad97fdd63bb36b6c6" category="list-text">*Grupo de recursos*: Un contenedor lógico que le permite administrar múltiples VM como una sola unidad.</block>
+  <block id="01f306e8e2e64b0a1d39d18d7594ecf5" category="list-text">*Plan de replicación*: Un conjunto de reglas sobre la frecuencia con la que se producen las copias de seguridad y cómo manejar los eventos de conmutación por error. Los planes se asignan a uno o más grupos de recursos.</block>
+  <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">Espere hasta que se complete la conmutación por recuperación antes de ejecutar la detección</block>
+  <block id="a59aaedc864081e6c1a7bd46bcdf9813" category="paragraph">Después de finalizar la conmutación al nodo de respaldo, no inicie la detección manualmente en la instancia de vCenter de origen. Espere hasta que termine la conmutación de retorno tras recuperación e inicie la detección en la instancia de vCenter de origen.</block>
+  <block id="eaecda6db64f5346d5c63bfe0094e040" category="section-title">20 de septiembre de 2024</block>
+  <block id="ee811bd919a27bd2eb705f65ed45e4f6" category="paragraph">Esta versión de recuperación ante desastres de BlueXP  incluye la siguiente actualización.</block>
+  <block id="b077aa4f9a421cc2e2782608fb5caf4f" category="list-text">*Compatibilidad con almacenes de datos VMware VMFS locales a locales*: Esta versión incluye soporte para VM montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) VMware vSphere para iSCSI y FC protegidos para almacenamiento local. Anteriormente, el servicio ofrecía una _technology preview_ que admitía los almacenes de datos VMFS para iSCSI y FC.</block>
+  <block id="0eb65976c0b0c5ffa90b07d4a062e509" category="paragraph">A continuación se muestran algunas consideraciones adicionales relativas a los protocolos iSCSI y FC:</block>
+  <block id="d671bd2f503deef1e03581ce8d516507" category="list-text">La compatibilidad con FC es para los protocolos de interfaz de cliente, no para la replicación.</block>
+  <block id="cf1967c6d778937fae37b9e43582b1b6" category="list-text">La recuperación ante desastres de BlueXP  solo admite una única LUN por volumen ONTAP. El volumen no debe tener varios LUN.</block>
+  <block id="f3a37c3560d0027bc0f49abfab4ab0e3" category="list-text">Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas. Por ejemplo, si el origen utiliza un protocolo FC, el destino debe utilizar también FC.</block>
+  <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">Seleccione vCenter Servers.</block>
+  <block id="cfb3b856fe141dd537038393a8052d33" category="list-text">Seleccione las máquinas virtuales que desea replicar y asignar grupos.</block>
+  <block id="8e635b1aadad234871ba0e012309361f" category="list-text">Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.</block>
+  <block id="1c10305a999dce53cb52dd4f6b8d89ff" category="list-text">Revise el plan.</block>
+  <block id="054b753af44fc4eeee43c9ba6037caaa" category="doc">Crear informes de recuperación tras siniestros</block>
+  <block id="282dfbc5927b79619ad76e7f3cbfe3c6" category="paragraph">La revisión de los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos y las recuperaciones tras fallos, detalles de replicación en todos los sitios y detalles de tareas del año pasado. También puede crear informes personalizados.</block>
+  <block id="08efd64e87408e4769275d6a11482ddf" category="paragraph">Es posible descargar los informes en formato PDF.</block>
+  <block id="b775ae7fb34855ffeede56666da9a15c" category="list-text">En el menú superior, selecciona *Informes*.</block>
+  <block id="44f0d43cd92781ec793d9ba50c2d422e" category="inline-image-macro">Informes</block>
+  <block id="a73757daae33bff01ded292e39f3ddaf" category="paragraph"><block ref="a73757daae33bff01ded292e39f3ddaf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ccbbafbdd477e2f028bfd34e03f436b" category="list-text">Antes de crear o descargar un informe, actualice los datos haciendo clic en la opción *Actualizar*.</block>
+  <block id="c83e2a522238e98593e337bd5a7311b5" category="list-text">Seleccione un informe de la pestaña *Listo* o cree su propio informe en la pestaña *Personalizado*.</block>
+  <block id="70db9063910acf1265d5a518168c69cd" category="list-text">Descargue un informe haciendo clic en *Descargar*.</block>
+  <block id="0656a1b7f286656b2fc85b91fe54f0dd" category="section-title">Cree su propio informe de recuperación ante desastres</block>
+  <block id="8eaafa07b3ff6e9aa5dbe62e7cc8c77c" category="paragraph">Puede crear un informe personalizado donde puede especificar las ubicaciones, los planes de replicación y los datos. Puede especificar si desea incluir resúmenes de conmutación por error y conmutación por recuperación del año anterior, detalles de VM para cada plan de replicación y detalles de trabajo para cada plan de replicación del año anterior.</block>
+  <block id="036f7e4b10d318ae312cdfbb79a225fe" category="list-text">Antes de crear un informe, actualice los datos haciendo clic en la opción *Actualizar*.</block>
+  <block id="27c38bec0a8c0321e9a3236a8a9d4e76" category="list-text">Seleccione la pestaña *Custom*.</block>
+  <block id="c3c616a8c2970d4d1156559952705700" category="list-text">Selecciona *Añadir* para añadir un nuevo informe.</block>
+  <block id="402199b58c216d8c9be526288150639b" category="inline-image-macro">Cuadro de diálogo Agregar informe personalizado</block>
+  <block id="8224443416aacfdb9c8d006355a8489a" category="paragraph"><block ref="8224443416aacfdb9c8d006355a8489a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d6c444c23609646be63340436709d5f" category="list-text">Seleccione las opciones para personalizar el informe:</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">SQL Server</block>
+  <block id="478109b22c544f0e3bed80d9622cc572" category="list-text">Resumen de los fallos y las recuperaciones tras fallos del año pasado</block>
+  <block id="d9848020098abdd6a6adf5b664e0a02c" category="list-text">Detalles de VM para cada plan de replicación</block>
+  <block id="2eac16c021d7f4e2d342be672e454649" category="list-text">Detalles del trabajo para cada plan de replicación del año pasado</block>
+  <block id="65db0a5300ccaa6099d24aaf16150200" category="paragraph">El informe personalizado aparece en la lista de informes personalizados.</block>
+  <block id="b7a41431aa1eee1607db390ac47d2a65" category="admonition">Para ver todos los sitios o planes incluidos en el informe, haga clic en el número a la derecha del nombre del informe o los nombres de planes.</block>
+  <block id="a99780537c030fe162f59c129be8e471" category="list-text">Descargue su informe personalizado haciendo clic en *Descargar*.</block>
 </blocks>

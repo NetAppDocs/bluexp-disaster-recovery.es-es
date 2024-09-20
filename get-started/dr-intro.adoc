@@ -47,6 +47,7 @@ La recuperación ante desastres de BlueXP te permite utilizar al máximo varias 
 
 * Replique aplicaciones de VMware en su sitio de producción local en un sitio remoto de recuperación de desastres en el cloud o en las instalaciones mediante la replicación de SnapMirror.
 * Migre las cargas de trabajo de VMware de su sitio original a otro sitio.
+* Realice una prueba de recuperación tras fallos; las máquinas virtuales se crean temporalmente. La recuperación ante desastres de BlueXP  crea un nuevo volumen FlexClone de la Snapshot seleccionada, y se asigna un almacén de datos temporal que respalda el volumen de FlexClone a los hosts ESXi. Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
 * En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.
 * Una vez resuelto el desastre, conmutación al respaldo bajo demanda del sitio de recuperación de desastres al sitio principal.
 
@@ -112,4 +113,15 @@ Cuando hay un desastre, este servicio le ayuda a recuperar máquinas virtuales e
 * El servicio también le permite recuperar las máquinas virtuales a la ubicación de origen original.
 * Puede probar el proceso de conmutación al nodo de respaldo de recuperación ante desastres sin interrumpir los equipos virtuales originales. La prueba recupera máquinas virtuales en una red aislada mediante la creación de un FlexClone del volumen.
 * Para el proceso de conmutación por error o conmutación por error de prueba, puede elegir la última (predeterminada) o la instantánea seleccionada de la que recuperar la máquina virtual.
+
+
+
+
+== Términos que pueden ayudarle con la recuperación ante desastres de BlueXP 
+
+Puede que se le beneficie si entiende alguna terminología relacionada con la recuperación ante desastres.
+
+* *Sitio*: Un contenedor lógico asociado típicamente a un centro de datos físico o proveedor de la nube.
+* *Grupo de recursos*: Un contenedor lógico que le permite administrar múltiples VM como una sola unidad.
+* *Plan de replicación*: Un conjunto de reglas sobre la frecuencia con la que se producen las copias de seguridad y cómo manejar los eventos de conmutación por error. Los planes se asignan a uno o más grupos de recursos.
 

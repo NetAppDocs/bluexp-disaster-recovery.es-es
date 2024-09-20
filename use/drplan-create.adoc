@@ -24,11 +24,11 @@ Puede crear un plan de replicación y también editar programas para cumplimient
 
 Un asistente le guiará por los siguientes pasos:
 
-* Seleccione vCenter Servers
-* Seleccione las máquinas virtuales que desea replicar y asignar grupos
+* Seleccione vCenter Servers.
+* Seleccione las máquinas virtuales que desea replicar y asignar grupos.
 * Mapear cómo se asignan los recursos del entorno de origen al destino.
-* Identifique la recurrencia
-* Revise el plan
+* Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.
+* Revise el plan.
 
 
 Mientras crea el plan de replicación, puede definir la relación de SnapMirror entre los volúmenes de origen y de destino en una de las siguientes configuraciones:
@@ -108,11 +108,6 @@ image:dr-plan-resource-mapping2.png["Plan de replicación, pestaña Asignación 
 
 . En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada uno.
 . *Recursos de cómputo*: Selecciona la flecha hacia abajo junto a *Recursos de cómputo*.
-+
-** Clúster de origen
-** Clúster de destino (opcional)
-
-
 . *Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Introduzca o seleccione la LAN virtual de origen y el segmento de destino.
 . *Máquinas virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Máquinas virtuales*.
 +
@@ -130,10 +125,10 @@ SnapMirror se encuentra en el nivel de volumen. Por lo tanto, todos los equipos 
 *** *DHCP*: Si eliges esta opción, solo proporcionas las credenciales para la VM.
 *** *IP estática*: Puede seleccionar la misma o diferente información de la VM de origen. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
 +
-image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
+Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
 
 +
-Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
+image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
 
 
 

@@ -97,20 +97,9 @@ Si trae su propia licencia (BYOL), el equipo incluye la compra de la licencia, l
 *Activa la licencia*
 Después de comprar tu licencia de recuperación ante desastres de BlueXP al representante de ventas de NetApp, activas la licencia introduciendo el número de serie de recuperación de desastres de BlueXP y la información de la cuenta del sitio de soporte de NetApp (NSS).
 
-Antes de comenzar, necesitará tener la siguiente información:
+Necesitará el número de serie de la recuperación ante desastres de BlueXP . Busque este número en su pedido de ventas o póngase en contacto con el equipo de cuentas para obtener esta información.
 
-* Número de serie de la recuperación ante desastres de BlueXP
-+
-Busque este número en su pedido de ventas o póngase en contacto con el equipo de cuentas para obtener esta información.
-
-* ID de cuenta de BlueXP
-+
-Puedes encontrar tu ID de cuenta de BlueXP seleccionando el menú desplegable *Cuenta* en la parte superior de BlueXP y, a continuación, seleccionando *Gestionar cuenta* junto a tu cuenta. Su ID de cuenta se encuentra en la ficha Descripción general.
-
-
-
-*Añade la licencia a la cartera digital de BlueXP*
-Después de comprar una licencia de recuperación ante desastres de BlueXP para tu cuenta de BlueXP, tendrás que añadir la licencia a la cartera digital de BlueXP.
+*Agregar la licencia a la cartera digital de BlueXP * Después de comprar una licencia de recuperación ante desastres de BlueXP , debe agregar la licencia a la cartera digital de BlueXP .
 
 . Después de obtener la licencia, vuelve a la recuperación de desastres de BlueXP. Seleccione la opción *Ver métodos de pago* en la parte superior derecha. O, en el mensaje de que la prueba gratuita está caducando, seleccione *Suscribirse o comprar una licencia*.
 +

@@ -22,5 +22,4 @@ Se requiere una licencia de recuperación ante desastres de BlueXP para acceder 
 
 Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar las licencias de recuperación de desastres de BlueXP"].
 
-* ¿Cómo accedes a la recuperación ante desastres de BlueXP?*
-La recuperación ante desastres de BlueXP no requiere habilitación. La opción de recuperación ante desastres aparece automáticamente en la navegación izquierda de BlueXP.
+* ¿Cómo se accede a la recuperación de desastres de BlueXP ?* La recuperación ante desastres de BlueXP no requiere habilitación. La opción de recuperación ante desastres aparece automáticamente en la navegación izquierda de BlueXP.

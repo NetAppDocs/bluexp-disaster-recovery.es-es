@@ -71,7 +71,7 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 
 
 . Para volver a la lista de planes, seleccione «Planes de replicación» en las rutas de navegación de la parte superior izquierda.
-. Para realizar acciones con el plan, en la lista de planes de replicación, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  A la derecha del plan y seleccione cualquiera de las opciones, como *Editar horarios*, *Prueba de conmutación por error*, *Error de conmutación*, *Error de retorno*, *Deshabilitar*, *Habilitar*, o *Borrar*.
+. Para realizar acciones con el plan, en la lista de planes de replicación, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]a la derecha del plan y seleccione cualquiera de las opciones, como *Editar horarios*, *Prueba de conmutación por error*, *Error de conmutación*, *Migración*, *Tomar instantánea ahora*, *Limpiar instantáneas antiguas*, *Desactivar*, *Activar* o *Borrar*.
 . Para establecer o cambiar un programa de prueba de conmutación por error o establecer la comprobación de frecuencia de cumplimiento, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] a la derecha del plan y seleccione *Editar horarios*.
 +
 .. En la página Edit schedules, introduzca la frecuencia en minutos que desea que se realice la comprobación de cumplimiento de la conmutación por error.
@@ -80,6 +80,39 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 .. Seleccione *Guardar*.
 
 
+
+
+
+
+=== Conciliar instantáneas a petición
+
+Puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino. Esto puede suceder si se eliminan las copias Snapshot en un destino fuera de la recuperación tras desastres de BlueXP . El servicio elimina automáticamente la snapshot de origen de forma automática cada 24 horas. Sin embargo, puede realizar esto bajo demanda. Esta función le permite asegurarse de que las instantáneas sean coherentes en todos los sitios.
+
+.Pasos
+. En el menú superior, selecciona *Planes de replicación*.
++
+image:../use/dr-plan-list2.png["Lista de planes de replicación"]
+
+. En la lista de planes de replicación, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]a la derecha del plan y seleccione *Reconciliar instantáneas*.
+. Revise la información de conciliación.
+. Selecciona *Reconciliar*.
+
+
+
+
+=== Suprimir un plan de replicación
+
+Puede eliminar un plan de replicación si ya no lo necesita. Si elimina un plan de replicación, también puede eliminar las instantáneas primarias y secundarias creadas por el plan.
+
+.Pasos
+. En el menú superior, selecciona *Planes de replicación*.
++
+image:../use/dr-plan-list2.png["Lista de planes de replicación"]
+
+. Selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]a la derecha del plan y selecciona *Eliminar*.
+. Seleccione si desea eliminar las instantáneas principales, las instantáneas secundarias o solo los metadatos creados por el plan.
+. Escriba “delete” para confirmar la eliminación.
+. Seleccione *Eliminar*.
 
 
 
@@ -95,6 +128,7 @@ Es posible cambiar cuántos almacenes de datos se retienen.
 image:../use/dr-plan-failover-edit.png["Editar la página de asignaciones de failover"]
 
 . Cambie el valor del recuento de retención en el plan de replicación.
+. Con el plan de replicación seleccionado, seleccione el menú Acciones, seleccione *Limpiar instantáneas antiguas” para eliminar instantáneas antiguas en el destino para que coincidan con el nuevo recuento de retención.
 
 
 

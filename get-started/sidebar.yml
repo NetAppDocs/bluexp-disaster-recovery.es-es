@@ -8,10 +8,10 @@ entries:
   url: "/get-started/dr-prerequisites.html"
 - title: Inicio rápido
   url: "/get-started/dr-quick-start.html"
+- title: Configura tu infraestructura para la recuperación ante desastres de BlueXP
+  url: "/get-started/dr-setup.html"
 - title: Accede a la recuperación ante desastres de BlueXP
   url: "/get-started/dr-login.html"
-- title: Configura la recuperación de desastres de BlueXP
-  url: "/get-started/dr-setup.html"
 - title: Configurar la licencia
   url: "/get-started/dr-licensing.html"
 - title: PREGUNTAS FRECUENTES

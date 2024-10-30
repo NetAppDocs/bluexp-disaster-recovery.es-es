@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/drplan-create.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
 summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Después de añadir sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o replicación. 
 ---
 = Cree un plan de replicación
@@ -25,7 +25,7 @@ Puede crear un plan de replicación y también editar programas para cumplimient
 Un asistente le guiará por los siguientes pasos:
 
 * Seleccione vCenter Servers.
-* Seleccione las máquinas virtuales que desea replicar y asignar grupos.
+* Seleccione las máquinas virtuales (VM) que desea replicar y asignar grupos.
 * Mapear cómo se asignan los recursos del entorno de origen al destino.
 * Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.
 * Revise el plan.
@@ -34,7 +34,7 @@ Un asistente le guiará por los siguientes pasos:
 Mientras crea el plan de replicación, puede definir la relación de SnapMirror entre los volúmenes de origen y de destino en una de las siguientes configuraciones:
 
 * 1 a 1
-* 1 a muchos en una arquitectura fanout
+* de 1 a muchos en una arquitectura ramificada
 * Varios a 1 en un grupo de consistencia
 * Muchos A VARIOS
 
@@ -63,32 +63,33 @@ image:dr-plan-create-name.png["Captura de pantalla que muestra la página Agrega
 
 === Seleccione aplicaciones para replicar y asignar grupos de recursos
 
-El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
+El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de equipos virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
+
+Cuando selecciona aplicaciones en el plan de replicación, puede ver el sistema operativo de cada VM del plan. Esto es útil para decidir cómo agrupar máquinas virtuales en un grupo de recursos.
 
 
-TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya aquí.
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluya aquí.
 
 .Pasos
-. En el lado izquierdo de la página Applications, puede buscar almacenes de datos.
-. En la parte izquierda de la página Aplicaciones, seleccione las máquinas virtuales que desea replicar y asignar al grupo seleccionado.
+. Opcionalmente, en la parte izquierda de la página Applications, filtre las máquinas virtuales por su almacén de datos.
+. En la parte izquierda de la página Applications, seleccione las máquinas virtuales que desea proteger y asignar al grupo seleccionado.
 +
-La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que agrega una máquina virtual al último grupo, se agrega otro grupo.
+La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que se agrega una máquina virtual al último grupo, se agrega otro grupo.
 
 +
-image:dr-plan-create-apps-vms4.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
+image:dr-plan-create-apps-vms5.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
 
 . Opcionalmente, realice cualquiera de las siguientes acciones:
 +
-** Para cambiar de grupo, haga clic en el icono de grupo *Editar* image:icon-pencil.png["Icono de lápiz"] .
-** Para eliminar una máquina virtual de un grupo, seleccione *X*.
-** Para mover una máquina virtual a un grupo diferente, arrástrela y suéltela en el nuevo grupo.
+** Para cambiar el nombre del grupo, haga clic en el icono del grupo *Editar*image:icon-pencil.png["Icono de lápiz"].
+** Para eliminar una VM de un grupo, seleccione *X* junto a la VM.
+** Para mover un equipo virtual a otro grupo, arrástrelo y suéltelo en el nuevo grupo.
 
 
 . Cuando tenga varios grupos de recursos, asegúrese de que la secuencia de los grupos coincida con la secuencia operativa que debe producirse.
 +
-Cada máquina virtual dentro de un grupo se inicia en secuencia según el orden aquí. Dos grupos se inician en paralelo.
+Cada VM dentro de un grupo se inicia en secuencia según el orden aquí.
 
-. Opcionalmente, cambie el nombre del grupo haciendo clic en el icono *Editar*.
 . Seleccione *Siguiente*.
 
 
@@ -96,7 +97,7 @@ Cada máquina virtual dentro de un grupo se inicia en secuencia según el orden 
 
 === Asignar recursos de origen al destino
 
-En el paso Asignación de recursos, especifique cómo se deben asignar los recursos del entorno de origen al destino.
+En el paso Asignación de recursos, especifique cómo se deben asignar los recursos del entorno de origen al destino. Al crear un plan de replicación, puede establecer un retraso de inicio y un orden para cada VM del plan. Esto permite establecer una secuencia para que se inicien las máquinas virtuales.
 
 .Antes de empezar
 Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
@@ -108,22 +109,33 @@ image:dr-plan-resource-mapping2.png["Plan de replicación, pestaña Asignación 
 
 . En la pestaña Asignaciones de failover, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada uno.
 . *Recursos de cómputo*: Selecciona la flecha hacia abajo junto a *Recursos de cómputo*.
-. *Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Introduzca o seleccione la LAN virtual de origen y el segmento de destino.
++
+** *Datacenters de origen y destino*
+** *Target cluster*
+** *Host de destino* (opcional): Después de seleccionar el clúster, puede establecer esta información.
++
+
+TIP: Si una instancia de vCenter tiene un programador de recursos distribuidos (DRS) configurado para gestionar varios hosts en un clúster, no es necesario seleccionar un host. Si selecciona un host, la recuperación ante desastres de BlueXP  colocará todas las máquinas virtuales en el host seleccionado.
+
+** *Target VM folder* (opcional): Crea una nueva carpeta raíz para almacenar las VM seleccionadas.
+
+
+. *Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Seleccione la LAN virtual de origen y el segmento de destino.
 . *Máquinas virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Máquinas virtuales*.
++
+Si realiza algún cambio en la configuración predeterminada, deberá proporcionar las credenciales.
+
 +
 Seleccione la asignación de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento apropiado para asignar la máquina virtual.
 
 +
-Esta sección puede estar activada o desactivada en función de su selección.
-
-+
-SnapMirror se encuentra en el nivel de volumen. Por lo tanto, todos los equipos virtuales se replican en el destino de replicación. Asegúrese de seleccionar todas las máquinas virtuales que formen parte del almacén de datos. Si no se seleccionan, solo se procesan las máquinas virtuales que forman parte del plan de replicación.
+Esta sección puede mostrar diferentes campos según su selección.
 
 +
 ** *Tipo de dirección IP*: Cuando está asignando la red entre las ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, la recuperación de desastres de BlueXP  ofrece dos opciones: DHCP o IP estática. Para las IP estáticas, configure la subred, la puerta de enlace y los servidores DNS. Además, introduzca credenciales para máquinas virtuales.
 +
-*** *DHCP*: Si eliges esta opción, solo proporcionas las credenciales para la VM.
-*** *IP estática*: Puede seleccionar la misma o diferente información de la VM de origen. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
+*** *DHCP*: Seleccione esta opción si desea que sus VM obtengan información de configuración de red desde un servidor DHCP. Si selecciona esta opción, proporcione solo las credenciales para la máquina virtual.
+*** *IP estática*: Seleccione esta opción si desea especificar la información de configuración de IP manualmente. Puede seleccionar de la máquina virtual de origen la misma información o una diferente. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
 +
 Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
 
@@ -132,9 +144,26 @@ image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar p
 
 
 
-** *CPU y RAM de la VM de origen*: En los detalles de las Máquinas Virtuales, opcionalmente puede cambiar el tamaño de los parámetros de CPU y RAM de la VM.
-** *Retraso de arranque*: Puede modificar el orden de arranque para todas las máquinas virtuales seleccionadas en los grupos de recursos. De forma predeterminada, se utiliza el orden de inicio seleccionado durante la selección del grupo de recursos; sin embargo, puede realizar cambios en esta etapa. Con este campo, puede ajustar el retraso en minutos de la acción de arranque.
-** *Crear réplicas consistentes con la aplicación*: Indica si se deben crear copias Snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, realizará una snapshot para obtener un estado coherente de la aplicación.
+** *Prefijo y sufijo de la VM de destino*: En los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y sufijo al nombre de la VM.
+** *CPU y RAM de la VM de origen*: Bajo los detalles de las máquinas virtuales, puede cambiar opcionalmente el tamaño de los parámetros de CPU y RAM de la VM.
++
+image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
+
+** *Orden de arranque*: Puede modificar el orden de arranque después de una conmutación por error para todas las máquinas virtuales seleccionadas a través de los grupos de recursos. De forma predeterminada, se utiliza el orden de inicio seleccionado durante la selección del grupo de recursos; sin embargo, puede realizar cambios en esta etapa. Esto es útil para garantizar que todas las máquinas virtuales prioritarias se ejecutan antes de que se inicien las máquinas virtuales de prioridad posterior.
++
+Los Núm.s de orden de inicio sólo se aplican dentro de un grupo de recursos. Si tienes un «2» en un grupo y un «2» en otro, las VM del primer grupo comienzan en su orden y las VM del segundo empiezan en su orden.
+
++
+*** Inicio secuencial: Asigne a cada máquina virtual un número único para iniciar en el orden asignado, por ejemplo, 1,2,3,4,5
+*** Arranque simultáneo: Asigne el mismo número a todas las máquinas virtuales para que las arranquen al mismo tiempo, por ejemplo, 1,1, 1,1, 2,2, 3,4, 4.
+
+
+** *Retardo de arranque*: Ajusta el retraso en minutos de la acción de arranque.
++
+
+TIP: Para restablecer el orden de arranque a la configuración predeterminada, seleccione *Restablecer la configuración de VM a la predeterminada* y, a continuación, elija la configuración que desea cambiar de nuevo a la predeterminada.
+
+** *Crear réplicas consistentes con la aplicación*: Indica si se deben crear copias Snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, tomará una instantánea para obtener un estado coherente de la aplicación. Esta función es compatible con Oracle ejecutándose en Windows y Linux y SQL Server ejecutándose en Windows.
 
 
 . *Datastores*: En la pestaña de asignaciones de Failover, seleccione la flecha hacia abajo junto a *datastores*. Según la selección de máquinas virtuales, se seleccionan automáticamente las asignaciones de almacenes de datos.
@@ -193,15 +222,15 @@ image:dr-plan-create-recurrence.png["Captura de pantalla que muestra la repetici
 
 
 
-=== Confirme el plan de replicación
+=== Revise el plan de replicación
 
-Por último, dedique unos momentos a confirmar el plan de replicación.
+Por último, dedique unos momentos a revisar el plan de replicación.
 
 
 TIP: Posteriormente, puede desactivar o eliminar el plan de replicación.
 
 .Pasos
-. Revise la información en cada pestaña: Detalles del plan, asignación de conmutación por error, máquinas virtuales.
+. Revise la información en cada pestaña: Detalles del plan, asignación de conmutación por error y máquinas virtuales.
 . Selecciona *Añadir plan*.
 +
 El plan se agrega a la lista de planes.

@@ -12,21 +12,23 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 
 
 [role="lead"]
-En caso de desastre, conmuta tu sitio principal de VMware local a otro sitio de VMware local o VMware Cloud en AWS.
+En caso de desastre, conmuta tu sitio principal de VMware local a otro sitio de VMware local o VMware Cloud en AWS. Puede probar el proceso de recuperación tras fallos para garantizar el éxito cuando lo necesite.
 
-Durante la recuperación tras fallos, se utiliza la copia Snapshot de SnapMirror más reciente. O bien, se puede seleccionar una copia Snapshot específica de una copia Snapshot de un momento específico (según la política de retención de SnapMirror). La opción de un momento específico puede ser útil si se enfrenta a un evento de corrupción como ransomware, donde las réplicas más recientes ya están comprometidas o cifradas. La recuperación ante desastres de BlueXP muestra todos los puntos disponibles en el tiempo.
+Durante una conmutación por error, se utiliza la copia Snapshot de SnapMirror más reciente. O bien, se puede seleccionar una copia de Snapshot específica de un momento específico (según la política de retención de SnapMirror). La opción de un momento específico puede ser útil si se enfrenta a un evento de corrupción como ransomware, donde las réplicas más recientes ya están comprometidas o cifradas. La recuperación ante desastres de BlueXP muestra todos los puntos disponibles en el tiempo.
 
-Este procedimiento interrumpe la relación de replicación, coloca sin conexión las máquinas virtuales de origen de vCenter y habilita la lectura/escritura en el sitio de destino.
+Este proceso varía según si el sitio de producción está en buen estado y se realiza una recuperación tras fallas en el sitio de recuperación de desastres por motivos diferentes a un fallo de infraestructura crucial:
 
-Puede incluir scripts personalizados en formato .sh, .bat o .ps1 como procesos posteriores a la conmutación al respaldo. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
+* Fallo crítico del sitio de producción en el que no se puede acceder al clúster de vCenter o ONTAP de origen: La recuperación ante desastres de BlueXP  le permite seleccionar cualquier snapshot disponible desde la que restaurar.
+* El entorno de producción es correcto: Puede tomar una instantánea ahora o seleccionar una instantánea creada previamente.
 
-Antes de iniciar la conmutación por error, puede probar el proceso, garantizando el éxito cuando lo necesite. La prueba no coloca las máquinas virtuales en estado sin conexión.
+
+Este procedimiento interrumpe la relación de replicación, coloca sin conexión las máquinas virtuales de origen de vCenter, registra los volúmenes como almacenes de datos en el vCenter de recuperación ante desastres, reinicia las máquinas virtuales protegidas con las reglas de conmutación al nodo de respaldo en el plan y habilita la lectura/escritura en el sitio de destino.
 
 
 
 == Probar el proceso de recuperación tras fallos
 
-Antes de iniciar una conmutación al respaldo real, debe probar el proceso de conmutación por error.
+Antes de iniciar la conmutación al respaldo, puede probar el proceso. La prueba no coloca las máquinas virtuales en estado sin conexión.
 
 Durante una prueba de conmutación por error, se crean temporalmente las máquinas virtuales. La recuperación ante desastres de BlueXP no asigna el volumen de destino. En su lugar, crea un nuevo volumen FlexClone de la Snapshot seleccionada y se asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
 

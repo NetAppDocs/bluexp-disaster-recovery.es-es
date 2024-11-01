@@ -12,7 +12,7 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 
 
 [role="lead"]
-Después de añadir sitios de vCenter, estará listo para crear una recuperación ante desastres o un _replication plan_. Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, puede agrupar máquinas virtuales asociadas a una aplicación, o bien agrupar aplicaciones con niveles similares.
+Después de añadir sitios de vCenter, estará listo para crear una recuperación ante desastres o un _replication plan_. Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, puede agrupar máquinas virtuales (VM) asociadas a una aplicación, o bien puede agrupar aplicaciones con niveles similares.
 
 Estos planes a veces se llaman _blueprints_.
 
@@ -25,7 +25,7 @@ Puede crear un plan de replicación y también editar programas para cumplimient
 Un asistente le guiará por los siguientes pasos:
 
 * Seleccione vCenter Servers.
-* Seleccione las máquinas virtuales (VM) que desea replicar y asignar grupos.
+* Seleccione las máquinas virtuales que desea replicar y asignar grupos.
 * Mapear cómo se asignan los recursos del entorno de origen al destino.
 * Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.
 * Revise el plan.
@@ -37,6 +37,13 @@ Mientras crea el plan de replicación, puede definir la relación de SnapMirror 
 * de 1 a muchos en una arquitectura ramificada
 * Varios a 1 en un grupo de consistencia
 * Muchos A VARIOS
+
+
+Al crear el plan, debe seguir estas pautas:
+
+* Utilice las mismas credenciales para todas las máquinas virtuales del plan.
+* Utilice el mismo script para todas las máquinas virtuales del plan.
+* Use la misma subred, DNS y puerta de enlace para todas las máquinas virtuales del plan.
 
 
 .Antes de empezar
@@ -71,7 +78,7 @@ Cuando selecciona aplicaciones en el plan de replicación, puede ver el sistema 
 TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluya aquí.
 
 .Pasos
-. Opcionalmente, en la parte izquierda de la página Applications, filtre las máquinas virtuales por su almacén de datos.
+. Opcionalmente, en la parte izquierda de la página Applications, filtre las máquinas virtuales por su almacén de datos. También puede buscar máquinas virtuales específicas por nombre.
 . En la parte izquierda de la página Applications, seleccione las máquinas virtuales que desea proteger y asignar al grupo seleccionado.
 +
 La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que se agrega una máquina virtual al último grupo, se agrega otro grupo.
@@ -126,15 +133,18 @@ TIP: Si una instancia de vCenter tiene un programador de recursos distribuidos (
 Si realiza algún cambio en la configuración predeterminada, deberá proporcionar las credenciales.
 
 +
-Seleccione la asignación de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento apropiado para asignar la máquina virtual.
+Se asigna la configuración predeterminada para las máquinas virtuales. La asignación utiliza la misma configuración que utilizan las máquinas virtuales en el entorno de producción (misma dirección IP, máscara de subred y puerta de enlace).
+
++
+Seleccione la asignación de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento adecuado para asignar el equipo virtual.
 
 +
 Esta sección puede mostrar diferentes campos según su selección.
 
 +
-** *Tipo de dirección IP*: Cuando está asignando la red entre las ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, la recuperación de desastres de BlueXP  ofrece dos opciones: DHCP o IP estática. Para las IP estáticas, configure la subred, la puerta de enlace y los servidores DNS. Además, introduzca credenciales para máquinas virtuales.
+** *Tipo de dirección IP*: Vuelva a configurar la configuración de las VM para que coincida con los requisitos de la red virtual de destino. La recuperación ante desastres de BlueXP  ofrece dos opciones: DHCP o IP estática. Para las IP estáticas, configure la máscara de subred, la puerta de enlace y los servidores DNS. Además, introduzca las credenciales para máquinas virtuales.
 +
-*** *DHCP*: Seleccione esta opción si desea que sus VM obtengan información de configuración de red desde un servidor DHCP. Si selecciona esta opción, proporcione solo las credenciales para la máquina virtual.
+*** *DHCP*: Seleccione esta opción si desea que sus máquinas virtuales obtengan información de configuración de red de un servidor DHCP. Si selecciona esta opción, proporcione solo las credenciales para la máquina virtual.
 *** *IP estática*: Seleccione esta opción si desea especificar la información de configuración de IP manualmente. Puede seleccionar de la máquina virtual de origen la misma información o una diferente. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
 +
 Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
@@ -144,6 +154,7 @@ image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar p
 
 
 
+** *Scripts*: Puede incluir scripts personalizados en formato .sh, .bat o .ps1 como procesos post failover. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
 ** *Prefijo y sufijo de la VM de destino*: En los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y sufijo al nombre de la VM.
 ** *CPU y RAM de la VM de origen*: Bajo los detalles de las máquinas virtuales, puede cambiar opcionalmente el tamaño de los parámetros de CPU y RAM de la VM.
 +
@@ -163,33 +174,37 @@ Los Núm.s de orden de inicio sólo se aplican dentro de un grupo de recursos. S
 
 TIP: Para restablecer el orden de arranque a la configuración predeterminada, seleccione *Restablecer la configuración de VM a la predeterminada* y, a continuación, elija la configuración que desea cambiar de nuevo a la predeterminada.
 
-** *Crear réplicas consistentes con la aplicación*: Indica si se deben crear copias Snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, tomará una instantánea para obtener un estado coherente de la aplicación. Esta función es compatible con Oracle ejecutándose en Windows y Linux y SQL Server ejecutándose en Windows.
+** *Crear réplicas consistentes con la aplicación*: Indica si crear copias instantáneas consistentes con la aplicación. El servicio desactivará la aplicación y, a continuación, tomará una instantánea para obtener un estado coherente de la aplicación. Esta función es compatible con Oracle ejecutándose en Windows y Linux y SQL Server ejecutándose en Windows.
 
 
-. *Datastores*: En la pestaña de asignaciones de Failover, seleccione la flecha hacia abajo junto a *datastores*. Según la selección de máquinas virtuales, se seleccionan automáticamente las asignaciones de almacenes de datos.
+. *Datastores*: Selecciona la flecha hacia abajo junto a *datastores*. Según la selección de las máquinas virtuales, las asignaciones de almacenes de datos se seleccionan automáticamente.
 +
 Esta sección puede estar activada o desactivada en función de su selección.
 
 +
 ** *RPO*: Introduzca el objetivo de punto de recuperación (RPO) para indicar la cantidad de datos a recuperar (medido en tiempo). Por ejemplo, si introduce un objetivo de punto de recuperación de 60 minutos, la recuperación debe tener datos que no tengan una antigüedad superior a 60 minutos en todo momento. Si hay un desastre, está permitiendo la pérdida de hasta 60 minutos de datos. Además, introduzca la cantidad de copias de Snapshot que se retendrán para todos los almacenes de datos.
 ** *Conteo de retención*: Introduzca el número de instantáneas que desea conservar.
-** *Almacenes de datos de origen y destino*: Si un volumen tiene una relación SnapMirror ya establecida, puede seleccionar los almacenes de datos de origen y destino correspondientes. Si selecciona un volumen que no tiene una relación de SnapMirror, puede crear uno ahora mediante la selección del entorno de trabajo y su SVM entre iguales.
+** *Almacenes de datos de origen y destino*: Si existen múltiples relaciones de SnapMirror (fan-out), puede seleccionar el destino a utilizar. Si un volumen ya tiene una relación de SnapMirror establecida, se muestran los almacenes de datos de origen y destino correspondientes. Si un volumen que no posee una relación SnapMirror, puede crear uno ahora mediante la selección de un clúster de destino, una SVM de destino y el suministro de un nombre de volumen. El servicio creará la relación del volumen y SnapMirror.
 +
 
 NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
 
-+
-*** *Grupos de consistencia*: Cuando creas un plan de replicación, puedes incluir VMs que sean de diferentes volúmenes y diferentes SVM. La recuperación ante desastres de BlueXP crea una snapshot de grupo de consistencia.
-
-
-** Si especifica el objetivo de punto de recuperación (RPO), el servicio programa un backup principal según el RPO y actualiza los destinos secundarios.
-** Si las máquinas virtuales son desde el mismo volumen y misma SVM, el servicio realiza una Snapshot de ONTAP estándar y actualiza los destinos secundarios.
-** Si las máquinas virtuales son desde diferentes volúmenes y misma SVM, el servicio crea una snapshot de grupo de consistencia mediante el que se incluyen todos los volúmenes y se actualizan los destinos secundarios.
-** Si las máquinas virtuales se utilizan desde un volumen diferente y una SVM diferente, el servicio realiza una fase de inicio de grupo de coherencia y una Snapshot de fase de compromiso mediante la inclusión de todos los volúmenes del mismo clúster o de un clúster diferente, y actualiza los destinos secundarios.
+** Cuando se especifica el objetivo de punto de recuperación (RPO), el servicio programa un backup principal basado en el RPO y actualiza los destinos secundarios.
+** Si las máquinas virtuales pertenecen al mismo volumen y a la misma SVM, el servicio realiza una copia de Snapshot de ONTAP estándar y actualiza los destinos secundarios.
+** Si las máquinas virtuales son desde diferentes volúmenes y misma SVM, el servicio crea una copia de Snapshot de grupo de coherencia mediante todos los volúmenes y actualiza los destinos secundarios.
+** Si las máquinas virtuales se utilizan desde un volumen diferente y una SVM diferente, el servicio realiza una fase de inicio de grupo de coherencia y una snapshot de fase de compromiso incluyendo todos los volúmenes del mismo clúster o de otro diferente, y actualiza los destinos secundarios.
 ** Durante la conmutación al respaldo, puede seleccionar cualquier instantánea. Si selecciona la instantánea más reciente, el servicio crea un backup bajo demanda, actualiza el destino y utiliza esa instantánea para la conmutación por error.
 
 
-. Para establecer diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Correspondencias de prueba*. Revise cada pestaña como antes, pero esta vez para el entorno de prueba.
+
+
+
+
+=== Pruebe las asignaciones
+
+.Pasos
+. Para establecer diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Correspondencias de prueba*.
+. Revise cada pestaña como antes, pero esta vez para el entorno de prueba.
 +
 En la pestaña Test maps, las asignaciones de máquinas virtuales y almacenes de datos están deshabilitadas.
 

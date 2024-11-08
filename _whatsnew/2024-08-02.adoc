@@ -1,0 +1,20 @@
+= Compatibilidad con almacenes de datos VMFS de VMware para FC tanto en las instalaciones como en las instalaciones
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con almacenes de datos VMFS de VMware para FC tanto en las instalaciones como en las instalaciones
+
+Esta versión incluye una vista previa _tecnológica_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos para máquinas virtuales (VMFS) de VMware vSphere para FC protegido al almacenamiento en las instalaciones. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para iSCSI.
+
+
+NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
+
+
+
+=== Cancelación de trabajo
+
+Con esta versión, ahora puede cancelar un trabajo en la interfaz de usuario de Job Monitor.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Supervisar trabajos"].

@@ -1,0 +1,16 @@
+= Compatibilidad con almacenes de datos VMFS de VMware desde las instalaciones hasta en las instalaciones
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con almacenes de datos VMFS de VMware desde las instalaciones hasta en las instalaciones
+
+Esta versión incluye compatibilidad con máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere para iSCSI y FC protegidos en almacenamiento en las instalaciones. Anteriormente, el servicio ofrecía una _technology preview_ que admitía los almacenes de datos VMFS para iSCSI y FC.
+
+A continuación se muestran algunas consideraciones adicionales relativas a los protocolos iSCSI y FC:
+
+* La compatibilidad con FC es para los protocolos de interfaz de cliente, no para la replicación.
+* La recuperación ante desastres de BlueXP  solo admite una única LUN por volumen ONTAP. El volumen no debe tener varios LUN.
+* Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas. Por ejemplo, si el origen utiliza un protocolo FC, el destino debe utilizar también FC.
+

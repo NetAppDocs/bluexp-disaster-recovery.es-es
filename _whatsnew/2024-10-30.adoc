@@ -1,0 +1,89 @@
+= Creación de informes
+:allow-uri-read: 
+
+
+
+
+=== Creación de informes
+
+Ahora puede generar y descargar informes para ayudarle a analizar su paisaje. Los informes prediseñados resumen las recuperaciones tras fallos y las recuperaciones tras fallos, muestran los detalles de la replicación en todos los sitios y muestran los detalles del trabajo de los últimos siete días.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Crear informes de recuperación tras siniestros"].
+
+
+
+=== prueba gratuita de 30 días
+
+Ahora puedes registrarte para disfrutar de una prueba gratuita de 30 días de recuperación ante desastres de BlueXP . Anteriormente, las pruebas gratuitas eran de 90 días.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar la licencia"].
+
+
+
+=== Desactive y active los planes de replicación
+
+Una versión anterior incluía actualizaciones de la estructura del programa de prueba de conmutación por error, que era necesaria para soportar los programas diarios y semanales. Esta actualización requería deshabilitar y volver a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
+
+Le contamos cómo:
+
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
+. Seleccione *Desactivar*.
+. Después de unos minutos, selecciona *Habilitar*.
+
+
+
+
+=== Asignación de carpetas
+
+Al crear un plan de replicación y asignar recursos de computación, ahora puede asignar carpetas de modo que se recuperen las máquinas virtuales en una carpeta que especifique para el centro de datos, el clúster y el host.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Los detalles de la máquina virtual están disponibles para la conmutación al nodo de respaldo, la conmutación de retorno tras recuperación y la conmutación
+
+Cuando se produce un fallo y se inicia una conmutación al respaldo, una conmutación de retorno tras recuperación o una prueba de la conmutación por error, ahora puede ver los detalles de los equipos virtuales e identificar qué equipos virtuales no se reiniciaron.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
+
+
+
+=== Retraso en el arranque de equipos virtuales con una secuencia de arranque ordenada
+
+Al crear un plan de replicación, ahora puede establecer un retraso de inicio para cada VM del plan. De este modo, es posible establecer una secuencia para que las máquinas virtuales se inicien para garantizar que se ejecute toda la prioridad que se tienen unas máquinas virtuales antes de que se inicien las siguientes de prioridad.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Información del sistema operativo del equipo virtual
+
+Al crear un plan de replicación, ahora puede ver el sistema operativo de cada VM del plan. Esto es útil para decidir cómo agrupar máquinas virtuales en un grupo de recursos.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Alias de nombres de VM
+
+Al crear un plan de replicación, ahora puede agregar un prefijo y un sufijo a los nombres de los equipos virtuales en el área de recuperación ante desastres. Esto permite usar un nombre más descriptivo para las máquinas virtuales del plan.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Limpie las instantáneas antiguas
+
+Es posible eliminar las copias de Snapshot que ya no se necesiten más allá del recuento de retención especificado. Las copias Snapshot pueden acumularse con el tiempo al reducir el número de retención de snapshots y ahora puede quitarlas para liberar espacio. Puede hacerlo en cualquier momento bajo demanda o cuando elimine un plan de replicación.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Administre la información de sitios, grupos de recursos, planes de replicación, almacenes de datos y máquinas virtuales"] .
+
+
+
+=== Conciliar instantáneas
+
+Ahora puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino. Esto puede suceder si se eliminan las copias Snapshot en un destino fuera de la recuperación tras desastres de BlueXP . El servicio elimina la snapshot de origen automáticamente cada 24 horas. Sin embargo, puede realizar esto bajo demanda. Esta función le permite asegurarse de que las instantáneas sean coherentes en todos los sitios.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes de replicación"] .

@@ -18,124 +18,164 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 == 30 de octubre de 2024
 
-Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Reporting*: Con esta versión, ahora puedes generar y descargar informes para ayudarte a analizar tu paisaje. Los informes prediseñados resumen las recuperaciones tras fallos y las recuperaciones tras fallos, muestran los detalles de la replicación en todos los sitios y muestran los detalles del trabajo de los últimos siete días.
-+
+
+=== Creación de informes
+
+Ahora puede generar y descargar informes para ayudarle a analizar su paisaje. Los informes prediseñados resumen las recuperaciones tras fallos y las recuperaciones tras fallos, muestran los detalles de la replicación en todos los sitios y muestran los detalles del trabajo de los últimos siete días.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Crear informes de recuperación tras siniestros"].
 
-* *Prueba gratuita de 30 días*: Con esta versión, ahora puede inscribirse para una prueba gratuita de 30 días de recuperación de desastres de BlueXP . Anteriormente, las pruebas gratuitas eran de 90 días.
-+
+
+
+=== prueba gratuita de 30 días
+
+Ahora puedes registrarte para disfrutar de una prueba gratuita de 30 días de recuperación ante desastres de BlueXP . Anteriormente, las pruebas gratuitas eran de 90 días.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar la licencia"].
 
-* *Deshabilitar y habilitar planes de replicación*: Una versión anterior incluía actualizaciones de la estructura de programación de prueba de conmutación por error, que era necesaria para soportar horarios diarios y semanales. Esta actualización requería deshabilitar y volver a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
-+
+
+
+=== Desactive y active los planes de replicación
+
+Una versión anterior incluía actualizaciones de la estructura del programa de prueba de conmutación por error, que era necesaria para soportar los programas diarios y semanales. Esta actualización requería deshabilitar y volver a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
+
 Le contamos cómo:
 
-+
-.. En el menú superior, selecciona *Planes de replicación*.
-.. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
-.. Seleccione *Desactivar*.
-.. Después de unos minutos, selecciona *Habilitar*.
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
+. Seleccione *Desactivar*.
+. Después de unos minutos, selecciona *Habilitar*.
 
 
-* *Asignación de carpetas*: Cuando crea un plan de replicación y asigna recursos de computación, ahora puede asignar carpetas para que las VM se recuperen en una carpeta que especifique para el centro de datos, el clúster y el host.
-+
+
+
+=== Asignación de carpetas
+
+Al crear un plan de replicación y asignar recursos de computación, ahora puede asignar carpetas de modo que se recuperen las máquinas virtuales en una carpeta que especifique para el centro de datos, el clúster y el host.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* *Detalles de VM disponibles para failover, failback y failover de prueba*: Cuando ocurre un fallo y usted está iniciando un failover, realizando un failback o probando el failover, ahora puede ver detalles de las VM e identificar qué VM no se reiniciaron.
-+
+
+
+=== Los detalles de la máquina virtual están disponibles para la conmutación al nodo de respaldo, la conmutación de retorno tras recuperación y la conmutación
+
+Cuando se produce un fallo y se inicia una conmutación al respaldo, una conmutación de retorno tras recuperación o una prueba de la conmutación por error, ahora puede ver los detalles de los equipos virtuales e identificar qué equipos virtuales no se reiniciaron.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
 
-* *Retraso de arranque de VM con secuencia de arranque ordenada*: Cuando crea un plan de replicación, ahora puede establecer un retraso de arranque para cada VM en el plan. De este modo, es posible establecer una secuencia para que las máquinas virtuales se inicien para garantizar que se ejecute toda la prioridad que se tienen unas máquinas virtuales antes de que se inicien las siguientes de prioridad.
-+
+
+
+=== Retraso en el arranque de equipos virtuales con una secuencia de arranque ordenada
+
+Al crear un plan de replicación, ahora puede establecer un retraso de inicio para cada VM del plan. De este modo, es posible establecer una secuencia para que las máquinas virtuales se inicien para garantizar que se ejecute toda la prioridad que se tienen unas máquinas virtuales antes de que se inicien las siguientes de prioridad.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* *Información del sistema operativo de VM*: Cuando crea un plan de replicación, ahora puede ver el sistema operativo de cada VM en el plan. Esto es útil para decidir cómo agrupar máquinas virtuales en un grupo de recursos.
-+
+
+
+=== Información del sistema operativo del equipo virtual
+
+Al crear un plan de replicación, ahora puede ver el sistema operativo de cada VM del plan. Esto es útil para decidir cómo agrupar máquinas virtuales en un grupo de recursos.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* *VM name aliasing*: Cuando creas un plan de replicación, ahora puedes agregar un prefijo y un sufijo a los nombres de VM en el área de recuperación ante desastres. Esto permite usar un nombre más descriptivo para las máquinas virtuales del plan.
-+
+
+
+=== Alias de nombres de VM
+
+Al crear un plan de replicación, ahora puede agregar un prefijo y un sufijo a los nombres de los equipos virtuales en el área de recuperación ante desastres. Esto permite usar un nombre más descriptivo para las máquinas virtuales del plan.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* * Limpiar instantáneas antiguas*: Con esta versión, puede eliminar cualquier instantánea que ya no sea necesaria más allá de su recuento de retención especificado. Las copias Snapshot pueden acumularse con el tiempo al reducir el número de retención de snapshots y ahora puede quitarlas para liberar espacio. Puede hacerlo en cualquier momento bajo demanda o cuando elimine un plan de replicación.
-+
+
+
+=== Limpie las instantáneas antiguas
+
+Es posible eliminar las copias de Snapshot que ya no se necesiten más allá del recuento de retención especificado. Las copias Snapshot pueden acumularse con el tiempo al reducir el número de retención de snapshots y ahora puede quitarlas para liberar espacio. Puede hacerlo en cualquier momento bajo demanda o cuando elimine un plan de replicación.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Administre la información de sitios, grupos de recursos, planes de replicación, almacenes de datos y máquinas virtuales"] .
 
-* *Reconciliar instantáneas*: Con esta versión, ahora puede reconciliar instantáneas que no están sincronizadas entre el origen y el destino. Esto puede suceder si se eliminan las copias Snapshot en un destino fuera de la recuperación tras desastres de BlueXP . El servicio elimina la snapshot de origen automáticamente cada 24 horas. Sin embargo, puede realizar esto bajo demanda. Esta función le permite asegurarse de que las instantáneas sean coherentes en todos los sitios.
-+
+
+
+=== Conciliar instantáneas
+
+Ahora puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino. Esto puede suceder si se eliminan las copias Snapshot en un destino fuera de la recuperación tras desastres de BlueXP . El servicio elimina la snapshot de origen automáticamente cada 24 horas. Sin embargo, puede realizar esto bajo demanda. Esta función le permite asegurarse de que las instantáneas sean coherentes en todos los sitios.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes de replicación"] .
-
-
 
 
 
 == 20 de septiembre de 2024
 
-Esta versión de recuperación ante desastres de BlueXP  incluye la siguiente actualización.
 
-* *Compatibilidad con almacenes de datos VMware VMFS locales a locales*: Esta versión incluye soporte para VM montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) VMware vSphere para iSCSI y FC protegidos para almacenamiento local. Anteriormente, el servicio ofrecía una _technology preview_ que admitía los almacenes de datos VMFS para iSCSI y FC.
-+
+
+=== Compatibilidad con almacenes de datos VMFS de VMware desde las instalaciones hasta en las instalaciones
+
+Esta versión incluye compatibilidad con máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere para iSCSI y FC protegidos en almacenamiento en las instalaciones. Anteriormente, el servicio ofrecía una _technology preview_ que admitía los almacenes de datos VMFS para iSCSI y FC.
+
 A continuación se muestran algunas consideraciones adicionales relativas a los protocolos iSCSI y FC:
 
-+
-** La compatibilidad con FC es para los protocolos de interfaz de cliente, no para la replicación.
-** La recuperación ante desastres de BlueXP  solo admite una única LUN por volumen ONTAP. El volumen no debe tener varios LUN.
-** Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas. Por ejemplo, si el origen utiliza un protocolo FC, el destino debe utilizar también FC.
-
-
+* La compatibilidad con FC es para los protocolos de interfaz de cliente, no para la replicación.
+* La recuperación ante desastres de BlueXP  solo admite una única LUN por volumen ONTAP. El volumen no debe tener varios LUN.
+* Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas. Por ejemplo, si el origen utiliza un protocolo FC, el destino debe utilizar también FC.
 
 
 
 
 == 2 de agosto de 2024
 
-Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Compatibilidad con almacenes de datos VMware VMFS en las instalaciones para FC*: Esta versión incluye una _vista previa de tecnología_ de soporte para VM montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para FC protegido en almacenamiento local. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para iSCSI.
-+
+
+=== Compatibilidad con almacenes de datos VMFS de VMware para FC tanto en las instalaciones como en las instalaciones
+
+Esta versión incluye una vista previa _tecnológica_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos para máquinas virtuales (VMFS) de VMware vSphere para FC protegido al almacenamiento en las instalaciones. Anteriormente, el servicio ofrecía una vista previa de la tecnología que admitía almacenes de datos VMFS para iSCSI.
+
 
 NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
 
-* *Cancelación de trabajo*: Con esta versión, ahora puede cancelar un trabajo en la interfaz de usuario de Job Monitor.
-+
+
+
+=== Cancelación de trabajo
+
+Con esta versión, ahora puede cancelar un trabajo en la interfaz de usuario de Job Monitor.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Supervisar trabajos"].
-
-
 
 
 
 == 17 de julio de 2024
 
-Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* * Programas de prueba de conmutación por error*: Esta versión incluye actualizaciones de la estructura del programa de prueba de conmutación por error, que era necesaria para soportar los horarios diarios y semanales. Esta actualización requiere que desactive y vuelva a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
-+
+
+=== Programas de prueba de conmutación por error
+
+Esta versión incluye actualizaciones de la estructura del programa de prueba de conmutación por error, que era necesaria para soportar los programas diarios y semanales. Esta actualización requiere que desactive y vuelva a activar todos los planes de replicación existentes para poder utilizar los nuevos programas de prueba de conmutación por error diarios y semanales. Este es un requisito único.
+
 Le contamos cómo:
 
-+
-.. En el menú superior, selecciona *Planes de replicación*.
-.. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
-.. Seleccione *Desactivar*.
-.. Después de unos minutos, selecciona *Habilitar*.
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione un plan y seleccione el icono Acciones para mostrar el menú desplegable.
+. Seleccione *Desactivar*.
+. Después de unos minutos, selecciona *Habilitar*.
 
 
-* *Actualizaciones del plan de replicación*: Esta versión incluye actualizaciones de los datos del plan de replicación, que resuelve un problema de “instantánea no encontrada”. Esto requiere cambiar el recuento de retención en todos los planes de replicación a 1 e iniciar una instantánea bajo demanda. Este proceso crea una nueva copia de seguridad y elimina todas las copias de seguridad más antiguas.
-+
+
+
+=== Actualizaciones del plan de replicación
+
+Esta versión incluye actualizaciones de los datos del plan de replicación, lo que resuelve un problema de «instantánea no encontrada». Esto requiere cambiar el recuento de retención en todos los planes de replicación a 1 e iniciar una instantánea bajo demanda. Este proceso crea una nueva copia de seguridad y elimina todas las copias de seguridad más antiguas.
+
 Le contamos cómo:
 
-+
-.. En el menú superior, selecciona *Planes de replicación*.
-.. Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el icono del lápiz *Editar*.
-.. Haga clic en la flecha *datastores* para expandirla.
-.. Observe el valor del recuento de retención en el plan de replicación. Tendrá que restablecer este valor original cuando haya terminado con estos pasos.
-.. Reduzca el conteo a 1.
-.. Inicie una snapshot bajo demanda. Para hacerlo, en la página del plan de replicación, seleccione el plan, haga clic en el icono Acciones y seleccione *Tomar instantánea ahora*.
-.. Una vez que el trabajo de instantánea se haya completado correctamente, aumente el recuento del plan de replicación hasta el valor original que anotó en el primer paso.
-.. Repita estos pasos para todos los planes de replicación existentes.
-
-
+. En el menú superior, selecciona *Planes de replicación*.
+. Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el icono del lápiz *Editar*.
+. Haga clic en la flecha *datastores* para expandirla.
+. Observe el valor del recuento de retención en el plan de replicación. Tendrá que restablecer este valor original cuando haya terminado con estos pasos.
+. Reduzca el conteo a 1.
+. Inicie una snapshot bajo demanda. Para hacerlo, en la página del plan de replicación, seleccione el plan, haga clic en el icono Acciones y seleccione *Tomar instantánea ahora*.
+. Una vez que el trabajo de instantánea se haya completado correctamente, aumente el recuento del plan de replicación hasta el valor original que anotó en el primer paso.
+. Repita estos pasos para todos los planes de replicación existentes.
 
 
 
@@ -144,36 +184,66 @@ Le contamos cómo:
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Soporte para la serie A de AFF*: Esta versión es compatible con las plataformas de hardware de la serie A de NetApp AFF.
 
 
-* *Soporte para almacenes de datos VMware VMFS en las instalaciones a los locales*: Esta versión incluye una _technology preview_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere protegidos en el almacenamiento local. Con este lanzamiento, la recuperación de desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones al entorno VMware en las instalaciones con almacenes de datos VMFS.
-+
+=== Compatibilidad con AFF A-Series
+
+En esta versión se admiten las plataformas de hardware NetApp AFF A-series.
+
+
+
+=== Compatibilidad con almacenes de datos VMFS de VMware desde las instalaciones hasta en las instalaciones
+
+Esta versión incluye una vista previa _tecnológica_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere protegidos en almacenamiento en las instalaciones. Con este lanzamiento, la recuperación de desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones al entorno VMware en las instalaciones con almacenes de datos VMFS.
+
 
 NOTE: NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
 
-* *Actualizaciones del plan de replicación*: Puede agregar un plan de replicación más fácilmente filtrando las VM por almacén de datos en la página Aplicaciones y mediante selecti//consulte link:../use/drplan-create.html["Cree un plan de replicación"]. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"]. Ng Más detalles de destino en la página de asignación de recursos.
-* *Editar planes de replicación*: Con esta versión, la página de asignaciones de failover se ha mejorado para una mayor claridad.
-+
+
+
+=== Actualizaciones del plan de replicación
+
+Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página Asignación de recursos. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Editar planes de replicación
+
+Con esta versión, la página de asignaciones de failover se ha mejorado para una mayor claridad.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes"].
 
-* *Editar VMs*: Con esta versión, el proceso de edición de VMs en el plan incluyó algunas mejoras menores de UI.
-+
+
+
+=== Editar las máquinas virtuales
+
+Con esta versión, el proceso de edición de máquinas virtuales en el plan incluyó algunas mejoras menores en la interfaz de usuario.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar máquinas virtuales"].
 
-* * Fallo de actualizaciones*: Antes de iniciar una conmutación por error, ahora puede determinar el estado de las VM y si están encendidas o apagadas. Ahora el proceso de conmutación por error le permite tomar una copia Snapshot ahora o elegir las instantáneas.
-+
+
+
+=== Actualizaciones de conmutación al respaldo
+
+Antes de iniciar una conmutación por error, ahora puede determinar el estado de las máquinas virtuales y si están encendidas o apagadas. Ahora el proceso de conmutación por error le permite tomar una copia Snapshot ahora o elegir las instantáneas.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"].
 
-* * Programas de prueba de conmutación por error*: Ahora puede editar las pruebas de conmutación por error y establecer horarios diarios, semanales y mensuales para la prueba de conmutación por error.
-+
+
+
+=== Programas de prueba de conmutación por error
+
+Ahora puede editar las pruebas de conmutación por error y establecer programas diarios, semanales y mensuales para la prueba de conmutación por error.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar planes"].
 
-* *Actualizaciones de la información de requisitos previos*: Se ha actualizado la información de requisitos previos de recuperación de desastres de BlueXP.
-+
+
+
+=== Actualizaciones de la información de requisitos previos
+
+Se actualizó la información de requisitos previos de recuperación de desastres de BlueXP .
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["Requisitos previos de recuperación ante desastres de BlueXP"].
-
-
 
 
 
@@ -181,12 +251,19 @@ Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-p
 
 Esta versión de recuperación de desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Replicar las cargas de trabajo de VMware de on-premises a on-premises* ahora se lanza como una característica de disponibilidad general. Anteriormente, era una vista previa de la tecnología con funcionalidad limitada.
-* *Actualizaciones de licencias*: con la recuperación ante desastres de BlueXP, puedes registrarte para disfrutar de una prueba gratuita de 90 días, comprar una suscripción de pago por uso (PAYGO) con Amazon Marketplace o BYOL, que es un archivo de licencia de NetApp (NLF) que obtienes a través de tu representante de ventas de NetApp o en el sitio de soporte de NetApp (NSS).
-+
+
+
+=== Replicar las cargas de trabajo de VMware de on-premises a on-premises
+
+Ahora se publica como una característica de disponibilidad general. Anteriormente, era una vista previa de la tecnología con funcionalidad limitada.
+
+
+
+=== Actualizaciones de licencias
+
+Con la recuperación ante desastres de BlueXP , puedes registrarte para disfrutar de una prueba gratuita de 90 días, comprar una suscripción de pago por uso (PAYGO) con Amazon Marketplace o BYOL (BYOL), que es un archivo de licencia de NetApp (NLF) que obtienes al representante de ventas de NetApp o al sitio de soporte de NetApp (NSS).
+
 Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configurar la licencia"].
-
-
 
 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtén más información sobre la recuperación ante desastres de BlueXP"].
 
@@ -196,20 +273,23 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 Esta es la versión de Disponibilidad general de la recuperación de desastres de BlueXP, que incluye las siguientes actualizaciones.
 
-* *ACTUALIZACIONES DE LICENCIA*: Con la recuperación ante desastres de BlueXP, puedes registrarte para una prueba gratuita de 90 días o BYOL, que es un archivo de licencia de NetApp (NLF) que obtienes de tu representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP. Los cargos de recuperación ante desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos.
-+
+
+
+=== Actualizaciones de licencias
+
+Con la recuperación ante desastres de BlueXP , puedes registrarte para disfrutar de una prueba gratuita de 90 días o BYOL (Bring Your Own License), que es un archivo de licencia de NetApp (NLF) que obtienes de tu representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP. Los cargos de recuperación ante desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos.
+
 Para obtener más detalles sobre cómo configurar la licencia para la recuperación ante desastres de BlueXP, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar la licencia"].
 
-+
 Para obtener más información sobre la gestión de licencias para los servicios de *All* BlueXP, consulte https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Gestiona las licencias para todos los servicios de BlueXP"^].
 
 
 
-* *Editar horarios*: Con esta versión, ahora puede configurar horarios para probar pruebas de cumplimiento y failover para asegurarse de que funcionen correctamente en caso de necesitarlos.
-+
+=== Editar programaciones
+
+Con esta versión, ahora puede configurar programas para probar pruebas de cumplimiento y de conmutación por error, de modo que se asegure de que funcionarán correctamente en caso de necesitarlas.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree el plan de replicación"].
-
-
 
 
 
@@ -217,36 +297,57 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-di
 
 Esta versión previa de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
 
-* * Mejora de red*: Con esta versión, ahora puede cambiar el tamaño de los valores de CPU y RAM de VM. Ahora también puede seleccionar una dirección IP estática o DHCP de red para la máquina virtual.
-+
-** DHCP: Si elige esta opción, proporcionará credenciales para la máquina virtual.
-** Static IP: Puede seleccionar la misma información o una diferente de la máquina virtual de origen. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si elige utilizar información diferente de la fuente, puede proporcionar las credenciales, la dirección IP, la máscara de subred, el DNS y la información de la puerta de enlace.
-+
+
+
+=== Mejora de la red
+
+Con esta versión, ahora puede cambiar el tamaño de los valores de CPU y RAM de VM. Ahora también puede seleccionar una dirección IP estática o DHCP de red para la máquina virtual.
+
+* DHCP: Si elige esta opción, proporcionará credenciales para la máquina virtual.
+* Static IP: Puede seleccionar la misma información o una diferente de la máquina virtual de origen. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si elige utilizar información diferente de la fuente, puede proporcionar las credenciales, la dirección IP, la máscara de subred, el DNS y la información de la puerta de enlace.
+
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
 
 
-* *Los scripts personalizados* ahora se pueden incluir como procesos post failover. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
-+
+=== Scripts personalizados
+
+Ahora se puede incluir como procesos posteriores a la conmutación al respaldo. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmutación al nodo de respaldo en un sitio remoto"].
 
-* *Relación de SnapMirror*: Ahora puede crear una relación de SnapMirror mientras desarrolla el plan de replicación. Anteriormente, tenías que crear la relación fuera de la recuperación ante desastres de BlueXP.
-+
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* *Grupos de consistencia*: Cuando creas un plan de replicación, puedes incluir VMs que sean de diferentes volúmenes y diferentes SVM. La recuperación ante desastres de BlueXP crea una snapshot de grupo de consistencia incluyendo todos los volúmenes y actualizaciones todas las ubicaciones secundarias.
-+
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-* *Opción de retraso de encendido de VM*: Cuando crea un plan de replicación, puede agregar VM a un grupo de recursos. Con los grupos de recursos, puede establecer un retraso en cada máquina virtual para que se inicien una secuencia retrasada.
-+
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+=== Relación de SnapMirror
 
-* * Copias snapshot coherentes con la aplicación*: Puede especificar que cree copias snapshot coherentes con la aplicación. El servicio desactivará la aplicación y, a continuación, realizará una snapshot para obtener un estado coherente de la aplicación.
-+
+Ahora puede crear una relación de SnapMirror mientras desarrolla el plan de replicación. Anteriormente, tenías que crear la relación fuera de la recuperación ante desastres de BlueXP.
+
 Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
 
+
+=== Grupos de consistencia
+
+Cuando se crea un plan de replicación, puede incluir máquinas virtuales de diferentes volúmenes y diferentes SVM. La recuperación ante desastres de BlueXP crea una snapshot de grupo de consistencia incluyendo todos los volúmenes y actualizaciones todas las ubicaciones secundarias.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Opción de retraso de encendido de la máquina virtual
+
+Al crear un plan de replicación, puede añadir máquinas virtuales a un grupo de recursos. Con los grupos de recursos, puede establecer un retraso en cada máquina virtual para que se inicien una secuencia retrasada.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Copias Snapshot consistentes con las aplicaciones
+
+Puede especificar para crear copias de Snapshot consistentes con las aplicaciones. El servicio desactivará la aplicación y, a continuación, realizará una snapshot para obtener un estado coherente de la aplicación.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
 
 
@@ -254,8 +355,11 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-di
 
 Esta versión preliminar de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
 
-* Con esta versión, puede acceder a la información de otras páginas desde el Dashboard más rápidamente.
 
+
+=== Crear el panel con mayor rapidez
+
+Con esta versión, puede acceder a la información de otras páginas desde el Dashboard más rápidamente.
 
 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtén más información sobre la recuperación ante desastres de BlueXP"].
 
@@ -264,6 +368,10 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 == 20 de octubre de 2023
 
 Esta versión preliminar de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones.
+
+
+
+=== Proteja las cargas de trabajo de VMware basadas en NFS en las instalaciones
 
 Ahora, con la recuperación ante desastres de BlueXP, puedes proteger tus cargas de trabajo de VMware basadas en NFS on-premises frente a desastres en otro entorno de VMware basado en NFS en las instalaciones además del cloud público. La recuperación de desastres de BlueXP orquesta la finalización de los planes de recuperación ante desastres.
 
@@ -278,34 +386,38 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 Esta versión preliminar de la recuperación ante desastres de BlueXP incluye las siguientes actualizaciones:
 
-* *Actualizaciones del tablero*: Ahora puede hacer clic en las opciones del tablero, lo que le facilita revisar la información rápidamente. Además, la consola ahora muestra el estado de conmutaciones al respaldo y migraciones.
-+
+
+
+=== Actualizaciones de la consola
+
+Ahora puede hacer clic en las opciones del Panel de Control, lo que le facilitará revisar la información rápidamente. Además, la consola ahora muestra el estado de conmutaciones al respaldo y migraciones.
+
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["Vea el estado de sus planes de recuperación ante desastres en la Consola"].
 
-* *Actualizaciones del plan de replicación*:
-+
-** *RPO*: Ahora puede ingresar el objetivo de punto de recuperación (RPO) y el recuento de retención en la sección datastores del plan de replicación. Indica la cantidad de datos que debe existir que no es anterior a la hora establecida. Si, por ejemplo, lo configura en 5 minutos, el sistema puede perder hasta 5 minutos de datos si hay un desastre sin que ello afecte a las necesidades vitales para el negocio.
+
+
+=== Actualizaciones del plan de replicación
+
+* *RPO*: Ahora puede ingresar el objetivo de punto de recuperación (RPO) y el recuento de retención en la sección datastores del plan de replicación. Indica la cantidad de datos que debe existir que no es anterior a la hora establecida. Si, por ejemplo, lo configura en 5 minutos, el sistema puede perder hasta 5 minutos de datos si hay un desastre sin que ello afecte a las necesidades vitales para el negocio.
 +
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-** *Mejoras de red*: Cuando mapeas la red entre las ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, la recuperación ante desastres de BlueXP ahora ofrece dos opciones: DHCP o IP estática. Anteriormente, solo DHCP era compatible. Para las IP estáticas, debe configurar la subred, la puerta de enlace y los servidores DNS. Además, ahora puede introducir credenciales para máquinas virtuales.
+* *Mejoras de red*: Cuando mapeas la red entre las ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, la recuperación ante desastres de BlueXP ahora ofrece dos opciones: DHCP o IP estática. Anteriormente, solo DHCP era compatible. Para las IP estáticas, debe configurar la subred, la puerta de enlace y los servidores DNS. Además, ahora puede introducir credenciales para máquinas virtuales.
 +
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
 
-** *Editar horarios*: Ahora puede actualizar los horarios del plan de replicación.
+* *Editar horarios*: Ahora puede actualizar los horarios del plan de replicación.
 +
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Gestionar recursos"].
 
-** *Automatización de SnapMirror*: Mientras crea el plan de replicación en esta versión, puede definir la relación de SnapMirror entre los volúmenes de origen y de destino en una de las siguientes configuraciones:
+* *Automatización de SnapMirror*: Mientras crea el plan de replicación en esta versión, puede definir la relación de SnapMirror entre los volúmenes de origen y de destino en una de las siguientes configuraciones:
 +
-*** 1 a 1
-*** 1 a muchos en una arquitectura fanout
-*** Muchos a 1 como un grupo de consistencia
-*** Muchos A VARIOS
+** 1 a 1
+** 1 a muchos en una arquitectura fanout
+** Muchos a 1 como un grupo de consistencia
+** Muchos A VARIOS
 +
 Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
-
-
 
 
 
@@ -314,6 +426,10 @@ Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-creat
 
 
 == 1 de agosto de 2023
+
+
+
+=== Vista previa de la recuperación ante desastres de BlueXP 
 
 La vista previa de la recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con la vista previa de la recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS que ejecutan el almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx for ONTAP.
 
@@ -324,17 +440,39 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 Esta versión incluye las siguientes actualizaciones:
 
-* *Actualización de grupos de recursos para orden de arranque*: Cuando crea un plan de recuperación ante desastres o replicación, puede agregar máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos permiten poner un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener un orden de inicio que se puede ejecutar tras la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya en el plan. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["Seleccione aplicaciones para replicar y asignar grupos de recursos"].
-* *Verificación de replicación*: Después de crear el plan de recuperación ante desastres o replicación, identificar la recurrencia en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos de recuperación ante desastres de BlueXP verifica que la replicación se produzca realmente de acuerdo con el plan. Puede supervisar el progreso en la página Job Monitor. Consulte  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/replicate.html["Replicar aplicaciones en otro sitio"].
-* *El plan de replicación muestra los horarios de transferencia del objetivo de punto de recuperación (RPO)*: Cuando creas un plan de recuperación ante desastres o replicación, seleccionas las VM. En esta versión, ahora puede ver el SnapMirror asociado con cada uno de los volúmenes que estén asociados con el almacén de datos o la máquina virtual. También se pueden ver las programaciones de transferencia de RPO asociadas con la programación de SnapMirror. El RPO ayuda a determinar si la programación de backup es suficiente para recuperarse después de un desastre. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
-* *Actualización de Job Monitor*: La página Job Monitor ahora incluye una opción Refresh para que pueda obtener un estado actualizado de las operaciones. Consulte  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Supervisar los trabajos de recuperación ante desastres"].
 
+
+=== Los grupos de recursos se actualizan para el orden de inicio
+
+Al crear un plan de recuperación ante desastres o replicación, puede agregar máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos permiten poner un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener un orden de inicio que se puede ejecutar tras la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya en el plan. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["Seleccione aplicaciones para replicar y asignar grupos de recursos"].
+
+
+
+=== Verificación de replicación
+
+Después de crear el plan de recuperación ante desastres o replicación, identificar la repetición del asistente e iniciar una replicación a un sitio de recuperación ante desastres, cada 30 minutos de recuperación ante desastres de BlueXP  verifica que la replicación se produzca según el plan. Puede supervisar el progreso en la página Job Monitor. Consulte  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/replicate.html["Replicar aplicaciones en otro sitio"].
+
+
+
+=== El plan de replicación muestra los programas de transferencia de objetivo de punto de recuperación (RPO)
+
+Al crear un plan de recuperación ante desastres o replicación, selecciona las máquinas virtuales. En esta versión, ahora puede ver el SnapMirror asociado con cada uno de los volúmenes que estén asociados con el almacén de datos o la máquina virtual. También se pueden ver las programaciones de transferencia de RPO asociadas con la programación de SnapMirror. El RPO ayuda a determinar si la programación de backup es suficiente para recuperarse después de un desastre. Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Actualización de Job Monitor
+
+La página Job Monitor ahora incluye una opción Refresh para que pueda obtener un estado actualizado de las operaciones. Consulte  https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["Supervisar los trabajos de recuperación ante desastres"].
 
 
 
 == 18 de mayo de 2023
 
 Esta es el lanzamiento inicial de la recuperación ante desastres de BlueXP.
+
+
+
+=== Servicio de recuperación ante desastres basado en cloud
 
 La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Inicialmente, con la vista previa de la recuperación ante desastres de BlueXP, puedes proteger las cargas de trabajo de VMware basadas en NFS que ejecutan el almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx for ONTAP.
 

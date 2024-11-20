@@ -18,6 +18,8 @@ Estos planes a veces se llaman _blueprints_.
 
 Puede crear un plan de replicación y también editar programas para cumplimiento y pruebas.
 
+Es posible proteger varias máquinas virtuales en varios almacenes de datos. La recuperación ante desastres de BlueXP  crea grupos de consistencia ONTAP para todos los volúmenes de ONTAP que alojan almacenes de datos de máquinas virtuales protegidos.
+
 
 
 == Cree el plan
@@ -29,14 +31,6 @@ Un asistente le guiará por los siguientes pasos:
 * Mapear cómo se asignan los recursos del entorno de origen al destino.
 * Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.
 * Revise el plan.
-
-
-Mientras crea el plan de replicación, puede definir la relación de SnapMirror entre los volúmenes de origen y de destino en una de las siguientes configuraciones:
-
-* 1 a 1
-* de 1 a muchos en una arquitectura ramificada
-* Varios a 1 en un grupo de consistencia
-* Muchos A VARIOS
 
 
 Al crear el plan, debe seguir estas pautas:
@@ -127,16 +121,20 @@ TIP: Si una instancia de vCenter tiene un programador de recursos distribuidos (
 ** *Target VM folder* (opcional): Crea una nueva carpeta raíz para almacenar las VM seleccionadas.
 
 
-. *Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Seleccione la LAN virtual de origen y el segmento de destino.
+. *Redes virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*. Seleccione la LAN virtual de origen y la LAN virtual de destino.
++
+Seleccione la asignación de red a la LAN virtual adecuada. Las LAN virtuales ya se deben aprovisionar, así que seleccione la LAN virtual adecuada para asignar la máquina virtual.
+
 . *Máquinas virtuales*: En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo junto a *Máquinas virtuales*.
 +
-Si realiza algún cambio en la configuración predeterminada, deberá proporcionar las credenciales.
+Se asigna la configuración predeterminada para las máquinas virtuales. La asignación predeterminada utiliza la misma configuración que utilizan los equipos virtuales en el entorno de producción (misma dirección IP, máscara de subred y puerta de enlace).
 
 +
-Se asigna la configuración predeterminada para las máquinas virtuales. La asignación utiliza la misma configuración que utilizan las máquinas virtuales en el entorno de producción (misma dirección IP, máscara de subred y puerta de enlace).
+Si realiza algún cambio en la configuración predeterminada, debe cambiar el campo IP de destino a diferente del origen.
 
 +
-Seleccione la asignación de red al segmento apropiado. Los segmentos ya se deben aprovisionar, así que seleccione el segmento adecuado para asignar el equipo virtual.
+
+NOTE: Si cambia la configuración a «diferente del origen», deberá proporcionar las credenciales del sistema operativo invitado de VM.
 
 +
 Esta sección puede mostrar diferentes campos según su selección.

@@ -22,7 +22,7 @@ Puede utilizar los siguientes tipos de licencia:
 
 
 
-NOTE: Los cargos de recuperación de desastres de BlueXP se basan en la capacidad aprovisionada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la cartera digital de BlueXP.
+NOTE: Los cargos de recuperación ante desastres de BlueXP  se basan en la capacidad usada de los almacenes de datos en el sitio de origen cuando hay al menos un equipo virtual con un plan de replicación. La capacidad para un almacén de datos con fallos no se incluye en la permisión de capacidad. Para una BYOL, si los datos superan la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la cartera digital de BlueXP.
 
 Después de configurar tu BYOL, puedes ver la licencia en la pestaña *Licencias de servicios de datos* de la cartera digital de BlueXP.
 

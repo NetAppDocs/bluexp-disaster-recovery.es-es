@@ -452,7 +452,6 @@ Para la URL, en un navegador, introduzca:<block ref="6db7b50bf17b27cbede9f07c4fb
   <block id="901540dd7e45eaf2226327527c8d78b4" category="list-text">*Fuente*: Seleccione *Descubrir servidores de vCenter* para introducir información sobre el sitio de vCenter de origen.</block>
   <block id="bc7f3cb185f48d451eb5ef976e8ad82d" category="list-text">*Objetivo*:</block>
   <block id="d23a9d83c87c6eacef309f00a2beb5d3" category="inline-image-macro">Captura de pantalla de la página Sitios</block>
-  <block id="28f8c0c78028f2e899f7af50ce138e1b" category="paragraph"><block ref="28f8c0c78028f2e899f7af50ce138e1b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6f5e3fdfa73285ac2283ba492cf2d47b" category="list-text">VMware Cloud (VMC) en AWS con Amazon FSx para NetApp ONTAP o.</block>
   <block id="b374472b15e644f23d1e6b059b5216b9" category="list-text">Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP</block>
   <block id="53c1c0c22e2a647591a0b52427852850" category="paragraph"><block ref="53c1c0c22e2a647591a0b52427852850" category="inline-image-macro-rx" type="image"></block></block>
@@ -1046,4 +1045,5 @@ Después de comprar tu licencia de recuperación ante desastres de BlueXP al rep
   <block id="7dbf01d6d33098287eb82c71ea10ea1e" category="list-text">(Se aplica solo a sitios en las instalaciones) Para aceptar certificados autofirmados de la instancia de vCenter de origen, marque la casilla.</block>
   <block id="c2a573f83674b01d424b4f0c10fdc5f1" category="list-text">(Se aplica solo a sitios en la nube) *token API*: Ingrese el token API para autorizar el acceso al servicio para su organización. Cree el token de API proporcionando roles específicos de organización y servicio.</block>
   <block id="92d0331e97c92cd07178f7a7c2ab56da" category="list-text">(Se aplica solo a sitios en la nube) *ID de organización largo*: Introduzca el ID único de la organización. Puede identificar este ID haciendo clic en el nombre de usuario en la sección Cuenta de la consola de BlueXP .</block>
+  <block id="15a58a3d11cafa89812a0ab9b55e93b0" category="paragraph"><block ref="15a58a3d11cafa89812a0ab9b55e93b0" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

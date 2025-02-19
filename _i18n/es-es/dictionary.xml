@@ -1046,4 +1046,13 @@ Después de comprar tu licencia de recuperación ante desastres de BlueXP al rep
   <block id="c2a573f83674b01d424b4f0c10fdc5f1" category="list-text">(Se aplica solo a sitios en la nube) *token API*: Ingrese el token API para autorizar el acceso al servicio para su organización. Cree el token de API proporcionando roles específicos de organización y servicio.</block>
   <block id="92d0331e97c92cd07178f7a7c2ab56da" category="list-text">(Se aplica solo a sitios en la nube) *ID de organización largo*: Introduzca el ID único de la organización. Puede identificar este ID haciendo clic en el nombre de usuario en la sección Cuenta de la consola de BlueXP .</block>
   <block id="15a58a3d11cafa89812a0ab9b55e93b0" category="paragraph"><block ref="15a58a3d11cafa89812a0ab9b55e93b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca716ff875c64c5d237c8e862b62065c" category="doc">Compatibilidad de ASA R2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS</block>
+  <block id="1979efa5817be86acee4a8fbdf309a1a" category="paragraph">Esta versión de la recuperación ante desastres de BlueXP  ofrece compatibilidad con ASA R2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS. En un sistema ASA R2, el software ONTAP admite la funcionalidad SAN básica, mientras que quita funciones que no son compatibles con los entornos SAN.</block>
+  <block id="d154d7f159ffe4fedd65f7894a405e59" category="paragraph">Esta versión admite las siguientes funciones de ASA R2:</block>
+  <block id="38e9022b7f95524a99b3126af89eb640" category="list-text">Aprovisionamiento de grupos de consistencia para el almacenamiento primario (únicamente grupo de coherencia plano, es decir, sólo un nivel sin una estructura jerárquica)</block>
+  <block id="bbc4e3ff648912e4a892f88fcb03c65b" category="list-text">Operaciones de backup (grupo de consistencia) incluida la automatización de SnapMirror</block>
+  <block id="7e13cc5491f076161e0aefc0728bf351" category="paragraph">La compatibilidad con ASA R2 en la recuperación ante desastres de BlueXP  utiliza ONTAP 9.16.1.</block>
+  <block id="60a0836359d058db16981cf45c24594f" category="paragraph">Si bien los almacenes de datos se pueden montar en un volumen ONTAP o en una unidad de almacenamiento de ASA R2, un grupo de recursos de la recuperación ante desastres de BlueXP  no puede incluir tanto un almacén de datos de ONTAP como uno de ASA R2. Es posible seleccionar un almacén de datos de ONTAP o un almacén de datos de ASA R2 en un grupo de recursos.</block>
+  <block id="79043fd5ff3b61216207b60882cd72cd" category="section-title">19 de febrero de 2025</block>
+  <block id="c3687f641cfdd19b41b8fe6f7cb68897" category="paragraph">Versión 4,2</block>
 </blocks>

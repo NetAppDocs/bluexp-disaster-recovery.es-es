@@ -16,6 +16,28 @@ Descubre las novedades de la recuperación ante desastres de BlueXP.
 
 
 
+== 19 de febrero de 2025
+
+Versión 4,2
+
+
+
+=== Compatibilidad de ASA R2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS
+
+Esta versión de la recuperación ante desastres de BlueXP  ofrece compatibilidad con ASA R2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS. En un sistema ASA R2, el software ONTAP admite la funcionalidad SAN básica, mientras que quita funciones que no son compatibles con los entornos SAN.
+
+Esta versión admite las siguientes funciones de ASA R2:
+
+* Aprovisionamiento de grupos de consistencia para el almacenamiento primario (únicamente grupo de coherencia plano, es decir, sólo un nivel sin una estructura jerárquica)
+* Operaciones de backup (grupo de consistencia) incluida la automatización de SnapMirror
+
+
+La compatibilidad con ASA R2 en la recuperación ante desastres de BlueXP  utiliza ONTAP 9.16.1.
+
+Si bien los almacenes de datos se pueden montar en un volumen ONTAP o en una unidad de almacenamiento de ASA R2, un grupo de recursos de la recuperación ante desastres de BlueXP  no puede incluir tanto un almacén de datos de ONTAP como uno de ASA R2. Es posible seleccionar un almacén de datos de ONTAP o un almacén de datos de ASA R2 en un grupo de recursos.
+
+
+
 == 30 de octubre de 2024
 
 

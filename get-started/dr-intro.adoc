@@ -100,7 +100,7 @@ Puede comprar una licencia en cualquier momento y no se le cobrará hasta que fi
 
 La recuperación ante desastres de BlueXP puede recuperar cargas de trabajo replicadas de un sitio on-premises a Amazon FSx para ONTAP o a otro sitio on-premises. Este servicio automatiza la recuperación desde el nivel de SnapMirror, a través del registro de máquinas virtuales en Virtual Machine Cloud (VMC), y también en asignaciones de red directamente en la plataforma de seguridad y virtualización de red de VMware, NSX-T. Esta función se incluye en todos los entornos de nube de máquinas virtuales.
 
-La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP, que proporciona una replicación altamente eficiente y conserva las eficiencias de la Snapshot incremental de ONTAP para siempre. La replicación de SnapMirror garantiza que las copias Snapshot coherentes con las aplicaciones estén siempre sincronizadas y que los datos se puedan usar inmediatamente después de una conmutación por error.
+La recuperación ante desastres de BlueXP  utiliza la tecnología ONTAP SnapMirror, que proporciona una replicación altamente eficiente y conserva las eficiencias de Snapshot incremental de ONTAP para siempre. La replicación de SnapMirror garantiza que las copias snapshot coherentes con las aplicaciones estén siempre sincronizadas y que los datos se puedan usar inmediatamente después de una recuperación tras falla.
 
 image:dr-architecture-diagram-70-2.png["Diagrama que muestra la arquitectura de la recuperación ante desastres de BlueXP para la infraestructura del servicio de VMware"]
 

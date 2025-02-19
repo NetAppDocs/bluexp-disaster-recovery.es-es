@@ -71,7 +71,7 @@ El proceso de recuperación tras fallos implica las siguientes operaciones:
 * Si seleccionó la instantánea más reciente, se realiza la actualización de SnapMirror para replicar los cambios más recientes.
 * Las máquinas virtuales de origen se apagan.
 * La relación de SnapMirror se rompe y el volumen de destino se realiza de lectura/escritura.
-* Según la selección de la instantánea, el sistema de archivos activo se restaura a la instantánea especificada (última o seleccionada).
+* Según la selección de la instantánea, el sistema de archivos activo se restaura a la instantánea especificada (última o seleccionada)
 * Los almacenes de datos se crean y montan en el clúster o el host de VMware o VMC según la información capturada en el plan de replicación.
 * Las máquinas virtuales de destino se registran y se encienden según el orden capturado en la página Grupos de recursos.
 * La relación de SnapMirror se invierte del equipo virtual de destino al de origen.
@@ -88,7 +88,7 @@ TIP: Una vez que se inicia la conmutación al respaldo, es posible ver las máqu
 +
 image:dr-plan-failover2.png["Página de conmutación por error"]
 
-. En la página Failover, inicie una copia de Snapshot ahora o elija la Snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.
+. En la página Failover, inicie una snapshot now o elija la snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.
 +
 Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
 

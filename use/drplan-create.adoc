@@ -191,7 +191,7 @@ NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster
 ** Si las máquinas virtuales pertenecen al mismo volumen y a la misma SVM, el servicio realiza una copia de Snapshot de ONTAP estándar y actualiza los destinos secundarios.
 ** Si las máquinas virtuales son desde diferentes volúmenes y misma SVM, el servicio crea una copia de Snapshot de grupo de coherencia mediante todos los volúmenes y actualiza los destinos secundarios.
 ** Si las máquinas virtuales se utilizan desde un volumen diferente y una SVM diferente, el servicio realiza una fase de inicio de grupo de coherencia y una snapshot de fase de compromiso incluyendo todos los volúmenes del mismo clúster o de otro diferente, y actualiza los destinos secundarios.
-** Durante la conmutación al respaldo, puede seleccionar cualquier instantánea. Si selecciona la instantánea más reciente, el servicio crea un backup bajo demanda, actualiza el destino y utiliza esa instantánea para la conmutación por error.
+** Durante la conmutación al respaldo, puede seleccionar cualquier instantánea. Si selecciona la última instantánea, el servicio crea un backup bajo demanda, actualiza el destino y utiliza esa instantánea para la conmutación por error.
 
 
 

@@ -12,7 +12,7 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 
 
 [role="lead"]
-Después de resolver un desastre, conmute al sitio de recuperación de desastres al sitio de origen para volver al funcionamiento normal. Puede seleccionar la snapshot a partir de la que desea recuperar.
+Después de resolver un desastre, conmute al sitio de recuperación de desastres al sitio de origen para volver al funcionamiento normal. Puede seleccionar la snapshot a partir de la que se va a recuperar.
 
 En este flujo de trabajo, la recuperación de desastres de BlueXP replica (resincroniza) cualquier cambio de vuelta en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
 
@@ -28,6 +28,6 @@ En este flujo de trabajo, la recuperación de desastres de BlueXP replica (resin
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"]  Y seleccione *fail back*.
 . Introduzca el nombre del plan de replicación para confirmar e iniciar la conmutación de retorno tras recuperación.
-. Seleccione la Snapshot para el almacén de datos a partir del que desea recuperar.  El valor predeterminado es el último.
+. Seleccione la snapshot para el almacén de datos a partir del que se va a recuperar. El valor predeterminado es el último.
 . Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.
 

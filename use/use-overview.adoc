@@ -14,8 +14,9 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 [role="lead"]
 Con la recuperación ante desastres de BlueXP, podrá alcanzar los siguientes objetivos:
 
-* link:../use/dashboard-view.html["Vea el estado de sus planes de recuperación ante desastres"]
+* link:../use/dashboard-view.html["Vea el estado de sus planes de recuperación ante desastres"].
 * link:../use/sites-add.html["Añada sitios de vCenter"].
+* link:../use/resource-group.html["Cree grupos de recursos para organizar las máquinas virtuales juntas"]
 * link:../use/drplan-create.html["Cree un plan de recuperación ante desastres"].
 * link:../use/replicate.html["Replicar aplicaciones de VMware"] En el sitio principal a un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror.
 * link:../use/migrate.html["Migrar aplicaciones de VMware"] en su sitio principal a otro sitio.

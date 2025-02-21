@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: use/resource-group.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
+summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Después de añadir sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o replicación. 
+---
+= Cree un grupo de recursos para organizar las máquinas virtuales juntas
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Después de añadir sitios de vCenter, es posible que desee crear grupos de recursos que agrupen al mismo tiempo máquinas virtuales. Los grupos de recursos permiten organizar un conjunto de equipos virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, puede agrupar máquinas virtuales asociadas a una aplicación, o bien agrupar aplicaciones con niveles similares. Por otro ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
+
+Puede crear grupos de recursos con los siguientes métodos:
+
+* En la pestaña Resource groups
+* Mientras crea una recuperación ante desastres o _replication plan_. Si tiene muchas máquinas virtuales alojadas en un clúster de vCenter de origen, puede ser más fácil crear los grupos de recursos mientras crea el plan de replicación. Para obtener instrucciones sobre la creación de grupos de recursos mientras crea un plan de replicación, consulte link:dr-plan-create.html["Cree un plan de replicación"].
+
+
+
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluya en el plan de replicación. Es posible cambiar el orden arrastrando las máquinas virtuales hacia arriba o hacia abajo en la lista del grupo de recursos.
+
+.Acerca de los grupos de recursos
+Los grupos de recursos le permiten combinar máquinas virtuales relacionadas en el funcionamiento y que deben protegerse como una sola unidad.
+
+Por ejemplo, una aplicación de punto de venta puede consistir en varias máquinas virtuales que alojan bases de datos, varias máquinas virtuales que alojan la gestión de reglas de lógica empresarial y varias máquinas virtuales que actúan como escaparate basado en servidor web. Puede ser beneficioso gestionar la disponibilidad de toda la aplicación con un solo proceso de protección al colocar estas máquinas virtuales en un solo grupo de recursos.
+
+Con los grupos de recursos configurados, puede aplicar las reglas del plan de replicación para un orden de inicio de VM adecuado, conexión de red y mucho más para garantizar una recuperación adecuada de todas las VM necesarias para la aplicación.
+
+.¿Cómo funciona?
+La recuperación ante desastres de BlueXP  protege las máquinas virtuales mediante la replicación de los volúmenes ONTAP y los LUN subyacentes que alojan las máquinas virtuales en el grupo de recursos. Para ello, el sistema solicita a vCenter el nombre de cada almacén de datos que aloja las máquinas virtuales en un grupo de recursos. A continuación, la recuperación ante desastres de BlueXP  identifica el volumen ONTAP de origen o LUN que aloja dicho almacén de datos. Toda la protección se realiza a nivel de volumen de ONTAP mediante la replicación de SnapMirror.
+
+Si las máquinas virtuales del grupo de recursos se alojan en almacenes de datos diferentes, la recuperación ante desastres de BlueXP  utiliza uno de los siguientes métodos para crear una copia Snapshot consistente con datos de los volúmenes ONTAP o LUN.
+
+[cols="30,65a"]
+|===
+| Ubicación relativa de los volúmenes de FlexVol | Proceso de réplica de instantáneas 
+
+
+| Varios almacenes de datos - FlexVol volúmenes en el *mismo SVM*  a| 
+* Se creó el grupo de consistencia ONTAP
+* Snapshots del grupo de consistencia tomadas
+* Se realizó la replicación SnapMirror en el ámbito del volumen
+
+
+
+
+| Varios almacenes de datos - FlexVol Volumes en *Varias SVM*  a| 
+* API de ONTAP `cg_start`: . Quieces todos los volúmenes para que se puedan tomar copias de Snapshot e iniciar copias Snapshot con ámbito de volumen de todos los volúmenes de grupos de recursos.
+* API de ONTAP `cg_end`: . Reanuda las operaciones de I/O en todos los volúmenes y permite la replicación de SnapMirror con ámbito de volumen después de realizar las instantáneas.
+
+
+|===
+Al crear grupos de recursos, tenga en cuenta los siguientes problemas:
+
+* Un único almacén de datos no debe alojar equipos virtuales protegidos por más de un plan de replicación.
+* No alojan máquinas virtuales protegidas y sin protección en el mismo almacén de datos. Si se alojan equipos virtuales protegidos y sin protección en el mismo almacén de datos, podrían surgir los siguientes problemas:
++
+** Como la recuperación ante desastres de BlueXP  utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para tener en cuenta las licencias. En este caso, en este cálculo se incluirá el espacio del volumen consumido por las máquinas virtuales protegidas y sin protección.
+** Si el grupo de recursos y los almacenes de datos asociados deben conmutar en caso de fallo al sitio de recuperación de desastres, todos los equipos virtuales sin proteger (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojados en el volumen ONTAP) ya no existirán en el sitio de origen desde el proceso de conmutación por error, lo que provoca un fallo de equipos virtuales sin proteger en el sitio de origen. Además, la recuperación ante desastres de BlueXP  no iniciará esas máquinas virtuales no protegidas en el sitio de vCenter de conmutación al respaldo.
+
+
+* Para que una máquina virtual esté protegida, es necesario incluirla en un grupo de recursos.
+
+
+*MEJOR PRÁCTICA*: Organice sus VM antes de implementar la recuperación ante desastres de BlueXP  para minimizar la “dispersión de almacenes de datos”. Coloca las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y coloca las máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos. Asegúrese de que las máquinas virtuales de cualquier almacén de datos no estén protegidas por diferentes planes de replicación.
+
+.Pasos
+. En el menú de recuperación de desastres de BlueXP , seleccione *Grupos de recursos*.
+. Seleccione *Agregar*.
+. Escriba un nombre para el grupo de recursos.
+. Seleccione el clúster de vCenter de origen donde se encuentran las máquinas virtuales.
+. En el lado izquierdo de la página Add resource groups, seleccione las máquinas virtuales que desee proteger.
++
+image:dr-resource-groups-add.png["Captura de pantalla que muestra la página Agregar grupos de recursos"]
+
+. De manera opcional, puede cambiar el orden de las máquinas virtuales de la derecha arrastrando cada máquina virtual hacia arriba o hacia abajo en la lista. Las máquinas virtuales se encenderán según la secuencia en la que las incluya.
+. Seleccione *Agregar*.
+

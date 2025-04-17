@@ -20,6 +20,13 @@ Puede crear un plan de replicación y también editar programas para cumplimient
 
 Es posible proteger varias máquinas virtuales en varios almacenes de datos. La recuperación ante desastres de BlueXP  crea grupos de consistencia ONTAP para todos los volúmenes de ONTAP que alojan almacenes de datos de máquinas virtuales protegidos.
 
+Las máquinas virtuales solo se pueden proteger si el plan de replicación se encuentra en uno de los siguientes estados:
+
+* Preparado
+* Conmutación tras recuperación confirmada
+* Prueba de failover confirmada
+
+
 
 
 == Cree el plan
@@ -27,7 +34,7 @@ Es posible proteger varias máquinas virtuales en varios almacenes de datos. La 
 Un asistente le guiará por los siguientes pasos:
 
 * Seleccione vCenter Servers.
-* Seleccione las máquinas virtuales que desea replicar y asignar grupos.
+* Seleccione las máquinas virtuales o los almacenes de datos que desee replicar y asigne grupos de recursos.
 * Mapear cómo se asignan los recursos del entorno de origen al destino.
 * Identifique la recurrencia, ejecute un script alojado por invitado, establezca el orden de inicio y seleccione el objetivo de punto de recuperación.
 * Revise el plan.
@@ -64,27 +71,54 @@ image:dr-plan-create-name.png["Captura de pantalla que muestra la página Agrega
 
 === Seleccione aplicaciones para replicar y asignar grupos de recursos
 
-El siguiente paso es agrupar las máquinas virtuales necesarias en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de equipos virtuales dependientes en grupos lógicos que cumplan sus requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
+El siguiente paso es agrupar las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de máquinas virtuales o almacenes de datos dependientes en grupos lógicos que cumplan los requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
 
-Cuando selecciona aplicaciones en el plan de replicación, puede ver el sistema operativo de cada VM del plan. Esto es útil para decidir cómo agrupar máquinas virtuales en un grupo de recursos.
+Cuando selecciona aplicaciones en el plan de replicación, puede ver el sistema operativo de cada máquina virtual o almacén de datos del plan. Esto es útil para decidir cómo agrupar máquinas virtuales o almacenes de datos en un grupo de recursos.
 
 
-TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluya aquí.
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluya aquí.
+
+Al crear grupos de recursos, tenga en cuenta los siguientes problemas:
+
+* Antes de añadir almacenes de datos a grupos de recursos, primero debe iniciar una detección manual o una detección programada de las máquinas virtuales. De este modo se garantiza que las máquinas virtuales se detecten y aparezcan en el grupo de recursos. Si no activa una detección manual, es posible que las máquinas virtuales no se incluyan en el grupo de recursos.
+* Compruebe que haya al menos una máquina virtual en el almacén de datos. Si no hay máquinas virtuales en el almacén de datos, no se detectará este.
+* Un único almacén de datos no debe alojar equipos virtuales protegidos por más de un plan de replicación.
+* No aloje máquinas virtuales protegidas y sin protección en el mismo almacén de datos. Si se alojan máquinas virtuales protegidas y sin protección en el mismo almacén de datos, podrían surgir los siguientes problemas:
++
+** Como la recuperación ante desastres de BlueXP  utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para tener en cuenta las licencias. En este caso, en este cálculo se incluirá el espacio del volumen consumido por las máquinas virtuales protegidas y sin protección.
+** Si el grupo de recursos y los almacenes de datos asociados deben conmutar por error en el sitio de recuperación ante desastres, todos los equipos virtuales sin proteger (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojados en el volumen ONTAP) ya no existirán en el sitio de origen desde el proceso de conmutación por error, lo que provoca un fallo de equipos virtuales sin proteger en el sitio de origen. Además, la recuperación ante desastres de BlueXP  no iniciará esas máquinas virtuales no protegidas en el sitio de vCenter de conmutación al respaldo.
+
+
+* Para que una máquina virtual esté protegida, es necesario incluirla en un grupo de recursos.
+
+
+*MEJOR PRÁCTICA*: Organice sus VM antes de implementar la recuperación ante desastres de BlueXP  para minimizar la “dispersión de almacenes de datos”. Colocar máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y colocar máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos. Asegúrese de que las máquinas virtuales de cualquier almacén de datos determinado no estén protegidas por diferentes planes de replicación.
 
 .Pasos
-. Opcionalmente, en la parte izquierda de la página Applications, filtre las máquinas virtuales por su almacén de datos. También puede buscar máquinas virtuales específicas por nombre.
-. En la parte izquierda de la página Applications, seleccione las máquinas virtuales que desea proteger y asignar al grupo seleccionado.
+. Seleccione *Máquinas virtuales* o *Almacenes de datos*.
+. De manera opcional, busque máquina virtual o un almacén de datos específico por nombre.
+. En la parte izquierda de la página Applications, seleccione las máquinas virtuales o los almacenes de datos que desea proteger y asignar al grupo seleccionado.
 +
-La máquina virtual seleccionada se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que se agrega una máquina virtual al último grupo, se agrega otro grupo.
+El recurso seleccionado se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2. Cada vez que se agrega un recurso al último grupo, se agrega otro grupo.
 
 +
-image:dr-plan-create-apps-vms5.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
+image:dr-plan-create-apps-vms6.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
+
++
+O, para almacenes de datos:
+
++
+image:dr-plan-create-apps-datastores.png["Captura de pantalla que muestra la página Agregar plan de replicación  de gt; para replicar"]
 
 . Opcionalmente, realice cualquiera de las siguientes acciones:
 +
 ** Para cambiar el nombre del grupo, haga clic en el icono del grupo *Editar*image:icon-pencil.png["Icono de lápiz"].
-** Para eliminar una VM de un grupo, seleccione *X* junto a la VM.
-** Para mover un equipo virtual a otro grupo, arrástrelo y suéltelo en el nuevo grupo.
+** Para eliminar un recurso de un grupo, seleccione *X* junto al recurso.
+** Para mover un recurso a un grupo diferente, arrástrelo y suéltelo en el nuevo grupo.
++
+
+TIP: Para mover un almacén de datos a un grupo de recursos diferente, anule la selección del almacén de datos no deseado y envíe el plan de replicación. A continuación, cree o edite el otro plan de replicación y vuelva a seleccionar dataastore.
+
 
 
 . Cuando tenga varios grupos de recursos, asegúrese de que la secuencia de los grupos coincida con la secuencia operativa que debe producirse.

@@ -14,7 +14,23 @@ summary: Para poder crear un plan de recuperación ante desastres, debe añadir 
 [role="lead"]
 Para poder crear un plan de recuperación ante desastres, debe añadir un servidor de vCenter principal a un sitio y un sitio de recuperación ante desastres de vCenter de destino en BlueXP .
 
-Después de añadirlos, la recuperación de desastres de BlueXP realiza una detección profunda de los entornos de vCenter, incluidos clústeres de vCenter, hosts ESXi, almacenes de datos, huella de almacenamiento, detalles de las máquinas virtuales, réplicas de SnapMirror y redes de máquinas virtuales.
+Una vez que se añaden vCenter, la recuperación de desastres de BlueXP  realiza una detección profunda de los entornos de vCenter, incluidos clústeres de vCenter, hosts ESXi, almacenes de datos, superficie de almacenamiento, detalles de máquinas virtuales, réplicas de SnapMirror y redes de máquinas virtuales.
+
+Si añadió vCenter en versiones anteriores y desea personalizar la programación de detección, debe editar el sitio del servidor de vCenter y configurar la programación.
+
+
+TIP: La recuperación ante desastres de BlueXP  realiza la detección una vez cada 24 horas. Después de configurar un sitio, puede editar posteriormente el para vCenter para personalizar la programación de detección que satisfaga sus necesidades. Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 23 horas y 59 minutos. Si tiene una cantidad pequeña de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas. El intervalo mínimo es de 30 minutos y el máximo es de 24 horas.
+
+Primero debe realizar algunas detecciones manuales para obtener la información más actualizada sobre su entorno. Después de eso, puede configurar la programación para que se ejecute automáticamente.
+
+Las máquinas virtuales recién añadidas o eliminadas se reconocen en el siguiente descubrimiento programado o durante una detección manual inmediata.
+
+Las máquinas virtuales solo se pueden proteger si el plan de replicación se encuentra en uno de los siguientes estados:
+
+* Preparado
+* Conmutación tras recuperación confirmada
+* Prueba de failover confirmada
+
 
 .Pasos
 . Inicia sesión en BlueXP y selecciona *Protección* > *Recuperación ante desastres* desde el navegador izquierdo.
@@ -64,4 +80,38 @@ image:sites-list2.png["Captura de pantalla de la página Sitios"]
 
 
 . Para ver el progreso de la operación, en el menú superior, seleccione *Monitoreo de trabajos*.
+
+
+
+
+== Edite el sitio de vCenter Server y personalice la programación de detección
+
+Es posible editar el sitio de vCenter Server para personalizar la programación de detección. Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 23 horas y 59 minutos. Si tiene una cantidad pequeña de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
+
+Si añadió vCenter en versiones anteriores y desea personalizar la programación de detección, debe editar el sitio del servidor de vCenter y configurar la programación.
+
+Si no desea programar la detección, puede deshabilitar la opción de detección programada y actualizar la detección manualmente en cualquier momento.
+
+.Pasos
+. En el menú de recuperación ante desastres de BlueXP , seleccione *Sitios*.
+. Seleccione el sitio que desea editar.
+. Selecciona el icono Acciones a image:icon-vertical-dots.png["El icono Actions"]la derecha y selecciona *Editar*.
+. En la página Edit vCenter Server, edite los campos según sea necesario.
+. Para personalizar el programa de detección, marque la casilla *Habilitar detección programada* y seleccione el intervalo de fecha y hora que desee.
++
+image:sites-edit-schedule.png["Editar captura de pantalla del programa de detección"]
+
+. Seleccione *Guardar*.
+
+
+
+
+== Actualice la detección manualmente
+
+Es posible actualizar la detección manualmente en cualquier momento. Esto resulta útil si agregó o quitó máquinas virtuales y desea actualizar la información en la recuperación ante desastres de BlueXP .
+
+.Pasos
+. En el menú de recuperación ante desastres de BlueXP , seleccione *Sitios*.
+. Seleccione el sitio que desea actualizar.
+. Selecciona el icono Acciones a image:icon-vertical-dots.png["El icono Actions"]la derecha y selecciona *Actualizar*.
 

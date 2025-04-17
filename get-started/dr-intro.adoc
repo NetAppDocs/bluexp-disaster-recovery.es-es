@@ -12,7 +12,7 @@ summary: La recuperación de desastres en el cloud es una forma resiliente y ren
 
 
 [role="lead"]
-La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres.
+La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP  para VMware, puede replicar las cargas de trabajo de la máquina virtual de VMware o del almacén de datos que ejecutan el almacenamiento de ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en cloud de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación ante desastres.
 
 La recuperación de desastres de BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Con el servicio de recuperación ante desastres de BlueXP , puede proteger las cargas de trabajo basadas en NFS en las instalaciones y los almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere para iSCSI y FC que ejecutan almacenamiento NetApp en uno de los siguientes elementos:
 
@@ -48,8 +48,8 @@ La recuperación ante desastres de BlueXP te permite utilizar al máximo varias 
 * Replique aplicaciones de VMware en su sitio de producción local en un sitio remoto de recuperación de desastres en el cloud o en las instalaciones mediante la replicación de SnapMirror.
 * Migre las cargas de trabajo de VMware de su sitio original a otro sitio.
 * Realice una prueba de recuperación tras fallos; las máquinas virtuales se crean temporalmente. La recuperación ante desastres de BlueXP  crea un nuevo volumen FlexClone de la Snapshot seleccionada, y se asigna un almacén de datos temporal que respalda el volumen de FlexClone a los hosts ESXi. Este proceso no consume capacidad física adicional en almacenamiento on-premises de ONTAP ni en almacenamiento FSx para NetApp ONTAP en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
-* En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.
-* Una vez resuelto el desastre, conmutación al respaldo bajo demanda del sitio de recuperación de desastres al sitio principal.
+* En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con Amazon FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.
+* Una vez resuelto el desastre, conmutación al respaldo bajo demanda del sitio de recuperación de desastres al sitio principal. * Agrupar las máquinas virtuales o almacenes de datos en grupos de recursos lógicos para una gestión eficiente.
 
 
 

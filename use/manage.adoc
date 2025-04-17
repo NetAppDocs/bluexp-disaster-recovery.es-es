@@ -37,7 +37,13 @@ Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS
 
 == Gestione grupos de recursos
 
-Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan.
+Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan. Los grupos de recursos se crean por máquinas virtuales o por almacenes de datos.
+
+Es posible crear un grupo de recursos por almacenes de datos de las siguientes maneras:
+
+* Cuando se añade un grupo de recursos mediante almacenes de datos, se muestra una lista de almacenes de datos. Puede seleccionar uno o varios almacenes de datos para crear un grupo de recursos.
+* Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
+
 
 También puede editar y eliminar grupos de recursos.
 

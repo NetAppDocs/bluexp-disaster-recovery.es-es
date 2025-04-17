@@ -14,10 +14,7 @@ summary: La revisión de los informes de recuperación ante desastres puede ayud
 [role="lead"]
 La revisión de los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos de prueba, detalles del plan de replicación y detalles de las tareas en todos los sitios de una cuenta durante los últimos siete días.
 
-Es posible descargar los informes en formato HTML o JSON.
-
-
-TIP: Puede convertir la página HTML a un PDF utilizando las opciones de su navegador.
+Es posible descargar los informes en formato PDF, HTML o JSON.
 
 El enlace de descarga es válido durante seis horas.
 

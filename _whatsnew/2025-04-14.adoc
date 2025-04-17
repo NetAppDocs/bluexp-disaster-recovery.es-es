@@ -1,0 +1,39 @@
+= Detección programada para máquinas virtuales
+:allow-uri-read: 
+
+
+
+
+=== Detección programada para máquinas virtuales
+
+La recuperación ante desastres de BlueXP  realiza la detección una vez cada 24 horas. Con esta versión, ahora puede personalizar el programa de detección para satisfacer sus necesidades y reducir el impacto en el rendimiento cuando lo necesite. Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 48 horas. Si tiene una cantidad pequeña de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
+
+Si no wan programa la detección, puede deshabilitar la opción de detección programada y actualizar la detección manualmente en cualquier momento.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Añada sitios de vCenter Server"] .
+
+
+
+=== Compatibilidad con almacenes de datos de grupo de recursos
+
+Antes, solo podía crear grupos de recursos por máquinas virtuales. Con esta versión, es posible crear un grupo de recursos por almacenes de datos. Cuando crea un plan de replicación y crea un grupo de recursos para ese plan, se mostrarán todas las máquinas virtuales de un almacén de datos. Esta característica resulta útil si tiene una gran cantidad de máquinas virtuales y desea agruparlas por almacén de datos.
+
+Es posible crear un grupo de recursos con un almacén de datos de las siguientes maneras:
+
+* Cuando se añade un grupo de recursos mediante almacenes de datos, se muestra una lista de almacenes de datos. Puede seleccionar uno o varios almacenes de datos para crear un grupo de recursos.
+* Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
+
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].
+
+
+
+=== Notificaciones de prueba gratuita o vencimiento de licencia
+
+Esta versión proporciona notificaciones de que la prueba gratuita caducará en 60 días para garantizar que tenga tiempo para obtener una licencia. Esta versión también proporciona notificaciones el día en que caduca la licencia.
+
+
+
+=== Notificación de actualizaciones de servicio
+
+Con esta versión, aparece un banner en la parte superior para indicar que los servicios se están actualizando y que el servicio se coloca en modo de mantenimiento. El banner aparece cuando el servicio se está actualizando y desaparece cuando se completa la actualización. Aunque puede seguir trabajando en la interfaz de usuario mientras la actualización está en curso, no puede enviar nuevos trabajos. Los trabajos programados se ejecutarán una vez finalizada la actualización y el servicio volverá al modo de producción.

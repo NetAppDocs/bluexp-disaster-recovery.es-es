@@ -118,13 +118,13 @@ Puede detener la prueba gratuita en cualquier momento o puede esperar hasta que 
 +
 image:draas-trial-end3.png["Finalice la página de prueba gratuita"]
 
-. Si desea eliminar todos los datos, marque *Borrar todos los datos cuando termine mi prueba*.
+. Si desea eliminar todos los datos, marque *Borrar datos inmediatamente después de terminar mi prueba gratuita*.
 +
 Esto eliminará todos los programas, planes de replicación, grupos de recursos, vCenter y sitios. Los datos de auditoría, los registros de operaciones y el historial de trabajos se conservan hasta el final de la vida útil del producto.
 
 +
 
-NOTE: Si finaliza la prueba gratuita y no se le pide que elimine datos y no adquiere ninguna licencia o suscripción, 60 días después de que finalice la prueba gratuita, la recuperación ante desastres de BlueXP eliminará todos sus datos.
+NOTE: Si finaliza la prueba gratuita, no ha solicitado eliminar datos y no compra ninguna licencia o suscripción, la recuperación ante desastres de BlueXP  elimina todos sus datos 60 días después de que finalice la prueba gratuita.
 
 . Escriba «End trial» en el cuadro de texto.
 . Seleccione *END*.

@@ -1,0 +1,25 @@
+= Compatibilidad con proxy inteligente
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con proxy inteligente
+
+El conector BlueXP  admite proxy inteligente. El proxy inteligente es una forma ligera, segura y eficiente de conectar tu entorno on-premises al servicio BlueXP . Proporciona una conexión segura entre su entorno y el servicio BlueXP  sin requerir una VPN ni acceso directo a Internet. Esta implementación de proxy optimizada libera el tráfico de API dentro de la red local.
+
+Cuando se configura un proxy, la recuperación ante desastres de BlueXP  intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.
+
+La implementación del proxy de recuperación ante desastres de BlueXP  requiere comunicación del puerto 443 entre el conector y todas las instancias de vCenter Server y las cabinas ONTAP mediante un protocolo HTTPS. El agente de recuperación ante desastres de BlueXP  dentro de Connector se comunica directamente con VMware vSphere, el VC o ONTAP cuando realiza cualquier acción.
+
+Para obtener más información sobre el proxy inteligente para la recuperación de desastres de BlueXP , consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configura tu infraestructura para la recuperación ante desastres de BlueXP"].
+
+Para obtener más información sobre la configuración general de proxy en BlueXP , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configure un conector para que utilice un servidor proxy"^].
+
+
+
+=== Finalice la prueba gratuita en cualquier momento
+
+Puede detener la prueba gratuita en cualquier diente o puede esperar hasta que caduque.
+
+Consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Finalice la prueba gratuita"].

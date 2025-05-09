@@ -42,6 +42,18 @@ Asegúrese de que se cumplen los siguientes requisitos antes de configurar la re
 
 
 
+=== Compatibilidad con proxy inteligente
+
+El conector BlueXP  admite proxy inteligente. El proxy inteligente es una forma ligera, segura y eficiente de conectar tu entorno on-premises al servicio BlueXP . Proporciona una conexión segura entre su entorno y el servicio BlueXP  sin requerir una VPN ni acceso directo a Internet. Esta implementación de proxy optimizada libera el tráfico de API dentro de la red local.
+
+Cuando se configura un proxy, la recuperación ante desastres de BlueXP  intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.
+
+La implementación del proxy de recuperación ante desastres de BlueXP  requiere comunicación del puerto 443 entre el conector y todas las instancias de vCenter Server y las cabinas ONTAP mediante un protocolo HTTPS. El agente de recuperación ante desastres de BlueXP  dentro de Connector se comunica directamente con VMware vSphere, el VC o ONTAP cuando realiza cualquier acción.
+
+Para obtener más información sobre la configuración general de proxy en BlueXP , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configure un conector para que utilice un servidor proxy"^].
+
+
+
 == Prepárate para la recuperación de desastres de BlueXP  para conseguir una protección on-premises a la nube con AWS
 
 Para configurar la recuperación de desastres de BlueXP  para la protección de las instalaciones al cloud mediante AWS, tienes que configurar lo siguiente:

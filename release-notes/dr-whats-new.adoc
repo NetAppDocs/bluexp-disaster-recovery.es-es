@@ -54,7 +54,7 @@ Al iniciar una conmutación por error, ahora puede elegir una opción de *Omitir
 
 Después de que el sitio de origen original vuelva a estar en línea, puede establecer la protección inversa seleccionando *Proteger recursos* en el menú Acciones del plan de replicación. Esto intenta crear una relación de replicación inversa para cada volumen del plan. Puede ejecutar este trabajo varias veces hasta que se restaure la protección. Una vez restaurada la protección, puede iniciar una conmutación de retorno tras recuperación de la forma habitual.
 
-Para obtener más información sobre la protección contra omisiones, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Fallo de las aplicaciones ovre en un sitio remoto"] .
+Para obtener más información sobre la protección contra omisiones, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmute al nodo de respaldo de las aplicaciones en un sitio remoto"] .
 
 
 
@@ -64,11 +64,11 @@ La recuperación ante desastres de BlueXP  ahora admite el uso de soluciones de
 
 Para configurarlo, en la sección Plan de replicación > Asignación de recursos, marque la casilla de verificación *Usar copias de seguridad administradas por plataforma y programas de retención* al configurar la asignación de almacenes de datos.
 
-Cuando se selecciona, la recuperación ante desastres de BlueXP  no configura una programación de backup. Sin embargo, todavía debe configurar un programa de retención porque es posible que aún se realicen instantáneas para operaciones de prueba, conmutación por error y conmutación de retorno tras recuperación.
+Cuando se selecciona la opción, BlueXP  Disaster Recovery no configura una programación de backup. Sin embargo, todavía debe configurar un programa de retención porque es posible que aún se realicen instantáneas para operaciones de prueba, conmutación por error y conmutación de retorno tras recuperación.
 
 Una vez configurado, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
 
-Para obtener más información sobre la protección contra omisiones, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"] .
+Para obtener más información sobre el uso de soluciones instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"] .
 
 
 

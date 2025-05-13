@@ -33,7 +33,7 @@ Las máquinas virtuales solo se pueden proteger si el plan de replicación se en
 
 
 .Pasos
-. Inicia sesión en BlueXP y selecciona *Protección* > *Recuperación ante desastres* desde el navegador izquierdo.
+. Inicie sesión en BlueXP  y, en el menú de navegación de la izquierda, seleccione *Protección* > *Recuperación de desastres*.
 +
 Llegarás a la página del Panel de recuperación de desastres de BlueXP. Cuando comienza por primera vez con el servicio, debe añadir información de vCenter. Más adelante, el panel muestra datos sobre sus sitios y planes de replicación.
 
@@ -80,6 +80,70 @@ image:sites-list2.png["Captura de pantalla de la página Sitios"]
 
 
 . Para ver el progreso de la operación, en el menú superior, seleccione *Monitoreo de trabajos*.
+
+
+
+
+== Añada la asignación de subred para un sitio de vCenter
+
+Gestione direcciones IP cuando se produce una conmutación por error de una nueva manera mediante la asignación de subred, lo que le permite añadir subredes para cada vCenter. Al hacerlo, debe definir el CIDR IPv4, la puerta de enlace predeterminada y el DNS para cada red virtual.
+
+Tras la conmutación por error, la recuperación ante desastres de BlueXP  determina la dirección IP adecuada de cada VNIC observando el CIDR proporcionado para la red virtual asignada y lo utiliza para derivar la nueva dirección IP.
+
+Por ejemplo:
+
+* NetworkA = 10,1.1.0/24
+* NetworkB = 192.168.1.0/24
+
+
+VM1 tiene una VNIC (10,1.1,50) que está conectada a NetworkA. NetworkA se asigna a NetworkB en la configuración del plan de replicación.
+
+Tras la conmutación por error, la recuperación ante desastres de BlueXP  sustituye la parte de red de la dirección IP original (10,1.1) y mantiene la dirección de host (.50) de la dirección IP original (10,1.1,50). Para VM1, la recuperación ante desastres de BlueXP  examina la configuración CIDR para NetworkB y utiliza la parte de red 192.168.1 de NetworkB mientras mantiene la parte de host (.50) para crear la nueva dirección IP para VM1. La nueva dirección IP se convierte en 192.168.1.50.
+
+En resumen, la dirección de host permanece igual, mientras que la dirección de red se sustituye por lo que esté configurado en la asignación de subred del sitio. Esto le permite gestionar la reasignación de direcciones IP en caso de fallo con mayor facilidad, especialmente si tiene cientos de redes y miles de máquinas virtuales que gestionar.
+
+El uso de la asignación de subred es un proceso opcional de dos pasos:
+
+* En primer lugar, añada el mapa de subred para cada sitio de vCenter.
+* En segundo lugar, en el plan de replicación, indique que desea utilizar la asignación de subred.
+
+
+.Pasos
+. En el menú superior de recuperación de desastres de BlueXP , seleccione *Sitios*.
+. En el icono Acciones de image:icon-vertical-dots.png["El icono Actions"]la derecha, selecciona *Añadir subred*.
++
+image:sites-subnet-add.png["Agregar captura de pantalla de asignación de subred"]
+
+. En la página Configure subnet, introduzca la siguiente información:
++
+.. Subred: Introduzca el CIDR IPv4 para la subred hasta /32.
++
+
+TIP: La notación CIDR es un método para especificar direcciones IP y sus máscaras de red. /24 indica la máscara de red. El número consiste en una dirección IP con el número después de '/' que indica cuántos bits de la dirección IP denotan la red. Por ejemplo, 192.168.0.50/24, la dirección IP es 192.168.0.50 y el número total de bits en la dirección de red es 24. 192.168.0.50 255.255.255.0 se convierte en 192.168.0.0/24.
+
+.. Gateway: Introduzca la puerta de enlace predeterminada para la subred.
+.. DNS: Introduzca el DNS de la subred.
+
+
+. Seleccione *Añadir asignación de subred*.
+
+
+
+
+=== Seleccione la asignación de subred para un plan de replicación
+
+Al crear un plan de replicación, puede seleccionar la asignación de subred para el plan de replicación.
+
+.Pasos
+. En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.
+. Seleccione *Agregar* para agregar un plan de replicación.
+. Complete los campos de la forma habitual añadiendo los servidores vCenter, seleccionando los grupos de recursos o las aplicaciones y completando las asignaciones.
+. En la página Plan de replicación > Asignación de recursos, seleccione la sección *Máquinas virtuales*.
++
+image:dr-plan-create-subnet-mapping.png["Captura de pantalla de selección de asignación de subred"]
+
+. En el campo *IP objetivo*, seleccione *Usar asignación de subred* en la lista desplegable.
+. Continúe con la creación del plan de replicación.
 
 
 

@@ -71,12 +71,12 @@ image:dr-plan-create-name.png["Captura de pantalla que muestra la página Agrega
 
 === Seleccione aplicaciones para replicar y asignar grupos de recursos
 
-El siguiente paso es agrupar las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales. Los grupos de recursos permiten agrupar un conjunto de máquinas virtuales o almacenes de datos dependientes en grupos lógicos que cumplan los requisitos. Por ejemplo, los grupos pueden contener órdenes de inicio retrasadas que se pueden ejecutar tras la recuperación.
+El siguiente paso es agrupar las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales. Los grupos de recursos permiten proteger un conjunto de máquinas virtuales o almacenes de datos con una Snapshot común.
 
 Cuando selecciona aplicaciones en el plan de replicación, puede ver el sistema operativo de cada máquina virtual o almacén de datos del plan. Esto es útil para decidir cómo agrupar máquinas virtuales o almacenes de datos en un grupo de recursos.
 
 
-TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluya aquí.
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos.
 
 Al crear grupos de recursos, tenga en cuenta los siguientes problemas:
 
@@ -92,7 +92,7 @@ Al crear grupos de recursos, tenga en cuenta los siguientes problemas:
 * Para que una máquina virtual esté protegida, es necesario incluirla en un grupo de recursos.
 
 
-*MEJOR PRÁCTICA*: Organice sus VM antes de implementar la recuperación ante desastres de BlueXP  para minimizar la “dispersión de almacenes de datos”. Colocar máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y colocar máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos. Asegúrese de que las máquinas virtuales de cualquier almacén de datos determinado no estén protegidas por diferentes planes de replicación.
+*MEJOR PRÁCTICA*: Organice sus VM antes de implementar la recuperación ante desastres de BlueXP  para minimizar la “dispersión de almacenes de datos”. Colocar máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y colocar máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos. Utilice la protección basada en almacenes de datos para garantizar que estén protegidas las máquinas virtuales de cualquier almacén de datos determinado.
 
 .Pasos
 . Seleccione *Máquinas virtuales* o *Almacenes de datos*.
@@ -120,10 +120,6 @@ image:dr-plan-create-apps-datastores.png["Captura de pantalla que muestra la pá
 TIP: Para mover un almacén de datos a un grupo de recursos diferente, anule la selección del almacén de datos no deseado y envíe el plan de replicación. A continuación, cree o edite el otro plan de replicación y vuelva a seleccionar dataastore.
 
 
-
-. Cuando tenga varios grupos de recursos, asegúrese de que la secuencia de los grupos coincida con la secuencia operativa que debe producirse.
-+
-Cada VM dentro de un grupo se inicia en secuencia según el orden aquí.
 
 . Seleccione *Siguiente*.
 
@@ -177,7 +173,7 @@ Esta sección puede mostrar diferentes campos según su selección.
 ** *Tipo de dirección IP*: Vuelva a configurar la configuración de las VM para que coincida con los requisitos de la red virtual de destino. La recuperación ante desastres de BlueXP  ofrece dos opciones: DHCP o IP estática. Para las IP estáticas, configure la máscara de subred, la puerta de enlace y los servidores DNS. Además, introduzca las credenciales para máquinas virtuales.
 +
 *** *DHCP*: Seleccione esta opción si desea que sus máquinas virtuales obtengan información de configuración de red de un servidor DHCP. Si selecciona esta opción, proporcione solo las credenciales para la máquina virtual.
-*** *IP estática*: Seleccione esta opción si desea especificar la información de configuración de IP manualmente. Puede seleccionar de la máquina virtual de origen la misma información o una diferente. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
+*** *IP estática*: Seleccione esta opción si desea especificar la información de configuración de IP manualmente. Puede seleccionar una de las siguientes opciones: Igual que origen, diferente de origen o asignación de subred. Si elige lo mismo que el origen, no necesita introducir credenciales. Por otro lado, si opta por utilizar información diferente del origen, puede proporcionar las credenciales, la dirección IP de la máquina virtual, la máscara de subred, el DNS y la información de puerta de enlace. Las credenciales del sistema operativo invitado de VM se deben proporcionar a nivel global o a cada nivel de VM.
 +
 Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
 
@@ -192,13 +188,13 @@ image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar p
 +
 image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
 
-** *Orden de arranque*: Puede modificar el orden de arranque después de una conmutación por error para todas las máquinas virtuales seleccionadas a través de los grupos de recursos. De forma predeterminada, se utiliza el orden de inicio seleccionado durante la selección del grupo de recursos; sin embargo, puede realizar cambios en esta etapa. Esto es útil para garantizar que todas las máquinas virtuales prioritarias se ejecutan antes de que se inicien las máquinas virtuales de prioridad posterior.
+** *Orden de arranque*: Puede modificar el orden de arranque después de una conmutación por error para todas las máquinas virtuales seleccionadas a través de los grupos de recursos. De forma predeterminada, todas las máquinas virtuales se inician juntas en paralelo; sin embargo, puede realizar cambios en esta etapa. Esto es útil para garantizar que todas las máquinas virtuales prioritarias se ejecutan antes de que se inicien las máquinas virtuales de prioridad posterior.
 +
-Los Núm.s de orden de inicio sólo se aplican dentro de un grupo de recursos. Si tienes un «2» en un grupo y un «2» en otro, las VM del primer grupo comienzan en su orden y las VM del segundo empiezan en su orden.
+Todas las máquinas virtuales con el mismo número de orden de arranque se iniciarán en paralelo.
 
 +
-*** Inicio secuencial: Asigne a cada máquina virtual un número único para iniciar en el orden asignado, por ejemplo, 1,2,3,4,5
-*** Arranque simultáneo: Asigne el mismo número a todas las máquinas virtuales para que las arranquen al mismo tiempo, por ejemplo, 1,1, 1,1, 2,2, 3,4, 4.
+*** Arranque secuencial: Asigne a cada máquina virtual un número único para arrancar en el orden asignado, por ejemplo, 1,2,3,4,5.
+*** Arranque simultáneo: Asigne el mismo número a cualquier máquina virtual para que arranque al mismo tiempo, por ejemplo, 1,1,1,1,2,2,3,4,4.
 
 
 ** *Retardo de arranque*: Ajusta el retraso en minutos de la acción de arranque.
@@ -214,14 +210,21 @@ TIP: Para restablecer el orden de arranque a la configuración predeterminada, s
 Esta sección puede estar activada o desactivada en función de su selección.
 
 +
-** *RPO*: Introduzca el objetivo de punto de recuperación (RPO) para indicar la cantidad de datos a recuperar (medido en tiempo). Por ejemplo, si introduce un objetivo de punto de recuperación de 60 minutos, la recuperación debe tener datos que no tengan una antigüedad superior a 60 minutos en todo momento. Si hay un desastre, está permitiendo la pérdida de hasta 60 minutos de datos. Además, introduzca la cantidad de copias de Snapshot que se retendrán para todos los almacenes de datos.
+** *Utilice las copias de seguridad administradas por la plataforma y los horarios de retención*: Si está utilizando una solución de administración de instantáneas externa, marque esta casilla. La recuperación ante desastres de BlueXP  admite el uso de soluciones de gestión de snapshots externas, como el planificador de políticas nativo de ONTAP SnapMirror o las integraciones de terceros. Si todos los almacenes de datos (volúmenes) del plan de replicación ya tienen una relación de SnapMirror que se gestiona en otros lugares, puede usar esos snapshots como puntos de recuperación en la recuperación ante desastres de BlueXP .
++
+Cuando se selecciona, la recuperación ante desastres de BlueXP  no configura una programación de backup. Sin embargo, todavía debe configurar un programa de retención porque es posible que aún se realicen instantáneas para operaciones de prueba, conmutación por error y conmutación de retorno tras recuperación.
+
++
+Una vez configurado, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
+
+** *Hora de inicio*: Introduzca la fecha y la hora en que desea que las copias de seguridad y la retención comiencen a ejecutarse.
+** *Intervalo de ejecución*: Introduzca el intervalo de tiempo en horas y minutos. Por ejemplo, si introduce 1 hora, el servicio tomará una instantánea cada hora.
 ** *Conteo de retención*: Introduzca el número de instantáneas que desea conservar.
 ** *Almacenes de datos de origen y destino*: Si existen múltiples relaciones de SnapMirror (fan-out), puede seleccionar el destino a utilizar. Si un volumen ya tiene una relación de SnapMirror establecida, se muestran los almacenes de datos de origen y destino correspondientes. Si un volumen que no posee una relación SnapMirror, puede crear uno ahora mediante la selección de un clúster de destino, una SVM de destino y el suministro de un nombre de volumen. El servicio creará la relación del volumen y SnapMirror.
 +
 
 NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster y sus relaciones entre iguales de SVM ya deberían haberse configurado fuera de la recuperación de desastres de BlueXP.
 
-** Cuando se especifica el objetivo de punto de recuperación (RPO), el servicio programa un backup principal basado en el RPO y actualiza los destinos secundarios.
 ** Si las máquinas virtuales pertenecen al mismo volumen y a la misma SVM, el servicio realiza una copia de Snapshot de ONTAP estándar y actualiza los destinos secundarios.
 ** Si las máquinas virtuales son desde diferentes volúmenes y misma SVM, el servicio crea una copia de Snapshot de grupo de coherencia mediante todos los volúmenes y actualiza los destinos secundarios.
 ** Si las máquinas virtuales se utilizan desde un volumen diferente y una SVM diferente, el servicio realiza una fase de inicio de grupo de coherencia y una snapshot de fase de compromiso incluyendo todos los volúmenes del mismo clúster o de otro diferente, y actualiza los destinos secundarios.
@@ -232,7 +235,7 @@ NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster
 
 
 
-=== Pruebe las asignaciones
+=== Agregar asignaciones de failover de prueba
 
 .Pasos
 . Para establecer diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Correspondencias de prueba*.
@@ -244,27 +247,6 @@ En la pestaña Test maps, las asignaciones de máquinas virtuales y almacenes de
 
 TIP: Más tarde, puede probar todo el plan. Ahora mismo está configurando las asignaciones para el entorno de prueba.
 
-
-
-
-
-=== Identifique la recurrencia
-
-Seleccione si desea migrar datos (un movimiento que se realiza una vez) a otro destino o replicarlos con frecuencia de SnapMirror.
-
-Si desea replicarla, identifique la frecuencia con la que se deben duplicar los datos.
-
-.Pasos
-. En la página de repetición, seleccione *Migrate* o *Replicate*.
-+
-** *Migrar*: Seleccione para mover la aplicación a la ubicación de destino.
-** *Replicar*: Mantenga la copia de destino actualizada con los cambios de la copia de origen en una replicación recurrente.
-
-
-+
-image:dr-plan-create-recurrence.png["Captura de pantalla que muestra la repetición Agregar plan de replicación >"]
-
-. Seleccione *Siguiente*.
 
 
 
@@ -311,11 +293,12 @@ image:dr-plan-list.png["Captura de pantalla que muestra la lista de planes de re
 .. Seleccione el día del mes y la hora a la que desea que se ejecuten estas pruebas.
 .. Introduzca la fecha en formato aaaa-mm-dd cuando desee que se inicie la prueba.
 +
-image:dr-plan-schedule-edit.png["Captura de pantalla que muestra dónde puede editar horarios"]
+image:dr-plan-schedule-edit2.png["Captura de pantalla que muestra dónde puede editar horarios"]
 
 
 
-. Para limpiar el entorno de prueba después de que finalice la prueba de conmutación por error, compruebe * Limpiar automáticamente después de la conmutación por error de prueba *.
+. *Use OnDemand snapshot for scheduled test failover*: Para tomar una nueva instantánea antes de iniciar el test failover automatizado, marque esta casilla.
+. Para limpiar el entorno de prueba después de que finalice la prueba de conmutación por error, marque *Limpiar automáticamente después de la conmutación por error de prueba* e introduzca el número de minutos que desea esperar antes de que comience la limpieza.
 +
 
 NOTE: Este proceso cancela el registro de las máquinas virtuales temporales de la ubicación de prueba, elimina el volumen FlexClone que se creó y desmonta los almacenes de datos temporales.

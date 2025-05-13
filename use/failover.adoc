@@ -86,13 +86,18 @@ TIP: Una vez que se inicia la conmutación al respaldo, es posible ver las máqu
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú de acciones en el servicio de recuperación ante desastres de BlueXP"] Y seleccione *fail over*.
 +
-image:dr-plan-failover2.png["Página de conmutación por error"]
+image:dr-plan-failover3.png["Página de conmutación por error"]
 
 . En la página Failover, inicie una snapshot now o elija la snapshot para el almacén de datos desde el que desea recuperar. El valor predeterminado es el último.
 +
 Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
 
 . Opcionalmente, seleccione *Forzar conmutación por error* si desea que se produzca la conmutación por error incluso si se detecta un error que normalmente evitaría que se produzca la conmutación por error.
+. Opcionalmente, seleccione *Omitir protección* si desea que el servicio no cree automáticamente una relación de protección SnapMirror inversa después de una conmutación por error del plan de replicación. Esto resulta útil si desea realizar operaciones adicionales en el sitio restaurado antes de volver a conectarlo en línea dentro de la recuperación ante desastres de BlueXP .
++
+
+TIP: Puede establecer la protección inversa seleccionando *Proteger recursos* en el menú Acciones del plan de replicación. Esto intenta crear una relación de replicación inversa para cada volumen del plan. Puede ejecutar este trabajo varias veces hasta que se restaure la protección. Una vez restaurada la protección, puede iniciar una conmutación de retorno tras recuperación de la forma habitual.
+
 . Escriba «failover» en el cuadro.
 . Seleccione *fail over*.
 . Para comprobar el progreso, en el menú superior, seleccione *Monitoreo de trabajos*.

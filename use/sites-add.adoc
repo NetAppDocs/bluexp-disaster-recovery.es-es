@@ -112,6 +112,12 @@ El uso de la asignación de subred es un proceso opcional de dos pasos:
 . En el menú superior de recuperación de desastres de BlueXP , seleccione *Sitios*.
 . En el icono Acciones de image:icon-vertical-dots.png["El icono Actions"]la derecha, selecciona *Añadir subred*.
 +
+image:dr-sites-subnet-menu.png["Agregar captura de pantalla del menú de subred"]
+
++
+Aparece la página Configurar subred:
+
++
 image:sites-subnet-add.png["Agregar captura de pantalla de asignación de subred"]
 
 . En la página Configure subnet, introduzca la siguiente información:
@@ -140,9 +146,13 @@ Al crear un plan de replicación, puede seleccionar la asignación de subred par
 . Complete los campos de la forma habitual añadiendo los servidores vCenter, seleccionando los grupos de recursos o las aplicaciones y completando las asignaciones.
 . En la página Plan de replicación > Asignación de recursos, seleccione la sección *Máquinas virtuales*.
 +
-image:dr-plan-create-subnet-mapping.png["Captura de pantalla de selección de asignación de subred"]
+image:dr-plan-vm-subnet-option.png["Captura de pantalla de selección de asignación de subred"]
 
 . En el campo *IP objetivo*, seleccione *Usar asignación de subred* en la lista desplegable.
++
+
+NOTE: Si hay dos equipos virtuales (por ejemplo, una es Linux y la otra es Windows), solo se necesitarán las credenciales para Windows.
+
 . Continúe con la creación del plan de replicación.
 
 

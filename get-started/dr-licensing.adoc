@@ -17,7 +17,7 @@ Con la recuperación ante desastres de BlueXP, puedes utilizar diferentes planes
 Puede utilizar los siguientes tipos de licencia:
 
 * Regístrate para una prueba gratuita de 30 días.
-* Compre una suscripción de pago por uso (PAYGO) con Amazon Web Services (AWS) Marketplace.
+* Compra una suscripción de pago por uso (PAYGO) a *Servicios inteligentes de NetApp* con Amazon Web Services (AWS) Marketplace.
 * BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene del representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP.
 
 
@@ -71,12 +71,12 @@ Para obtener más información, consulte link:../use/sites-add.html["Añada siti
 
 == Cuando finalice la prueba, suscríbase a través de AWS Marketplace
 
-Cuando finalice la prueba gratuita, puedes comprar una licencia de NetApp o suscribirte a través de AWS Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en AWS Marketplace.
+Cuando finalice la prueba gratuita, puede comprar una licencia de NetApp o suscribirse a los servicios inteligentes de *NetApp* a través de AWS Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en AWS Marketplace.
 
 .Pasos
 . En la recuperación ante desastres de BlueXP, verás un mensaje que indica que la prueba gratuita ha caducado. En el mensaje, seleccione *Suscribir o comprar una licencia*.
 . Seleccione *Suscribirse en AWS Marketplace*.
-. En AWS Marketplace, selecciona *Ver opciones de compra*. Utiliza AWS Marketplace para suscribirte a la recuperación ante desastres de BlueXP.
+. Utilice AWS Marketplace para suscribirse a *Servicios inteligentes de NetApp* y *Recuperación ante desastres de BlueXP *.
 . Cuando vuelve a la recuperación ante desastres de BlueXP, hay un mensaje que dice que está suscrito.
 +
 Puede ver los detalles de la suscripción en la cartera digital de BlueXP . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Obtén más información sobre la gestión de suscripciones con la cartera digital"^].

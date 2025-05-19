@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
-keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud 
+keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
 summary: La recuperación de desastres en el cloud es una forma resiliente y rentable de proteger cargas de trabajo contra interrupciones del sitio y eventos de corrupción de datos. Con la recuperación ante desastres de BlueXP para VMware, puedes replicar tus cargas de trabajo de VMware on-premises que ejecutan el almacenamiento ONTAP en un centro de datos definido por software de VMware en un cloud público mediante el almacenamiento en nube de NetApp o en otro entorno de VMware on-premises con almacenamiento de ONTAP como sitio de recuperación de desastres. 
 ---
 = Obtén más información sobre la recuperación ante desastres de BlueXP para VMware
@@ -73,7 +73,7 @@ IMPORTANT: Algunos lanzamientos incluyen una vista previa de la tecnología. Net
 Puede utilizar los siguientes tipos de licencia:
 
 * Regístrate para una prueba gratuita de 30 días.
-* Compre una suscripción de pago por uso (PAYGO) con Amazon Web Services (AWS) Marketplace.
+* Compre una suscripción de pago por uso (PAYGO) a *Servicios inteligentes de NetApp* con el mercado de servicios web de Amazon (AWS).
 * BYOL (BYOL), que es un Archivo de licencia de NetApp (NLF) que obtiene del representante de ventas de NetApp Puede utilizar el número de serie de la licencia para activar la licencia de licencia en la cartera digital de BlueXP.
 
 

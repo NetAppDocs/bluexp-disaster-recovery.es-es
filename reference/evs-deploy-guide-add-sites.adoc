@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-add-sites.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Antes de poder proteger su infraestructura de máquinas virtuales, el servicio de recuperación ante desastres de BlueXP necesita saber qué clústeres de VMware vCenter alojan las máquinas virtuales que se van a proteger y dónde se ubican dichos vCenters. El primer paso es crear un sitio que represente los centros de datos de origen y destino. Un sitio es un dominio de fallos o un dominio de recuperación. 
+---
+= Agregar sitios en la recuperación ante desastres de BlueXP para Amazon EVS
+:allow-uri-read: 
+
+
+[role="lead"]
+Antes de proteger su infraestructura de máquinas virtuales, identifique qué clústeres de VMware vCenter alojan las máquinas virtuales que se van a proteger y dónde se ubican. El primer paso es crear un sitio que represente los centros de datos de origen y destino. Un sitio es un dominio de fallos o de recuperación.
+
+Necesitas crear lo siguiente:
+
+* Un sitio para representar cada centro de datos de producción donde residen sus clústeres de vCenter de producción
+* Un sitio para su centro de datos en la nube Amazon EVS/Amazon FSx para NetApp ONTAP
+
+
+
+
+== Crear sitios locales
+
+Cree un sitio de vCenter de producción.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP, seleccione *Protección* > *Recuperación ante desastres*.
+. Desde cualquier página de recuperación ante desastres de BlueXP, seleccione la pestaña *Sitios*.
++
+image:evs-create-site-op-1.png["Pestaña Sitios"]
+
+. Desde la pestaña Sitios, seleccione *Agregar*.
++
+image:evs-create-site-op-2.png["Agregar opción en la pestaña Sitios"]
+
+. En el cuadro de diálogo Agregar sitio, proporcione un nombre para el sitio.
+. Seleccione “En las instalaciones” como ubicación.
+. Seleccione *Agregar*.
++
+image:evs-create-site-op-3-5.png["Cuadro de diálogo Crear sitio"]
+
+
+
+Si tiene otros sitios de vCenter de producción, puede agregarlos siguiendo los mismos pasos.
+
+
+
+== Crear sitios en la nube de Amazon
+
+Cree un sitio de recuperación ante desastres para Amazon EVS utilizando Amazon FSx para el almacenamiento de NetApp ONTAP.
+
+. Desde cualquier página de recuperación ante desastres de BlueXP, seleccione la pestaña *Sitios*.
++
+image:evs-create-site-op-1.png["Pestaña Sitios"]
+
+. Desde la pestaña Sitios, seleccione *Agregar*.
++
+image:evs-create-site-aws-2.png["Añadir opción en la página Sitios"]
+
+. En el cuadro de diálogo Agregar sitio, proporcione un nombre para el sitio.
+. Seleccione “AWS-EVS” como ubicación.
+. Seleccione *Agregar*.
++
+image:evs-create-site-aws-3-5.png["Agregar cuadro de diálogo"]
+
+
+
+.Resultado
+Ahora tiene un sitio de producción (origen) y un sitio de DR (destino) creados.

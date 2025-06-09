@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-prereqs.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Debe asegurarse de que se cumplan varios requisitos previos antes de continuar configurando Amazon EVS con la recuperación ante desastres de BlueXP. 
+---
+= Requisitos previos para la recuperación ante desastres de Amazon EVS con BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Debe asegurarse de que se cumplan varios requisitos previos antes de continuar configurando Amazon EVS con la recuperación ante desastres de BlueXP.
+
+En concreto, haga lo siguiente:
+
+* Cree una cuenta de usuario de vCenter con los privilegios de VMware específicos necesarios para la recuperación ante desastres de BlueXP para realizar las operaciones necesarias.
++
+
+NOTE: No recomendamos usar la cuenta de administrador predeterminada "administrator@vsphere.com". En su lugar, debe crear una cuenta de usuario específica para recuperación ante desastres de BlueXP en todos los clústeres de vCenter que participarán en el proceso de recuperación ante desastres. Para obtener una lista de los privilegios específicos necesarios, consulte link:vcenter-privileges.html["Se necesitan privilegios de vCenter para la recuperación ante desastres de BlueXP"] .
+
+* Asegúrese de que todos los almacenes de datos de vCenter que alojarán máquinas virtuales protegidas por la recuperación ante desastres de BlueXP estén ubicados en recursos de almacenamiento de NetApp ONTAP.
++
+El servicio admite NFS y VMFS en iSCSI (no FC) al usar Amazon FSx en NetApp ONTAP. Si bien el servicio admite FC, Amazon FSx para NetApp ONTAP no.
+
+* Asegúrese de que su Amazon EVS vCenter esté conectado a un clúster de almacenamiento Amazon FSx para NetApp ONTAP.
+* Asegúrese de que las herramientas de VMware estén instaladas en todas las máquinas virtuales protegidas.
+* Asegúrese de que su red local esté conectada a su red VPC de AWS mediante un método de conexión aprobado por Amazon. Le recomendamos usar AWS Direct Connect, AWS Private Link o una VPN de sitio a sitio de AWS.
+

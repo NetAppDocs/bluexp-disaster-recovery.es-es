@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-03.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
+summary: Introducción a la recuperación ante desastres de BlueXP con Amazon EVS y Amazon FSx para NetApp ONTAP. Una vez que tenga una lista de máquinas virtuales que proteger, la recuperación ante desastres de BlueXP requiere que proporcione la información de mapeo de conmutación por error y la configuración de las máquinas virtuales para usar durante una conmutación por error. 
+---
+= Crear un plan de replicación: Paso 3: Asignar recursos en la recuperación ante desastres de BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Una vez que tenga una lista de máquinas virtuales que desea proteger mediante la recuperación ante desastres de BlueXP, proporcione la información de configuración de las máquinas virtuales y el mapeo de conmutación por error para usar durante una conmutación por error.
+
+Es necesario mapear cuatro tipos principales de información:
+
+* Recursos de computación
+* Redes virtuales
+* Reconfiguración de la máquina virtual
+* Mapeo de almacenes de datos
+
+
+Cada máquina virtual requiere los tres primeros tipos de información. Se requiere la asignación de almacenes de datos para cada almacén de datos que aloje máquinas virtuales que se vayan a proteger.
+
+* Las secciones con el icono de precaución ( image:evs-caution-icon.png["25,25"] ) requieren que usted proporcione información cartográfica.
+* La sección marcada con el icono de verificación ( image:evs-check-icon.png["25,25"] ) se han asignado o tienen asignaciones predeterminadas. Revíselas para asegurarse de que la configuración actual cumpla con sus requisitos.
+
+
+.Pasos para acceder a esta página
+. Desde la página *Plan de replicación*, continúe a la sección *Mapeo de recursos*.
+. Revise la información en la página *Mapeo de recursos* que se abre.
++
+image:evs-create-rp-wiz-c0.png["Crear plan de replicación, página de mapeo de recursos"]
+
+. Para abrir cada categoría de asignaciones requeridas, seleccione la flecha hacia abajo (*v*) junto a la sección.
+
+
+
+
+== Mapeo de recursos computacionales
+
+Debido a que un sitio puede alojar varios centros de datos virtuales y varios clústeres de vCenter, debe identificar en qué clúster de vCenter recuperar las máquinas virtuales en caso de una conmutación por error.
+
+.Pasos para mapear recursos computacionales
+. Seleccione el centro de datos virtual de la lista de centros de datos ubicados en el sitio de recuperación ante desastres.
+. Seleccione el clúster para alojar los almacenes de datos y las máquinas virtuales de la lista de clústeres dentro del centro de datos virtual seleccionado.
+. (Opcional) Seleccione un host de destino en el clúster de destino.
++
+Este paso no es necesario, ya que la recuperación ante desastres de BlueXP selecciona el primer host agregado al clúster en vCenter. En ese momento, las máquinas virtuales continúan ejecutándose en ese host ESXi o VMware DRS las traslada a otro host ESXi según sea necesario, según las reglas de DRS configuradas.
+
+. (Opcional) Proporcione el nombre de una carpeta vCenter de nivel superior donde colocar los registros de VM.
++
+Esto es para sus necesidades organizativas y no es obligatorio.
+
++
+image:evs-create-rp-wiz-c-compute-resources-1-4.png["Crear un plan de replicación, calcular recursos"]
+
+
+
+
+
+== Mapear recursos de red virtual
+
+Cada máquina virtual puede tener una o más tarjetas de interfaz de red (NIC) virtuales conectadas a redes virtuales dentro de la infraestructura de red de vCenter. Para garantizar que cada máquina virtual esté conectada correctamente a las redes deseadas al reiniciarse en el sitio de recuperación ante desastres, identifique las redes virtuales del sitio de recuperación ante desastres a las que conectará estas máquinas virtuales. Para ello, asigne cada red virtual del sitio local a una red asociada en el sitio de recuperación ante desastres.
+
+.Seleccione qué red virtual de destino asignar a cada red virtual de origen
+. Seleccione el segmento objetivo de la lista desplegable.
+. Repita el paso anterior para cada red virtual de origen indicada.
++
+image:evs-create-rp-wiz-c-network-resources-1-2.png["Crear un plan de replicación, recursos de red"]
+
+
+
+
+
+== Definir opciones para la reconfiguración de la máquina virtual durante la conmutación por error
+
+Cada máquina virtual podría requerir modificaciones para funcionar correctamente en el sitio de vCenter de recuperación ante desastres. La sección Máquinas virtuales le permite realizar los cambios necesarios.
+
+De forma predeterminada, la recuperación ante desastres de BlueXP utiliza la misma configuración para cada máquina virtual que la del sitio local de origen. Esto supone que las máquinas virtuales usarán la misma dirección IP, CPU virtual y configuración de DRAM virtual.
+
+
+
+=== Reconfiguración de la red
+
+Los tipos de direcciones IP compatibles son estáticas y DHCP. Para las direcciones IP estáticas, dispone de la siguiente configuración de IP de destino:
+
+* *Igual que el origen*: Como su nombre indica, el servicio utiliza la misma dirección IP en la máquina virtual de destino que la utilizada en la máquina virtual del sitio de origen. Esto requiere que configure las redes virtuales asignadas en el paso anterior con la misma configuración de subred.
+* *Diferente del origen*: El servicio proporciona un conjunto de campos de dirección IP para cada máquina virtual (VM). Estos campos deben configurarse para la subred correspondiente utilizada en la red virtual de destino, que se asignó en la sección anterior. Para cada VM, debe proporcionar una dirección IP, una máscara de subred, un DNS y una puerta de enlace predeterminada. Opcionalmente, utilice la misma configuración de máscara de subred, DNS y puerta de enlace para todas las VM para simplificar el proceso cuando todas se conectan a la misma subred.
+* *Asignación de subredes*: Esta opción reconfigura la dirección IP de cada máquina virtual según la configuración CIDR de la red virtual de destino. Para usar esta función, asegúrese de que cada red virtual de vCenter tenga una configuración CIDR definida dentro del servicio, tal como se modificó en la información de vCenter en la pestaña Sitios.
+
+
+Después de configurar las subredes, la asignación de subredes utiliza el mismo componente de unidad de la dirección IP para la configuración de la máquina virtual de origen y de destino, pero reemplaza el componente de subred de la dirección IP según la información CIDR proporcionada. Esta función también requiere que las redes virtuales de origen y de destino tengan la misma clase de dirección IP (la  `/xx` componente del CIDR). Esto garantiza que haya suficientes direcciones IP disponibles en el sitio de destino para alojar todas las máquinas virtuales protegidas.
+
+Para esta configuración de EVS, asumimos que las configuraciones de IP de origen y destino son las mismas y no requieren ninguna reconfiguración adicional.
+
+.Realizar cambios en la reconfiguración de la configuración de red
+. Seleccione el tipo de dirección IP que se utilizará para las máquinas virtuales conmutadas por error.
+. (Opcional) Proporcione un esquema de cambio de nombre de VM para las VM reiniciadas proporcionando un valor de prefijo y sufijo opcionales.
++
+image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Crear un plan de replicación, recursos de red"]
+
+
+
+
+
+=== Reconfiguración de recursos informáticos de máquinas virtuales
+
+Existen varias opciones para reconfigurar los recursos informáticos de la máquina virtual. La recuperación ante desastres de BlueXP permite cambiar la cantidad de CPU virtuales, la cantidad de DRAM virtual y el nombre de la máquina virtual.
+
+.Especifique cualquier cambio en la configuración de la máquina virtual
+. (Opcional) Modifique la cantidad de CPU virtuales que debe usar cada máquina virtual. Esto podría ser necesario si los hosts del clúster de vCenter de recuperación ante desastres no tienen tantos núcleos de CPU como el clúster de vCenter de origen.
+. (Opcional) Modifique la cantidad de DRAM virtual que debe usar cada máquina virtual. Esto podría ser necesario si los hosts del clúster de vCenter de recuperación ante desastres no tienen tanta DRAM física como los hosts del clúster de vCenter de origen.
++
+image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Crear un plan de replicación, recursos de VM"]
+
+
+
+
+
+=== Orden de arranque
+
+La recuperación ante desastres de BlueXP permite el reinicio ordenado de las máquinas virtuales según un campo de orden de arranque. Este campo indica cómo se inician las máquinas virtuales de cada grupo de recursos. Las máquinas virtuales con el mismo valor en el campo de orden de arranque arrancan en paralelo.
+
+.Modificar la configuración del orden de arranque
+. (Opcional) Modifique el orden en que desea que se reinicien las máquinas virtuales. Este campo admite cualquier valor numérico. La recuperación ante desastres de BlueXP intenta reiniciar las máquinas virtuales con el mismo valor numérico en paralelo.
+. (Opcional) Proporcione un retardo entre cada reinicio de la máquina virtual. El tiempo se inyecta después de que esta máquina virtual se reinicie y antes de que las máquinas virtuales con el siguiente orden de arranque se reinicien. Este tiempo se expresa en minutos.
++
+image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Crear plan de replicación, orden de arranque"]
+
+
+
+
+
+=== Operaciones personalizadas del sistema operativo invitado
+
+La recuperación ante desastres de BlueXP permite realizar algunas operaciones del sistema operativo invitado para cada máquina virtual:
+
+* La recuperación ante desastres de BlueXP puede realizar copias de seguridad consistentes con las aplicaciones de las máquinas virtuales que ejecutan bases de datos Oracle y bases de datos Microsoft SQL Server.
+* La recuperación ante desastres de BlueXP puede ejecutar scripts personalizados, adecuados para el sistema operativo invitado, en cada máquina virtual. Para ejecutar estos scripts, se requieren credenciales de usuario válidas para el sistema operativo invitado con amplios privilegios para ejecutar las operaciones que se indican en el script.
+
+
+.Modificar las operaciones del sistema operativo invitado personalizado de cada máquina virtual
+. (Opcional) Marque la casilla de verificación *Crear réplicas consistentes de la aplicación* si la máquina virtual aloja una base de datos Oracle o SQL Server.
+. (Opcional) Para ejecutar acciones personalizadas en el sistema operativo invitado durante el inicio, cargue un script para todas las máquinas virtuales. Para ejecutar un solo script en todas las máquinas virtuales, marque la casilla y complete los campos.
+. Ciertos cambios de configuración requieren credenciales de usuario con los permisos adecuados para realizar las operaciones. Proporcione las credenciales en los siguientes casos:
++
+** El sistema operativo invitado ejecutará un script dentro de la máquina virtual.
+** Es necesario realizar una instantánea consistente con la aplicación.
+
+
+
+
+image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Crear un plan de replicación, operaciones personalizadas del sistema operativo invitado"]
+
+
+
+== almacenes de datos de mapas
+
+El último paso para crear un plan de replicación es identificar cómo ONTAP debe proteger los almacenes de datos. Esta configuración define el objetivo de punto de recuperación (RPO) del plan de replicación, la cantidad de copias de seguridad que se deben mantener y dónde replicar los volúmenes de ONTAP de cada almacén de datos de vCenter que alojan.
+
+De manera predeterminada, la recuperación ante desastres de BlueXP administra su propio programa de replicación de instantáneas; sin embargo, de manera opcional, puede especificar que desea utilizar el programa de política de replicación de SnapMirror existente para la protección del almacén de datos.
+
+Además, puede personalizar opcionalmente las LIF de datos (interfaces lógicas) y la política de exportación que se usarán. Si no proporciona esta configuración, la recuperación ante desastres de BlueXP utiliza todas las LIF de datos asociadas con el protocolo adecuado (NFS, iSCSI o FC) y la política de exportación predeterminada para volúmenes NFS.
+
+.Para configurar la asignación de almacén de datos (volumen)
+. (Opcional) Decida si desea utilizar un programa de replicación de ONTAP SnapMirror existente o que la recuperación ante desastres de BlueXP administre la protección de sus máquinas virtuales (predeterminado).
+. Proporcionar un punto de partida para indicar cuándo el servicio debe comenzar a realizar copias de seguridad.
+. Especifique con qué frecuencia el servicio debe realizar una copia de seguridad y replicarla en el clúster de destino de recuperación ante desastres de Amazon FSx para NetApp ONTAP.
+. Especifique cuántas copias de seguridad históricas deben conservarse. El servicio mantiene la misma cantidad de copias de seguridad en el clúster de almacenamiento de origen y de destino.
+. (Opcional) Seleccione una interfaz lógica predeterminada (LIF de datos) para cada volumen. Si no se selecciona ninguna, se configuran todas las LIF de datos en la SVM de destino que admiten el protocolo de acceso al volumen.
+. (Opcional) Seleccione una política de exportación para cualquier volumen NFS. Si no se selecciona, se utiliza la política de exportación predeterminada.
++
+image:evs-create-rp-wiz-c-datastore-mapping.png["Crear un plan de replicación y mapeo del almacén de datos"]
+
+
+
+Continuar con link:evs-deploy-guide-create-rp-wiz-04.html["Asistente para crear un plan de replicación Paso 4"] .

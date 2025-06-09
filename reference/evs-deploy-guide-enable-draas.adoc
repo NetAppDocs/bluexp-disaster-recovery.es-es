@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-enable-draas.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Introducción de la recuperación ante desastres de BlueXP con Amazon EVS y Amazon FSx para NetApp ONTAP. La recuperación ante desastres de BlueXP es un producto con licencia que debe adquirirse antes de poder usarse. Existen varios tipos de licencias y diversas maneras de adquirirlas. 
+---
+= Agregue el servicio de recuperación ante desastres de BlueXP a su cuenta de BlueXP para Amazon EVS
+:allow-uri-read: 
+
+
+[role="lead"]
+La recuperación ante desastres de BlueXP es un producto con licencia que debe adquirirse antes de poder usarlo. Existen varios tipos de licencias y diversas maneras de adquirirlas. Una licencia le permite proteger una cantidad específica de datos durante un periodo de tiempo determinado.
+
+Para obtener más información sobre las licencias de recuperación ante desastres de BlueXP, consulte link:../get-started/dr-licensing.html["Configura las licencias para la recuperación ante desastres de BlueXP"] .
+
+
+
+== Tipos de licencia
+
+Hay dos tipos de licencias principales:
+
+* NetApp ofrece una link:../get-started/dr-licensing.html["Licencia de prueba de 30 días"] Que puede usar para evaluar la recuperación ante desastres de BlueXP con sus recursos de ONTAP y VMware. Esta licencia ofrece 30 días de uso con capacidad protegida ilimitada.
+* Adquiera una licencia de producción si desea protección contra desastres más allá del período de prueba de 30 días. Esta licencia se puede adquirir a través de los marketplaces de cualquiera de los socios de nube de NetApp, pero para esta guía, le recomendamos que adquiera su licencia de *NetApp Intelligent Services* para la recuperación ante desastres de BlueXP a través de Amazon AWS Marketplace. Para obtener más información sobre cómo adquirir una licencia a través de Amazon Marketplace, consulte link:../get-started/dr-licensing.html["Suscríbase a través de AWS Marketplace"] .
+
+
+
+
+== Dimensione sus necesidades de capacidad de recuperación ante desastres
+
+Antes de adquirir su licencia, debe comprender cuánta capacidad de almacenamiento de ONTAP necesita proteger. Una de las ventajas de usar el almacenamiento de NetApp ONTAP es la alta eficiencia con la que NetApp almacena sus datos. Todos los datos almacenados en un volumen de ONTAP, como las máquinas virtuales alojadas en almacenes de datos de VMware, se almacenan de forma altamente eficiente. ONTAP utiliza tres tipos de eficiencia de almacenamiento predeterminados al escribir datos en el almacenamiento físico: compactación, deduplicación y compresión. El resultado neto son eficiencias de almacenamiento de entre 1,5:1 y 4:1, según los tipos de datos almacenados. De hecho, NetApp ofrece...  https://www.netapp.com/media/79014-ng-937-Efficiency-Guarantee-Customer-Flyer.pdf["garantía de eficiencia de almacenamiento"^] para ciertas cargas de trabajo.
+
+Esto puede beneficiarle, ya que la recuperación ante desastres de BlueXP calcula la capacidad para la licencia después de aplicar todas las eficiencias de almacenamiento de ONTAP. Por ejemplo, supongamos que ha aprovisionado un almacén de datos NFS de 100 terabytes (TiB) en vCenter para alojar 100 máquinas virtuales que desea proteger mediante el servicio. Además, supongamos que, al escribir los datos en el volumen de ONTAP, las técnicas de eficiencia de almacenamiento aplicadas automáticamente hacen que esas máquinas virtuales consuman solo 33 TiB (eficiencia de almacenamiento de 3:1). La recuperación ante desastres de BlueXP solo necesita licencias de 33 TiB, no de 100 TiB. Esto puede suponer una gran ventaja para el coste total de propiedad de su solución de recuperación ante desastres en comparación con otras soluciones.
+
+.Pasos
+. Para determinar cuántos datos se consumen en cada volumen que aloja un almacén de datos VMware que se va a proteger, determine el consumo de capacidad en disco ejecutando el comando CLI de ONTAP para cada volumen:  `volume show-space -volume < _volume name_ > -vserver < _SVM name_ >` .
++
+Por ejemplo:
+
++
+[listing]
+----
+cluster1::> volume show-space
+Vserver : vm-nfs-ds1
+Volume  : vol0
+Feature                                Used      Used%
+-----------------------------      --------     ------
+User Data                           163.4MB         3%
+Filesystem Metadata                   172KB         0%
+Inodes                               2.93MB         0%
+Snapshot Reserve                    292.9MB         5%
+Total Metadata                        185KB         0%
+Total Used                          459.4MB         8%
+Total Physical Used                 166.4MB         3%
+
+----
+. Anote el valor de *Total físico usado* para cada volumen. Esta es la cantidad de datos que BlueXP necesita proteger para la recuperación ante desastres y es el valor que utilizará para determinar la capacidad que necesita licenciar.
+

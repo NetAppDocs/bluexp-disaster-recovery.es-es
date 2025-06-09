@@ -20,9 +20,12 @@ La recuperación de desastres de BlueXP es un servicio de recuperación ante des
 * Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP
 
 
+
+NOTE: ESTA DOCUMENTACIÓN RELATIVA A AWS EVS SE PROPORCIONA COMO UNA VISTA PREVIA DE LA TECNOLOGÍA. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y la línea de tiempo de la oferta antes de la disponibilidad general. Para obtener más información, consulte link:../reference/evs-deploy-guide-introduction.html["Introducción de la recuperación ante desastres de BlueXP mediante Amazon Elastic VMware Service y Amazon FSx para NetApp ONTAP"].
+
 La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
 
-image:draas-onprem-to-cloud-onprem.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]
+image:../use/evs-bluexp-architecture.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]
 
 
 
@@ -48,6 +51,8 @@ La recuperación ante desastres de BlueXP te permite utilizar al máximo varias 
 * En caso de desastre, conmuta al sitio principal bajo demanda al sitio de recuperación de desastres, que puede ser VMware Cloud on AWS con Amazon FSx para NetApp ONTAP o un entorno VMware on-premises con ONTAP.
 * Una vez resuelto el desastre, conmutación al respaldo bajo demanda del sitio de recuperación de desastres al sitio principal. * Agrupar las máquinas virtuales o almacenes de datos en grupos de recursos lógicos para una gestión eficiente.
 
+
+image:../use/evs-use-cases.png["Diagrama que muestra casos de uso para la recuperación ante desastres de BlueXP para VMware"]
 
 
 NOTE: La configuración del servidor vSphere se realiza fuera de la recuperación ante desastres de BlueXP en vSphere Server.

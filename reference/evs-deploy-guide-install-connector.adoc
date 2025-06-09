@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-install-connector.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Introducción de la recuperación ante desastres de BlueXP mediante Amazon EVS y Amazon FSx para NetApp ONTAP. Si bien el Conector puede instalarse en cualquiera de sus ubicaciones de red, para la recuperación ante desastres de BlueXP recomendamos instalarlo en el sitio de recuperación ante desastres. Esto garantiza que, en caso de fallo del sitio principal, la interfaz de usuario de la consola en la nube de BlueXP siga en contacto con el Conector y pueda orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres. 
+---
+= Instalar el conector BlueXP para la recuperación ante desastres de BlueXP
+:allow-uri-read: 
+
+
+[role="lead"]
+Un conector BlueXP es un software de NetApp que se ejecuta en su nube o red local. Ejecuta las acciones que BlueXP necesita para gestionar su infraestructura de datos. El conector sondea constantemente la capa de recuperación ante desastres de BlueXP para detectar cualquier acción que deba tomar.
+
+Para el servicio de recuperación ante desastres de BlueXP, las acciones ejecutadas orquestan los clústeres de VMware vCenter y las instancias de almacenamiento de ONTAP mediante las API nativas de cada servicio para proteger las máquinas virtuales de producción que se ejecutan en una ubicación local. Si bien el Conector puede instalarse en cualquiera de las ubicaciones de red, para la recuperación ante desastres de BlueXP recomendamos instalarlo en el sitio de recuperación ante desastres. Esto garantiza que, en caso de fallo del sitio principal, la interfaz de usuario de la consola en la nube de BlueXP siga en contacto con el Conector y pueda orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres.
+
+Para usar el servicio, instale el Conector en modo estándar. Para obtener más información sobre los tipos de instalación del Conector, visite  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Conozca los modos de implementación de BlueXP | Documentación de NetApp"^] .
+
+Si bien el Conector es fundamental para usar el servicio, los pasos de instalación dependen de sus necesidades y de la configuración de red. Esta información no proporciona instrucciones específicas para la instalación.
+
+El método más sencillo para instalar un conector con Amazon AWS es usar AWS Marketplace. Para obtener más información sobre la instalación de un conector mediante AWS Marketplace, consulte  https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["Crear un conector desde AWS Marketplace | Documentación de NetApp"^] .

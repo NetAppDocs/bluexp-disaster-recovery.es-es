@@ -5,3 +5,45 @@ entries:
 - title: Privilegios de vCenter necesarios para la recuperación ante desastres de
     BlueXP
   url: "/reference/vcenter-privileges.html"
+- title: Utilice la recuperación ante desastres de BlueXP con Amazon EVS
+  entries:
+  - title: Descripción general de la recuperación ante desastres de BlueXP con Amazon
+      EVS
+    url: "/reference/evs-deploy-guide-introduction.html"
+  - title: Descripción general de la solución
+    url: "/reference/evs-deploy-guide-solution-overview.html"
+  - title: Instale el conector BlueXP
+    url: "/reference/evs-deploy-guide-install-connector.html"
+  - title: Configurar la recuperación ante desastres de BlueXP para Amazon EVS
+    entries:
+    - title: Descripción general de la configuración de recuperación ante desastres
+        de BlueXP para Amazon EVS
+      url: "/reference/evs-deploy-guide-config-draas.html"
+    - title: Requisitos previos para Amazon EVS
+      url: "/reference/evs-deploy-guide-config-prereqs.html"
+    - title: Agregar matrices para Amazon EVS
+      url: "/reference/evs-deploy-guide-config-add-arrays.html"
+    - title: Agregue la recuperación ante desastres de BlueXP para Amazon EVS
+      url: "/reference/evs-deploy-guide-enable-draas.html"
+    - title: Agregar sitios en la recuperación ante desastres de BlueXP para Amazon
+        EVS
+      url: "/reference/evs-deploy-guide-add-sites.html"
+    - title: Agregar clústeres de vCenter para Amazon EVS
+      url: "/reference/evs-deploy-guide-add-vcenters.html"
+  - title: Crear planes de replicación para Amazon EVS
+    entries:
+    - title: Descripción general de la creación de planes de replicación para Amazon
+        EVS
+      url: "/reference/evs-deploy-guide-creating-replication-plans.html"
+    - title: Crear un plan de replicación Paso 1 para Amazon EVS
+      url: "/reference/evs-deploy-guide-create-rp-wiz-01.html"
+    - title: Crear un plan de replicación Paso 2 para Amazon EVS
+      url: "/reference/evs-deploy-guide-create-rp-wiz-02.html"
+    - title: Crear un plan de replicación Paso 3 para Amazon EVS
+      url: "/reference/evs-deploy-guide-create-rp-wiz-03.html"
+    - title: Crear un plan de replicación Paso 4 para Amazon EVS
+      url: "/reference/evs-deploy-guide-create-rp-wiz-04.html"
+    - title: Verificar el plan de replicación para Amazon EVS
+      url: "/reference/evs-deploy-guide-verify-rp.html"
+  - title: Realizar operaciones del plan de replicación
+    url: "/reference/evs-deploy-guide-rp-operations.html"

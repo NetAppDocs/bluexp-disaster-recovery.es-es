@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-solution-overview.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Descripción general de la solución de recuperación ante desastres de BlueXP mediante Amazon EVS y Amazon FSxN. 
+---
+= Descripción general de la solución de recuperación ante desastres de BlueXP con Amazon EVS y Amazon FSs para NetApp ONTAP
+:allow-uri-read: 
+
+
+[role="lead"]
+La recuperación ante desastres de BlueXP es un servicio de valor añadido alojado en el entorno de software como servicio de BlueXP, que depende de la arquitectura principal de BlueXP. Varios componentes principales conforman el servicio de recuperación ante desastres para la protección de VMware dentro de BlueXP.
+
+Para obtener una descripción general completa de la solución de recuperación ante desastres de BlueXP, consulte link:../get-started/dr-intro.html["Obtén más información sobre la recuperación ante desastres de BlueXP para VMware"] .
+
+Si desea proteger sus máquinas virtuales alojadas en VMware localmente en Amazon AWS, utilice el servicio para realizar copias de seguridad en Amazon EVS con Amazon FSx para almacenes de datos alojados en NetApp ONTAP.
+
+La siguiente figura muestra cómo funciona el servicio para proteger sus máquinas virtuales con Amazon EVS.
+
+Descripción general de la recuperación ante desastres de BlueXP con Amazon EVS y FSx para ONTAP image:evs-soloverview-evs.png["Descripción general de la recuperación ante desastres de BlueXP con Amazon EVS y FSx para ONTAP"]
+
+. Amazon EVS se implementa en su cuenta en una única configuración de zona de disponibilidad (AZ) y dentro de su nube privada virtual (VPC).
+. Un sistema de archivos de FSx para ONTAP se implementa en la misma zona de disponibilidad (AZ) que la implementación de Amazon EVS. El sistema de archivos se conecta a Amazon EVS directamente a través de una interfaz de red elástica (ENI), una conexión de pares de VPC o una puerta de enlace de Amazon Transit.
+. El conector BlueXP de NetApp se instala en su VPC. Este conector aloja varios servicios de gestión de datos (denominados agentes), incluido el agente de recuperación ante desastres de BlueXP, que gestiona la recuperación ante desastres (DR) de la infraestructura de VMware tanto en sus centros de datos físicos locales como en sus recursos alojados en Amazon AWS.
+. El agente de recuperación ante desastres de BlueXP se comunica de forma segura con el servicio alojado en la nube de BlueXP para recibir tareas y distribuirlas a las instancias de almacenamiento locales y alojadas en AWS de vCenter y ONTAP adecuadas.
+. Puede crear un plan de replicación mediante la consola de interfaz de usuario alojada en la nube de BlueXP, indicando las máquinas virtuales que se deben proteger, la frecuencia con la que se deben proteger y los procedimientos que se deben realizar para reiniciar esas máquinas virtuales en caso de una conmutación por error desde el sitio local.
+. El plan de replicación determina qué almacenes de datos de vCenter alojan las máquinas virtuales protegidas y los volúmenes de ONTAP que las alojan. Si los volúmenes aún no existen en el clúster de FSx para ONTAP, la recuperación ante desastres de BlueXP los crea automáticamente.
+. Se crea una relación SnapMirror para cada volumen ONTAP de origen identificado con cada FSx de destino para el volumen ONTAP alojado en ONTAP y se crea un programa de replicación basado en el RPO proporcionado por el usuario en el plan de replicación.
+. En caso de falla del sitio principal, un administrador inicia un proceso de conmutación por error manual dentro de la consola BlueXP y selecciona una copia de seguridad para usar como punto de restauración.
+. El agente de recuperación ante desastres de BlueXP activa los volúmenes de protección de datos alojados en FSx para ONTAP.
+. El agente registra cada volumen FSx para ONTAP activado con Amazon EVS vCenter, registra cada VM protegida con Amazon EVS vCenter y inicia cada una de ellas según las reglas predefinidas contenidas en el plan de replicación.
+

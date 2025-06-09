@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del servicio o cuya interoperabilidad con esta no es óptima. 
 ---
-= Limitaciones
+= Limitaciones en la recuperación ante desastres de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

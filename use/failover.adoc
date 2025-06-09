@@ -4,7 +4,7 @@ permalink: use/failover.html
 keywords: disaster recovery, bluexp disaster recovery, failover, replicate, fail over, vmware, vcenter 
 summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
 ---
-= Conmute al nodo de respaldo de las aplicaciones en un sitio remoto
+= Conmutación por error de aplicaciones a un sitio remoto con recuperación ante desastres de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -4,7 +4,7 @@ permalink: use/drplan-create.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
 summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Después de añadir sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o replicación. 
 ---
-= Cree un plan de replicación
+= Crear un plan de replicación en la recuperación ante desastres de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -186,9 +186,28 @@ Esta sección puede mostrar diferentes campos según su selección.
 Esto puede ser muy útil cuando se recuperan entornos grandes en clústeres de destino más pequeños o se realizan pruebas de recuperación ante desastres sin necesidad de aprovisionar una infraestructura física VMware uno a uno.
 
 +
-image:dr-plan-create-mapping-vms2.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
+image:dr-plan-vm-subnet-option2.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > máquinas virtuales"]
 
 
+
+* En el campo *IP de destino*, seleccione una de las siguientes:
++
+** *Igual que la fuente*
+** *Diferente de la fuente*
+** *Asignación de subred*: Seleccione esta opción si desea asignar la subred de origen a una subred de destino diferente. Puede seleccionar la subred de origen y luego la de destino. Esto resulta útil si desea cambiar la dirección IP de la máquina virtual en el entorno de destino.
++
+
+NOTE: El uso de la asignación de subred es un proceso opcional de dos pasos: primero, agregue la asignación de subred para cada sitio de vCenter en la pestaña Sitios. En segundo lugar, en el plan de replicación, indique que desea utilizar la asignación de subred.
+
++
+
+NOTE: Si hay dos equipos virtuales (por ejemplo, una es Linux y la otra es Windows), solo se necesitarán las credenciales para Windows.
+
+
+
+* *Usar Windows LAPS*: Si utiliza la Solución de contraseña de administrador local de Windows (Windows LAPS), marque esta casilla. Esta opción solo está disponible si ha seleccionado la opción *IP estática*. Al marcar esta casilla, no es necesario proporcionar una contraseña para cada máquina virtual. En su lugar, proporcione los datos del controlador de dominio.
++
+Si no usa Windows LAPS, la máquina virtual es una máquina virtual Windows y la opción de credenciales en la fila de la máquina virtual está habilitada. Puede proporcionar las credenciales de la máquina virtual.
 
 * *Scripts*: Puede incluir scripts personalizados en formato .sh, .bat o .ps1 como procesos post failover. Con scripts personalizados, puedes ejecutar tu script de recuperación ante desastres de BlueXP después de un proceso de conmutación al respaldo. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez finalizada la operación de failover.
 * *Prefijo y sufijo de la VM de destino*: En los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y sufijo al nombre de la VM.

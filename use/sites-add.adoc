@@ -4,7 +4,7 @@ permalink: use/sites-add.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
 summary: Para poder crear un plan de recuperación ante desastres, debe añadir un sitio de vCenter principal y un sitio de recuperación ante desastres de vCenter de destino en la recuperación ante desastres de BlueXP . 
 ---
-= Agregar vCenters a un sitio
+= Agregar vCenters a un sitio en la recuperación ante desastres de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -13,6 +13,9 @@ summary: Para poder crear un plan de recuperación ante desastres, debe añadir 
 
 [role="lead"]
 Para poder crear un plan de recuperación ante desastres, debe añadir un servidor de vCenter principal a un sitio y un sitio de recuperación ante desastres de vCenter de destino en BlueXP .
+
+
+TIP: Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo conector BlueXP.
 
 Una vez que se añaden vCenter, la recuperación de desastres de BlueXP  realiza una detección profunda de los entornos de vCenter, incluidos clústeres de vCenter, hosts ESXi, almacenes de datos, superficie de almacenamiento, detalles de máquinas virtuales, réplicas de SnapMirror y redes de máquinas virtuales.
 
@@ -139,6 +142,12 @@ TIP: La notación CIDR es un método para especificar direcciones IP y sus másc
 === Seleccione la asignación de subred para un plan de replicación
 
 Al crear un plan de replicación, puede seleccionar la asignación de subred para el plan de replicación.
+
+El uso de la asignación de subred es un proceso opcional de dos pasos:
+
+* En primer lugar, añada el mapa de subred para cada sitio de vCenter.
+* En segundo lugar, en el plan de replicación, indique que desea utilizar la asignación de subred.
+
 
 .Pasos
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Planes de replicación*.

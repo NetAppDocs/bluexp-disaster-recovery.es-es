@@ -1,0 +1,13 @@
+= Compatibilidad con la solución de contraseña de administrador local de Windows (LAPS)
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con la solución de contraseña de administrador local de Windows (LAPS)
+
+La Solución de contraseña de administrador local de Windows (Windows LAPS) es una función de Windows que administra y realiza copias de seguridad automáticamente de la contraseña de una cuenta de administrador local en Active Directory.
+
+Ahora puede seleccionar las opciones de mapeo de subredes y activar la opción LAPS proporcionando los detalles del controlador de dominio. Con esta opción, no necesita proporcionar una contraseña para cada máquina virtual.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Cree un plan de replicación"].

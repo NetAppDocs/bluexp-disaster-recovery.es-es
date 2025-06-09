@@ -4,7 +4,7 @@ permalink: use/reports.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
 summary: La revisión de los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos y las recuperaciones tras fallos, detalles de replicación en todos los sitios y detalles de tareas del año pasado. 
 ---
-= Crear informes de recuperación tras siniestros
+= Crear informes de recuperación ante desastres de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: La revisión de los informes de recuperación ante desastres puede ayud
 
 
 [role="lead"]
-La revisión de los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos de prueba, detalles del plan de replicación y detalles de las tareas en todos los sitios de una cuenta durante los últimos siete días.
+Revisar los informes de recuperación ante desastres de BlueXP puede ayudarle a analizar su preparación para la recuperación ante desastres. Los informes prediseñados incluyen un resumen de las recuperaciones tras fallos de prueba, detalles del plan de replicación y detalles de las tareas en todos los sitios de una cuenta durante los últimos siete días.
 
 Es posible descargar los informes en formato PDF, HTML o JSON.
 

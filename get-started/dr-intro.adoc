@@ -20,9 +20,6 @@ La recuperación de desastres de BlueXP es un servicio de recuperación ante des
 * Otro entorno VMware en las instalaciones basado en NFS con almacenamiento ONTAP
 
 
-
-IMPORTANT: Con esta versión, la recuperación ante desastres se admite en una vista previa tecnológica de las cargas de trabajo de VMware en las instalaciones a entornos VMware en las instalaciones con almacenes de datos del sistema de archivos de máquina virtual (VMFS) de VMware vSphere. NetApp no le cobra por ninguna capacidad de carga de trabajo vista previa.
-
 La recuperación ante desastres de BlueXP usa la tecnología SnapMirror de ONTAP como transporte de replicación al sitio de recuperación de desastres. Esto posibilita la mejor eficiencia del almacenamiento (compresión y deduplicación) en sitios principales y secundarios del sector.
 
 image:draas-onprem-to-cloud-onprem.png["Diagrama que muestra componentes de la recuperación ante desastres de BlueXP para VMware"]

@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
 summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
 ---
-= Vea el estado de sus planes de recuperación ante desastres en la Consola
+= Vea el estado de sus planes de recuperación ante desastres de BlueXP en el Panel de Control
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

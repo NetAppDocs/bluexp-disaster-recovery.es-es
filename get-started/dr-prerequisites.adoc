@@ -84,6 +84,7 @@ Para ver una lista de los privilegios de vCenter necesarios, consulte link:../re
 Debe configurarse un conector BlueXP en BlueXP. Cuando uses BlueXP Connector, incluirá las funcionalidades adecuadas para el servicio de recuperación ante desastres.
 
 * La recuperación ante desastres de BlueXP solo funciona con la puesta en marcha de Connector en modo estándar. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introducción a BlueXP en modo estándar"^].
+* Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo conector BlueXP.
 * Tipo de conector BlueXP necesario:
 +
 ** *Recuperación ante desastres local a local*: Instale el conector local de BlueXP en el sitio de recuperación ante desastres. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Instalar y configurar un conector en las instalaciones"^].

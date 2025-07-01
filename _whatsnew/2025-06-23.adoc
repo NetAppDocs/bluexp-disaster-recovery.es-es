@@ -1,0 +1,9 @@
+= Mejoras en el mapeo de subredes
+:allow-uri-read: 
+
+
+
+
+=== Mejoras en el mapeo de subredes
+
+Esta actualización mejora el cuadro de diálogo Agregar y editar asignación de subredes con una nueva función de búsqueda. Ahora puede encontrar subredes específicas rápidamente introduciendo términos de búsqueda, lo que facilita la gestión de asignaciones de subredes.

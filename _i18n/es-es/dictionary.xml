@@ -1640,4 +1640,12 @@ Se requiere una licencia de recuperación ante desastres de BlueXP para acceder 
   <block id="3a83143b77a0b90d82bf03cbf43e4443" category="sidebar">Crear un plan de replicación Paso 4 para Amazon EVS</block>
   <block id="5a72de72f8b0ba4525e25ce937621889" category="sidebar">Verificar el plan de replicación para Amazon EVS</block>
   <block id="f260d0f12b515f0ab789c0349e49a0fc" category="sidebar">Realizar operaciones del plan de replicación</block>
+  <block id="a1e044c84ca270d3adc998b256510801" category="doc">Mejoras en el mapeo de subredes</block>
+  <block id="494053c615ca0aa0debeb6eac90b3e5a" category="paragraph">Esta actualización mejora el cuadro de diálogo Agregar y editar asignación de subredes con una nueva función de búsqueda. Ahora puede encontrar subredes específicas rápidamente introduciendo términos de búsqueda, lo que facilita la gestión de asignaciones de subredes.</block>
+  <block id="dc729c135725ed28b09cd35258e2a28d" category="doc">Mejoras en el descubrimiento</block>
+  <block id="778d15d21e8eaffc6a6c8069d8fa5872" category="paragraph">Esta actualización mejora el proceso de descubrimiento, lo que reduce el tiempo necesario para realizarlo.</block>
+  <block id="b77e8ec0a3425747f32b3dbc303adecb" category="section-title">30 de junio de 2025</block>
+  <block id="f5939a7e3fd75d2d5422c1d6029f44c8" category="paragraph">Versión 4.2.4P2</block>
+  <block id="1d498761d9b5afe7d166fb15809b8000" category="section-title">23 de junio de 2025</block>
+  <block id="c114a433f08237cc585990ed9e9e88d5" category="paragraph">Versión 4.2.4P1</block>
 </blocks>

@@ -14,6 +14,10 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 [role="lead"]
 Con el panel de recuperación ante desastres de BlueXP, puedes determinar el estado de tus sitios de recuperación ante desastres y planes de replicación. Puede determinar rápidamente qué sitios y planes están en buen estado, desconectados o degradados.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior de recuperación ante desastres de BlueXP, selecciona *Dashboard*.

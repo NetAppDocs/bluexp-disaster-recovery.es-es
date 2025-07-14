@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: reference/dr-reference-roles.html 
+keywords: how bluexp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
+summary: La BlueXP disaster recovery emplea roles para gobernar el acceso que tiene cada usuario a funciones y acciones específicas. 
+---
+= Acceso a funciones basado en roles BlueXP disaster recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+La BlueXP disaster recovery emplea roles para gobernar el acceso que tiene cada usuario a funciones y acciones específicas.
+
+El servicio utiliza los siguientes roles que son específicos para la BlueXP disaster recovery.
+
+* *Administrador de recuperación ante desastres*: realiza cualquier acción en la BlueXP disaster recovery.
+* *Administrador de conmutación por error de recuperación ante desastres*: realiza acciones de conmutación por error y migración en la BlueXP disaster recovery.
+* *Administrador de aplicaciones de recuperación ante desastres*: crear y modificar planes de replicación e iniciar conmutaciones por error de prueba.
+* *Visor de recuperación ante desastres*: ve información en la BlueXP disaster recovery, pero no puede realizar ninguna acción.
+
+
+Estos roles son específicos de la BlueXP disaster recovery y no son los mismos que los roles de plataforma que se utilizan en BlueXP. Para obtener más información sobre todos los roles de la plataforma BlueXP , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["La documentación de configuración y administración de BlueXP"^].
+
+La siguiente tabla indica las acciones que cada función de BlueXP disaster recovery puede realizar.
+
+[cols="30,20a,20a,20a,20a"]
+|===
+| Característica y acción | Administración de recuperación ante desastres | Administrador de conmutación por error de recuperación ante desastres | Administrador de aplicaciones de recuperación ante desastres | Visor de recuperación ante desastres 
+
+
+| Ver panel y todas las pestañas  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Inicie una prueba gratuita  a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Inicie la detección de las cargas de trabajo  a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Ver información de la licencia  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Activar licencia  a| 
+Sí
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+
+
+
+5+| *En la pestaña Sitios*: 
+
+
+| Ver sitios  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Agregar, modificar o eliminar sitios  a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+5+| *En la pestaña Planes de replicación*: 
+
+
+| Ver planes de replicación  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Ver detalles del plan de replicación  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear o modificar planes de replicación  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Crear informes  a| 
+Sí
+ a| 
+No
+ a| 
+No
+ a| 
+No
+
+
+
+| Ver instantáneas  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Realizar pruebas de conmutación por error  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+
+
+| Realizar conmutaciones por error  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+| Realizar conmutaciones por error  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+| Realizar migraciones  a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+ a| 
+No
+
+
+
+5+| *En la pestaña Grupos de recursos*: 
+
+
+| Ver grupos de recursos  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Crear, modificar o eliminar grupos de recursos  a| 
+Sí
+ a| 
+No
+ a| 
+Sí
+ a| 
+No
+
+
+
+5+| *En la pestaña Monitoreo de trabajos*: 
+
+
+| Ver trabajos  a| 
+Sí
+ a| 
+No
+ a| 
+Sí
+ a| 
+Sí
+
+
+
+| Cancelar trabajos  a| 
+Sí
+ a| 
+Sí
+ a| 
+Sí
+ a| 
+No
+
+|===

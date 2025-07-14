@@ -14,6 +14,10 @@ summary: Con la recuperación ante desastres de BlueXP, puedes replicar las apli
 [role="lead"]
 Con la recuperación ante desastres de BlueXP, puedes replicar las aplicaciones de VMware en tu sitio de origen en un sitio remoto de recuperación ante desastres en el cloud mediante la replicación de SnapMirror.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 
 TIP: Después de crear el plan de recuperación ante desastres, identificar la repetición en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos de recuperación ante desastres de BlueXP verifica que la replicación se produzca realmente según el plan. Puede supervisar el progreso en la página Job Monitor.
 

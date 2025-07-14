@@ -5,6 +5,8 @@ entries:
 - title: Privilegios de vCenter necesarios para la recuperación ante desastres de
     BlueXP
   url: "/reference/vcenter-privileges.html"
+- title: Roles y privilegios de BlueXP disaster recovery
+  url: "/reference/dr-reference-roles.html"
 - title: Utilice la recuperación ante desastres de BlueXP con Amazon EVS
   entries:
   - title: Descripción general de la recuperación ante desastres de BlueXP con Amazon

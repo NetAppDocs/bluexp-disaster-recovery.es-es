@@ -14,6 +14,10 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 [role="lead"]
 En caso de desastre, conmuta tu sitio principal de VMware local a otro sitio de VMware local o VMware Cloud en AWS. Puede probar el proceso de recuperación tras fallos para garantizar el éxito cuando lo necesite.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 Durante una conmutación por error, se utiliza la copia Snapshot de SnapMirror más reciente. O bien, se puede seleccionar una copia de Snapshot específica de un momento específico (según la política de retención de SnapMirror). La opción de un momento específico puede ser útil si se enfrenta a un evento de corrupción como ransomware, donde las réplicas más recientes ya están comprometidas o cifradas. La recuperación ante desastres de BlueXP muestra todos los puntos disponibles en el tiempo.
 
 Este proceso varía según si el sitio de producción está en buen estado y se realiza una recuperación tras fallas en el sitio de recuperación de desastres por motivos diferentes a un fallo de infraestructura crucial:

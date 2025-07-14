@@ -21,11 +21,17 @@ Puede obtener un vistazo rápido de todos sus recursos de recuperación ante des
 * Equipos virtuales
 
 
+Cada tarea requiere diferentes roles de BlueXP . Para más información, consulte la sección *Rol de BlueXP requerido* en cada tarea.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 
 
 == Gestión de sitios de vCenter
 
 Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
+
+*Rol de BlueXP requerido* Rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
 
 .Pasos
 . En el menú superior, selecciona *Sitios*.
@@ -38,6 +44,8 @@ Es posible editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS
 == Gestione grupos de recursos
 
 Aunque puede agregar un grupo de recursos como parte de la creación de un plan de replicación, puede que le resulte más conveniente agregar los grupos por separado y, posteriormente, usar esos grupos en el plan. Los grupos de recursos se crean por máquinas virtuales o por almacenes de datos.
+
+*Rol de BlueXP requerido* Rol de administrador de organización, administrador de carpeta o proyecto, administrador de recuperación ante desastres o administrador de aplicación de recuperación ante desastres.
 
 Es posible crear un grupo de recursos por almacenes de datos de las siguientes maneras:
 
@@ -58,6 +66,8 @@ También puede editar y eliminar grupos de recursos.
 == Gestionar planes de replicación
 
 Puede desactivar, activar y suprimir planes de replicación. Puede cambiar los horarios.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 * Si desea pausar temporalmente un plan de replicación, puede deshabilitarlo y habilitarlo más adelante.
 * Si ya no necesita el plan, puede eliminarlo.
@@ -94,6 +104,8 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 
 Puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino. Esto puede suceder si se eliminan las copias Snapshot en un destino fuera de la recuperación tras desastres de BlueXP . El servicio elimina automáticamente la snapshot de origen de forma automática cada 24 horas. Sin embargo, puede realizar esto bajo demanda. Esta función le permite asegurarse de que las instantáneas sean coherentes en todos los sitios.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
 .Pasos
 . En el menú superior, selecciona *Planes de replicación*.
 +
@@ -109,6 +121,8 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 === Suprimir un plan de replicación
 
 Puede eliminar un plan de replicación si ya no lo necesita. Si elimina un plan de replicación, también puede eliminar las instantáneas primarias y secundarias creadas por el plan.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . En el menú superior, selecciona *Planes de replicación*.
@@ -127,6 +141,9 @@ image:../use/dr-plan-list2.png["Lista de planes de replicación"]
 
 Es posible cambiar cuántos almacenes de datos se retienen.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
+.Pasos
 . En el menú superior, selecciona *Planes de replicación*.
 . Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el icono del lápiz *Editar*.
 . Haga clic en la flecha *datastores* para expandirla.
@@ -143,6 +160,9 @@ image:../use/dr-plan-failover-edit.png["Editar la página de asignaciones de fai
 
 Es posible ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+.Pasos
 . En el menú superior, selecciona *Dashboard*.
 . Seleccione la instancia de vCenter en la fila del sitio.
 . Seleccione *datastores*.
@@ -155,6 +175,9 @@ Es posible ver información sobre cuántos almacenes de datos existen en el orig
 
 Es posible ver información sobre cuántas máquinas virtuales existen en el origen y en el destino, junto con la CPU, la memoria y la capacidad disponible.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+.Pasos
 . En el menú superior, selecciona *Dashboard*.
 . Seleccione la instancia de vCenter en la fila del sitio.
 . Seleccione *Máquinas virtuales*.

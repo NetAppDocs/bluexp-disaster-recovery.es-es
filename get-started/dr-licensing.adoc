@@ -14,6 +14,10 @@ summary: Con la recuperación ante desastres de BlueXP, puedes utilizar diferent
 [role="lead"]
 Con la recuperación ante desastres de BlueXP, puedes utilizar diferentes planes de licencia, como una prueba gratuita, una suscripción de pago por uso o BYOL.
 
+*Rol de BlueXP requerido* Rol de administrador de organización, administrador de carpeta o proyecto, administrador de recuperación ante desastres o administrador de aplicación de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 Puede utilizar los siguientes tipos de licencia:
 
 * Regístrate para una prueba gratuita de 30 días.

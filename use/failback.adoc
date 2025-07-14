@@ -14,6 +14,10 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 [role="lead"]
 Después de resolver un desastre, conmute al sitio de recuperación de desastres al sitio de origen para volver al funcionamiento normal. Puede seleccionar la snapshot a partir de la que se va a recuperar.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 En este flujo de trabajo, la recuperación de desastres de BlueXP replica (resincroniza) cualquier cambio de vuelta en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
 
 * En el sitio de destino, las máquinas virtuales se apagan y no se registran y los volúmenes se desmontan.

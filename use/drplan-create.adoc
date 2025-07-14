@@ -16,6 +16,10 @@ Después de añadir sitios de vCenter, estará listo para crear una recuperació
 
 Estos planes a veces se llaman _blueprints_.
 
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 Puede crear un plan de replicación y también editar programas para cumplimiento y pruebas.
 
 Es posible proteger varias máquinas virtuales en varios almacenes de datos. La recuperación ante desastres de BlueXP  crea grupos de consistencia ONTAP para todos los volúmenes de ONTAP que alojan almacenes de datos de máquinas virtuales protegidos.

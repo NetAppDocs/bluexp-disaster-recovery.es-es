@@ -14,6 +14,14 @@ summary: La recuperación ante desastres de NetApp BlueXP es un servicio de recu
 [role="lead"]
 Puede supervisar todos los trabajos de recuperación ante desastres de BlueXP y determinar su progreso.
 
+
+
+== Ver trabajos
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
+
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.
 . En el menú superior, selecciona *Monitoreo de trabajos*.
@@ -27,6 +35,10 @@ Puede supervisar todos los trabajos de recuperación ante desastres de BlueXP y 
 == Cancelar un trabajo
 
 Si un trabajo está en curso o en estado en cola y no desea que continúe, puede cancelarlo. Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola. Es posible que desee cancelar un trabajo antes de agotar el tiempo de espera.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de los usuarios en la BlueXP disaster recovery"]. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^].
 
 .Pasos
 . En el navegador izquierdo de BlueXP, selecciona *Protección* > *Recuperación ante desastres*.

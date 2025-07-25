@@ -23,7 +23,7 @@ entries:
       url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Requisitos previos para Amazon EVS
       url: "/reference/evs-deploy-guide-config-prereqs.html"
-    - title: Agregar matrices para Amazon EVS
+    - title: Agregar matrices de almacenamiento ONTAP para Amazon EVS
       url: "/reference/evs-deploy-guide-config-add-arrays.html"
     - title: Agregue la recuperación ante desastres de BlueXP para Amazon EVS
       url: "/reference/evs-deploy-guide-enable-draas.html"
